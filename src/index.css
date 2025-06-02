@@ -1,0 +1,120 @@
+/* src/index.css */
+
+@import "tailwindcss";
+
+/* Optional: Basic body styles for the whole app */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Ganti dengan font pilihan Anda */
+  background-color: #000000; /* Menggunakan warna primary-dark sebagai background global */
+  color: #ffffff; /* Menggunakan warna text-light sebagai default text color */
+}
+
+.gradient-border-link {
+  position: relative;
+  /* Membuat ruang untuk border */
+  padding: 0.5rem 1rem; /* Sesuaikan padding agar border tidak terlalu dekat teks */
+  border-radius: 0.5rem; /* rounded-lg */
+  transition: all 0.3s ease-in-out; /* Animasi transisi */
+  z-index: 1; /* Pastikan konten di atas border */
+  display: inline-block; /* Penting agar padding dan border diterapkan dengan benar */
+}
+
+.gradient-border-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* border-width, border-style */
+  background: linear-gradient(to right, theme('colors.purple.500'), theme('colors.orange.500')) border-box;
+  /* Mask untuk membuat border gradient */
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  border-radius: inherit; /* Mengambil radius dari parent */
+  z-index: -1; /* Di belakang konten */
+  opacity: 0; /* Tersembunyi secara default */
+  transition: opacity 0.3s ease-in-out; /* Animasi untuk muncul */
+}
+
+/* Hover/Active effect for gradient border */
+.gradient-border-link:hover::before,
+.gradient-border-link:focus::before,
+.gradient-border-link:active::before {
+  opacity: 1; /* Munculkan border */
+}
+
+/* For buttons with initial gradient border */
+.gradient-border-button {
+  position: relative;
+  border: 2px solid transparent; /* Border transparan agar gradien terlihat */
+  border-radius: 0.5rem;
+  background: linear-gradient(to right, theme('colors.purple.500'), theme('colors.orange.500')) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: 1;
+  overflow: hidden; /* Penting untuk clipping */
+  display: inline-flex; /* Agar konten di tengah */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Untuk teks yang akan menjadi gradient pada hover/active */
+.gradient-text-on-hover:hover,
+.gradient-text-on-hover:focus,
+.gradient-text-on-hover:active {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, theme('colors.purple.500'), theme('colors.orange.500'));
+}
+
+/* Scroll behavior for smooth scrolling on navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animasi */
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+.animate-blob {
+  animation: blob 7s infinite cubic-bezier(0.6, 0.05, 0.25, 1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Utility classes for animation delays */
+.animation-delay-500 { animation-delay: 0.5s; }
+.animation-delay-1000 { animation-delay: 1s; }
+.animation-delay-1500 { animation-delay: 1.5s; }
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
