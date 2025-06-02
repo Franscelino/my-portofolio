@@ -48,7 +48,7 @@ const Navbar = () => {
                 >
                   {item}
                   {/* Only border gradient on hover, transparent background */}
-                  <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-300 p-[1px] bg-gradient-to-r from-purple-500 to-orange-500">
+                  <div className="absolute inset-0 hover:border-amber-600 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-300 p-[1px] bg-gradient-to-r from-purple-500 to-orange-500">
                     <div className="w-full h-full bg-transparent rounded-xl"></div>
                   </div>
                   {/* Click effects */}

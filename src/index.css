@@ -26,7 +26,6 @@ body {
   /* border-width, border-style */
   background: linear-gradient(to right, theme('colors.purple.500'), theme('colors.orange.500')) border-box;
   /* Mask untuk membuat border gradient */
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
   border-radius: inherit; /* Mengambil radius dari parent */
@@ -48,7 +47,6 @@ body {
   border: 2px solid transparent; /* Border transparan agar gradien terlihat */
   border-radius: 0.5rem;
   background: linear-gradient(to right, theme('colors.purple.500'), theme('colors.orange.500')) border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
   z-index: 1;
@@ -89,13 +87,48 @@ html {
 }
 
 @keyframes blob {
-  0% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0px, 0px) scale(1); }
+  0%   { transform: translate(0px, 0px) scale(15); }
+  33%  { transform: translate(40px, -60px) scale(15); }
+  66%  { transform: translate(-30px, 30px) scale(15); }
+  100% { transform: translate(0px, 0px) scale(15); }
 }
+
 .animate-blob {
   animation: blob 7s infinite cubic-bezier(0.6, 0.05, 0.25, 1);
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.9;
+  }
+}
+
+@keyframes pingSlow {
+  0% {
+    transform: scale(0.2);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.2);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 3s infinite ease-in-out;
+}
+
+.animate-ping-slow {
+  animation: pingSlow 2s infinite cubic-bezier(0, 0, 0.2, 1);
 }
 
 @keyframes fadeInUp {

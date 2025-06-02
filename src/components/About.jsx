@@ -23,26 +23,24 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            {/* Profile Image */}
-            <div className="relative group order-2 md:order-1">
-              <div className="relative">
-                {/* Subtle glow effect */}
-                <div className="absolute inset-0 border border-purple-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                
-                {/* Image container */}
-                <div className="relative border border-gray-700 rounded-3xl p-1 hover:border-purple-500/50 transition-all duration-300">
-                  <div className="bg-gray-900/50 rounded-3xl p-6">
-                    <img 
-                      src="/profile.jpg" 
-                      alt="Profile" 
-                      className="w-full max-w-sm mx-auto rounded-2xl transition-all duration-500 group-hover:scale-105"
-                    />
-                  </div>
+            {/* Profile Image - Enhanced Creative Design */}
+            <div className="relative group order-2 md:order-1 flex justify-center items-center">
+              <div className="relative p-2 bg-gradient-to-br from-purple-600/50 to-orange-600/50 rounded-full shadow-lg transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl">
+                {/* Inner border for subtle effect */}
+                <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-black group-hover:border-purple-400 transition-all duration-500">
+                  <img 
+                    src="/profile.jpg" 
+                    alt="Profile" 
+                    className="w-full h-full object-cover object-center transform transition-transform duration-500 group-hover:scale-110"
+                  />
+                  {/* Overlay for subtle color tint on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-
-                {/* Minimal decorative elements */}
-                <div className="absolute -top-2 -right-2 w-4 h-4 border border-purple-400/30 rounded-full"></div>
-                <div className="absolute -bottom-2 -left-2 w-6 h-6 border border-orange-400/30 rounded-full"></div>
+                {/* Decorative elements around the image */}
+                <div className="absolute -top-4 -left-4 w-16 h-16 border-2 border-purple-400/50 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100 animate-pulse"></div>
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 border-2 border-orange-400/50 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200 animate-pulse"></div>
+                <div className="absolute top-1/4 right-0 w-8 h-8 bg-purple-300 rounded-full blur-sm opacity-0 group-hover:opacity-70 transition-all duration-700 delay-300"></div>
+                <div className="absolute bottom-1/4 left-0 w-6 h-6 bg-orange-300 rounded-full blur-sm opacity-0 group-hover:opacity-70 transition-all duration-700 delay-400"></div>
               </div>
             </div>
 
@@ -63,7 +61,7 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Skills Preview */}
+              {/* Skills Preview - Kept as is, assuming it's still desired */}
               <div className="grid grid-cols-2 gap-3 pt-6">
                 {['Creative Problem Solving', 'Continuous Learning', 'Team Collaboration', 'Innovation Mindset'].map((skill, index) => (
                   <div key={skill} className="group">
@@ -74,19 +72,8 @@ const About = () => {
                   </div>
                 ))}
               </div>
-
-              {/* CTA */}
-              <div className="pt-8">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center px-6 py-3 border border-purple-500/50 text-white font-medium rounded-xl transition-all duration-300 hover:border-purple-500 hover:bg-purple-500/5 active:scale-95"
-                >
-                  Let's Collaborate
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-              </div>
+              
+              {/* CTA section removed as requested */}
             </div>
           </div>
         </div>
