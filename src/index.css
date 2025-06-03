@@ -4,74 +4,206 @@
 
 /* Optional: Basic body styles for the whole app */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Ganti dengan font pilihan Anda */
-  background-color: #000000; /* Menggunakan warna primary-dark sebagai background global */
-  color: #ffffff; /* Menggunakan warna text-light sebagai default text color */
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  overflow-x: hidden; /* Prevent horizontal scroll from blob effects and other wide elements */
+  line-height: 1.6;
 }
 
-.gradient-border-link {
-  position: relative;
-  /* Membuat ruang untuk border */
-  padding: 0.5rem 1rem; /* Sesuaikan padding agar border tidak terlalu dekat teks */
-  border-radius: 0.5rem; /* rounded-lg */
-  transition: all 0.3s ease-in-out; /* Animasi transisi */
-  z-index: 1; /* Pastikan konten di atas border */
-  display: inline-block; /* Penting agar padding dan border diterapkan dengan benar */
-}
-
-.gradient-border-link::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  /* border-width, border-style */
-  background: linear-gradient(to right, theme('colors.purple.500'), theme('colors.orange.500')) border-box;
-  /* Mask untuk membuat border gradient */
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
-  border-radius: inherit; /* Mengambil radius dari parent */
-  z-index: -1; /* Di belakang konten */
-  opacity: 0; /* Tersembunyi secara default */
-  transition: opacity 0.3s ease-in-out; /* Animasi untuk muncul */
-}
-
-/* Hover/Active effect for gradient border */
-.gradient-border-link:hover::before,
-.gradient-border-link:focus::before,
-.gradient-border-link:active::before {
-  opacity: 1; /* Munculkan border */
-}
-
-/* For buttons with initial gradient border */
-.gradient-border-button {
-  position: relative;
-  border: 2px solid transparent; /* Border transparan agar gradien terlihat */
-  border-radius: 0.5rem;
-  background: linear-gradient(to right, theme('colors.purple.500'), theme('colors.orange.500')) border-box;
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
-  z-index: 1;
-  overflow: hidden; /* Penting untuk clipping */
-  display: inline-flex; /* Agar konten di tengah */
-  align-items: center;
-  justify-content: center;
-}
-
-/* Untuk teks yang akan menjadi gradient pada hover/active */
-.gradient-text-on-hover:hover,
-.gradient-text-on-hover:focus,
-.gradient-text-on-hover:active {
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(to right, theme('colors.purple.500'), theme('colors.orange.500'));
-}
-
-/* Scroll behavior for smooth scrolling on navigation */
+/* Add a smooth scroll behavior for the entire document */
 html {
   scroll-behavior: smooth;
 }
 
-/* Animasi */
+/* Selection styles for a polished look */
+::selection {
+  background-color: #a78bfa; /* purple-400 */
+  color: #1a202c; /* dark text for contrast */
+}
+
+/* Custom Scrollbar (Optional - for Webkit browsers) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a202c; /* dark gray */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #a78bfa, #f687b3); /* purple-400 to pink-400 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #8b5cf6, #ec4899); /* purple-500 to pink-500 */
+}
+
+
+/* ===== GLOBAL UTILITIES & ANIMATIONS ===== */
+
+/* Consistent Section Padding */
+.section-padding {
+  padding-top: 6rem; /* py-24 */
+  padding-bottom: 6rem; /* py-24 */
+}
+@media (min-width: 1024px) { /* lg breakpoint */
+  .section-padding {
+    padding-top: 8rem; /* lg:py-32 */
+    padding-bottom: 8rem; /* lg:py-32 */
+  }
+}
+
+/* Subtle border animation for cards/buttons */
+.animate-border-glow {
+  position: relative;
+  overflow: hidden;
+}
+.animate-border-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent 0%, rgba(147, 51, 234, 0.5) 10%, transparent 20%, transparent 80%, rgba(249, 115, 22, 0.5) 90%, transparent 100%);
+  animation: rotateGlow 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: -1;
+}
+.animate-border-glow:hover::before {
+  opacity: 1;
+}
+
+/* Gradient text utility */
+.text-gradient-primary {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, theme('colors.purple.400'), theme('colors.orange.400'));
+}
+
+/* General button/link styles */
+.btn-primary {
+  @apply px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/25;
+}
+
+.btn-secondary {
+  @apply px-8 py-3 border border-gray-600 rounded-full text-gray-300 font-semibold hover:border-purple-500 hover:text-white transition-all duration-300;
+}
+
+/* Section title styling */
+.section-title {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight;
+}
+
+.section-subtitle {
+  @apply text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed;
+}
+
+/* Card base styling */
+.card-base {
+  @apply relative bg-gray-900/40 backdrop-blur-sm rounded-2xl border border-gray-700/50 overflow-hidden transition-all duration-500;
+}
+
+.card-base:hover {
+  @apply border-purple-500/50 shadow-2xl shadow-purple-500/10;
+}
+
+/* Animated background elements (blobs, particles) */
+.animated-bg-elements {
+  @apply absolute inset-0 overflow-hidden;
+}
+
+.animated-bg-elements .blob-effect {
+  @apply absolute rounded-full blur-3xl opacity-10;
+}
+
+.animated-bg-elements .particle-effect {
+  @apply absolute w-1 h-1 bg-white/30 rounded-full animate-pulse;
+}
+
+/* Keyframe animations (from your existing index.css, ensuring they are here) */
+@keyframes blob {
+  0% { 
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  25% { 
+    transform: translate(40px, -60px) scale(1.1) rotate(90deg);
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  50% { 
+    transform: translate(-30px, 30px) scale(0.9) rotate(180deg);
+    border-radius: 50% 40% 60% 30%/30% 70% 40% 60%;
+  }
+  75% { 
+    transform: translate(60px, 40px) scale(1.2) rotate(270deg);
+    border-radius: 40% 70% 30% 60%/60% 40% 70% 30%;
+  }
+  100% { 
+    transform: translate(0px, 0px) scale(1) rotate(360deg);
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+
+.animate-blob {
+  animation: blob 12s infinite cubic-bezier(0.6, 0.05, 0.25, 1);
+}
+
+@keyframes float-blob {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% { 
+    transform: translateY(-20px) rotate(180deg); 
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+}
+
+.animate-float-blob {
+  animation: float-blob 6s infinite ease-in-out;
+}
+
+@keyframes morph-blob {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    transform: scale(1);
+  }
+  33% {
+    border-radius: 70% 30% 50% 50%/30% 60% 40% 70%;
+    transform: scale(1.1);
+  }
+  66% {
+    border-radius: 30% 70% 40% 60%/50% 40% 60% 30%;
+    transform: scale(0.9);
+  }
+}
+
+.animate-morph-blob {
+  animation: morph-blob 8s infinite ease-in-out;
+}
+
+@keyframes pulse-blob {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+    border-radius: 50%;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.4;
+    border-radius: 60% 40% 50% 60%/70% 50% 50% 30%;
+  }
+}
+
+.animate-pulse-blob {
+  animation: pulse-blob 4s infinite ease-in-out;
+}
+
 @keyframes slideIn {
   from {
     transform: translateY(-100%);
@@ -84,17 +216,6 @@ html {
 }
 .animate-slideIn {
   animation: slideIn 0.3s ease-out forwards;
-}
-
-@keyframes blob {
-  0%   { transform: translate(0px, 0px) scale(15); }
-  33%  { transform: translate(40px, -60px) scale(15); }
-  66%  { transform: translate(-30px, 30px) scale(15); }
-  100% { transform: translate(0px, 0px) scale(15); }
-}
-
-.animate-blob {
-  animation: blob 7s infinite cubic-bezier(0.6, 0.05, 0.25, 1);
 }
 
 @keyframes pulseSlow {
@@ -145,9 +266,104 @@ html {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+.animate-float-particle {
+  animation: floatParticle 4s infinite ease-in-out;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(147, 51, 234, 0.6), 0 0 60px rgba(236, 72, 153, 0.3);
+  }
+}
+
+.animate-glow {
+  animation: glow 3s infinite ease-in-out;
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate-glow {
+  animation: rotateGlow 20s linear infinite;
+}
+
+@keyframes scaleBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-scale-bounce {
+  animation: scaleBounce 2s infinite ease-in-out;
+}
+
 /* Utility classes for animation delays */
 .animation-delay-500 { animation-delay: 0.5s; }
 .animation-delay-1000 { animation-delay: 1s; }
 .animation-delay-1500 { animation-delay: 1.5s; }
 .animation-delay-2000 { animation-delay: 2s; }
 .animation-delay-4000 { animation-delay: 4s; }
+
+/* Additional blob variants for different sections */
+.blob-small {
+  width: 150px;
+  height: 150px;
+  filter: blur(20px);
+}
+
+.blob-medium {
+  width: 250px;
+  height: 250px;
+  filter: blur(30px);
+}
+
+.blob-large {
+  width: 400px;
+  height: 400px;
+  filter: blur(50px);
+}
+
+/* Interactive blob effects */
+.interactive-blob {
+  transition: all 0.3s ease-in-out;
+}
+
+.interactive-blob:hover {
+  transform: scale(1.1);
+  filter: blur(35px);
+}
+
+/* Gradient mesh background */
+.gradient-mesh {
+  background: 
+    radial-gradient(at 40% 20%, hsla(228, 100%, 74%, 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, hsla(340, 100%, 76%, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(343, 100%, 76%, 0.1) 0px, transparent 50%);
+}

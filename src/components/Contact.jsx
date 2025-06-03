@@ -17,8 +17,8 @@ const Contact = () => {
       value: 'franscelinomelvynn',
       link: 'https://www.instagram.com/franscelinomelvynn', // Ganti dengan tautan Instagram Anda yang sebenarnya
       icon: (
-        <svg className="w-6 h-6 text-orange-400 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 16h4c2.21 0 4-1.79 4-4v-4c0-2.21-1.79-4-4-4h-4c-2.21 0-4 1.79-4 4v4c0 2.21 1.79 4 4 4z" />
+        <svg className="w-6 h-6 text-orange-400 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 16h4c2.21 0 4-1.79 4-4v-4c0-2.21-1.79-4-4-4h-4c-2.21 0-4 1.79-4 4v4c0 2.21 1.79 4 4 4z" />
           <circle cx="12" cy="12" r="3" />
           <circle cx="16.5" cy="7.5" r="1.5" />
         </svg>
@@ -50,7 +50,7 @@ const Contact = () => {
       link: 'https://discordapp.com/users/melvyn18', // Perlu diingat, tautan langsung ke profil Discord tidak selalu berfungsi kecuali pengguna memiliki Discord Nitro dan mengatur vanity URL. Ini adalah tautan umum.
       icon: (
         <svg className="w-6 h-6 text-purple-400 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20.218 3.627A2.39 2.39 0 0018.156 2a2.39 2.39 0 00-2.062 1.627c-1.847-.282-3.666-.282-5.468 0A2.39 2.39 0 006.094 2a2.39 2.39 0 00-2.062 1.627C1.94 6.702 1.5 9.73 2.193 12.756c.032.14.07.279.113.418.423 1.36.98 2.682 1.666 3.966a1.05 1.05 0 001.07.643 1.05 1.05 0 00.992-.74c.08-.344.156-.69.227-1.037.16-.76.32-1.52.48-2.28a11.96 11.96 0 011.026-.856c.216-.17.433-.34.65-.51a1.01 1.01 0 00.183-.162c.18-.17.36-.34.54-.51a1.01 1.01 0 00.183-.162c.45-.45.9-.9 1.35-1.35.45-.45.9-.9 1.35-1.35.18-.17.36-.34.54-.51a1.01 1.01 0 00.183-.162c.677-.677 1.354-1.354 2.03-2.03a11.96 11.96 0 01.856-1.026c.76-.16 1.52-.32 2.28-.48.347-.07.693-.156 1.037-.227.344-.08.69-.156 1.037-.227a1.05 1.05 0 00.74-.992 1.05 1.05 0 00-.643-1.07c-1.284-.686-2.606-1.243-3.966-1.666a1.01 1.01 0 00-.418-.113c-3.026-.693-6.054-.252-9.106.877z" />
+          <path d="M20.218 3.627A2.39 2.39 0 0018.156 2a2.39 2.39 0 00-2.062 1.627c-1.847-.282-3.666-.282-5.468 0A2.39 2.39 0 006.094 2a2.39 2.39 0 00-2.062 1.627C1.94 6.702 1.5 9.73 2.193 12.756c.032.14.07.279.113.418.423 1.36.98 2.682 1.666 3.966a1.05 1.05 0 001.07.643 1.05 1.05 0 00.992-.74c.08-.344.156-.69.227-1.037.16-.76.32-1.52.48-2.28a11.96 11.96 0 011.026-.856c.216-.17.433-.34.65-.51a1.01 1.01 0 00.183-.162c.18-.17.36-.34.54-.51a1.01 101 0 00.183-.162c.45-.45.9-.9 1.35-1.35.45-.45.9-.9 1.35-1.35.18-.17.36-.34.54-.51a1.01 1.01 0 00.183-.162c.677-.677 1.354-1.354 2.03-2.03a11.96 11.96 0 01.856-1.026c.76-.16 1.52-.32 2.28-.48.347-.07.693-.156 1.037-.227.344-.08.69-.156 1.037-.227a1.05 1.05 0 00.74-.992 1.05 1.05 0 00-.643-1.07c-1.284-.686-2.606-1.243-3.966-1.666a1.01 1.01 0 00-.418-.113c-3.026-.693-6.054-.252-9.106.877z" />
           <path d="M8.09 17.03c.536 0 .97-.434.97-.97s-.434-.97-.97-.97-.97.434-.97.97.434.97.97.97zm7.82 0c.536 0 .97-.434.97-.97s-.434-.97-.97-.97-.97.434-.97.97.434.97.97.97z" />
         </svg>
       ),
@@ -68,20 +68,20 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-black relative overflow-hidden">
-      {/* Background Elements for Contact Section */}
-      <div className="absolute inset-0">
+    <section id="contact" className="py-24 bg-black relative overflow-hidden section-padding">
+      {/* Background Elements for Contact Section - Menggunakan kelas global untuk konsistensi */}
+      <div className="animated-bg-elements">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent"></div>
-        <div className="absolute top-1/4 right-1/4 w-48 h-48 border border-purple-500/10 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute bottom-1/4 left-1/4 w-56 h-56 border border-orange-500/10 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        <div className="blob-effect top-1/4 right-1/4 w-48 h-48 bg-purple-500/10 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+        <div className="blob-effect bottom-1/4 left-1/4 w-56 h-56 bg-orange-500/10 animate-pulse" style={{ animationDelay: '1.5s' }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Section Title */}
+          {/* Section Title - Menggunakan kelas global section-title */}
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400">Me</span>
+            <h2 className="section-title">
+              Contact <span className="text-gradient-primary">Me</span>
             </h2>
             <div className="w-16 h-px bg-gradient-to-r from-purple-500 to-orange-500 mx-auto"></div>
           </div>
@@ -90,7 +90,7 @@ const Contact = () => {
             Feel free to reach out to me through any of the platforms below!
           </p>
 
-          {/* Contact Cards Grid */}
+          {/* Contact Cards Grid - Menggunakan card-base untuk konsistensi */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {contactInfo.map((item, index) => (
               <a
@@ -98,7 +98,7 @@ const Contact = () => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-gray-900/40 rounded-xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg relative overflow-hidden flex flex-col items-center justify-center text-center"
+                className="card-base p-6 hover:shadow-lg relative overflow-hidden flex flex-col items-center justify-center text-center"
               >
                 {/* Subtle gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-orange-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>

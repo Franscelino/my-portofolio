@@ -1,89 +1,226 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import allProjectsData from '../data/projectsData'; // Import data proyek
+import allProjectsData from '../data/projectsData';
+// Pastikan ikon-ikon ini diimpor jika digunakan di tempat lain di komponen ini
+// import { Sparkles, Code, Zap, ExternalLink, ArrowRight } from 'lucide-react'; 
 
 const Projects = () => {
+  const [imageErrors, setImageErrors] = useState({});
+
+  const handleImageError = (projectId) => {
+    setImageErrors(prev => ({
+      ...prev,
+      [projectId]: true
+    }));
+  };
+
+  const getPlaceholderUrl = (projectName) => {
+    const encodedName = encodeURIComponent(projectName.replace(/\s+/g, '+'));
+    return `https://placehold.co/400x250/1f2937/9ca3af?text=${encodedName}`;
+  };
+
   return (
     <section id="projects" className="py-24 bg-black relative overflow-hidden">
-      {/* Background Elements for Projects Section */}
+      {/* Enhanced Background Elements */}
       <div className="absolute inset-0">
+        {/* Top gradient line */}
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-orange-500/10 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute bottom-1/4 right-1/4 w-56 h-56 border border-purple-500/10 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        
+        {/* Animated circles with improved positioning */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-orange-500/10 rounded-full animate-pulse" 
+             style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-56 h-56 border border-purple-500/10 rounded-full animate-pulse" 
+             style={{ animationDelay: '1.5s' }}></div>
+        
+        {/* Additional ambient elements */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 border border-purple-400/5 rounded-full animate-pulse" 
+             style={{ animationDelay: '2s' }}></div>
+        
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="h-full w-full" style={{
+            backgroundImage: `
+              linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '50px 50px'
+          }}></div>
+        </div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
-          {/* Section Title */}
+          {/* Enhanced Section Title */}
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              My <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400">Projects</span>
+            <div className="inline-block mb-4">
+              <span className="px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/10 to-orange-500/10 border border-purple-500/20 text-purple-300 text-sm font-medium">
+                Portfolio
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              My{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400">
+                Projects
+              </span>
             </h2>
-            <div className="w-16 h-px bg-gradient-to-r from-purple-500 to-orange-500 mx-auto"></div>
+            <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-8">
+              A collection of projects that showcase my skills and passion for creating innovative solutions
+            </p>
+            <div className="flex items-center justify-center space-x-2">
+              <div className="w-8 h-px bg-gradient-to-r from-transparent to-purple-500"></div>
+              <div className="w-16 h-px bg-gradient-to-r from-purple-500 to-orange-500"></div>
+              <div className="w-8 h-px bg-gradient-to-r from-orange-500 to-transparent"></div>
+            </div>
           </div>
 
-          {/* Projects Grid (Summary View) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          {/* Enhanced Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {allProjectsData.map((item, index) => (
-              <div key={item.id} className="bg-gray-900/40 rounded-xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 group hover:shadow-lg relative overflow-hidden">
-                {/* Subtle gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-orange-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+              // Bungkus seluruh kartu proyek dengan Link
+              <Link
+                key={item.id}
+                to={`/projects/${item.id}`} // Tautan dinamis ke halaman detail proyek
+                className="group relative bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-2 block" // Tambahkan 'block' agar Link mengisi area div
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {/* Enhanced gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                 
-                {/* Project Thumbnail Image */}
+                {/* Glowing edge effect */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/20 to-orange-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl -z-10"></div>
+
+                {/* Project Thumbnail with enhanced styling */}
                 {item.thumbnailUrl && (
-                  <div className="mb-4 rounded-lg overflow-hidden border border-gray-700 group-hover:border-orange-400 transition-colors duration-300">
-                    <img 
-                      src={item.thumbnailUrl} // Menggunakan thumbnailUrl
-                      alt={item.name} 
-                      className="w-full h-40 object-cover object-center transform group-hover:scale-105 transition-transform duration-300"
-                      onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x250/gray/white?text=Image+Not+Available'; }}
-                    />
+                  <div className="relative mb-6 rounded-xl overflow-hidden border border-gray-700/50 group-hover:border-orange-400/50 transition-all duration-500">
+                    <div className="aspect-video relative overflow-hidden bg-gray-800">
+                      <img 
+                        src={imageErrors[item.id] ? getPlaceholderUrl(item.name) : item.thumbnailUrl}
+                        alt={item.name} 
+                        className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700"
+                        onError={() => handleImageError(item.id)}
+                        loading="lazy"
+                      />
+                      {/* Image overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
                   </div>
                 )}
 
-                <h4 className="relative text-xl font-semibold text-white mb-2">
+                {/* Project Title with enhanced animation */}
+                <h4 className="relative text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-purple-200 transition-colors duration-300">
                   {item.name}
-                  <span className="block w-0 h-0.5 bg-gradient-to-r from-purple-400 to-orange-400 transition-all duration-300 group-hover:w-1/4 mt-2"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-orange-400 transition-all duration-500 group-hover:w-1/3"></span>
                 </h4>
                 
-                <ul className="relative space-y-2 text-gray-300 text-sm list-none pl-0 mb-4">
-                  {item.shortDetails.map((desc, descIndex) => ( // Menggunakan shortDetails
-                    <li key={descIndex} className="flex items-start">
-                      <span className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-orange-400 mr-3 mt-1 flex-shrink-0"></span>
-                      {desc}
-                    </li>
+                {/* Enhanced project details */}
+                <div className="space-y-3 text-gray-300 mb-6">
+                  {item.shortDetails?.map((desc, descIndex) => (
+                    <div 
+                      key={descIndex} 
+                      className="flex items-start group/item hover:text-gray-200 transition-colors duration-300"
+                    >
+                      <div className="flex-shrink-0 mt-1.5 mr-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-400 to-orange-400 group-hover/item:scale-125 transition-transform duration-300"></div>
+                      </div>
+                      <span className="text-sm leading-relaxed">{desc}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
 
-                {/* Optional: Direct Repository Link (if still desired on summary) */}
-                {item.repositoryLink && (
-                  <div className="flex justify-end mt-4"> {/* Pindahkan ke kanan */}
+                {/* Technologies Used */}
+                {item.technologies && item.technologies.length > 0 && (
+                  <div className="mb-6">
+                    <h5 className="text-sm font-semibold text-white mb-2">Technologies:</h5>
+                    <div className="flex flex-wrap gap-2">
+                      {item.technologies.map((tech, techIndex) => (
+                        <span key={techIndex} className="px-3 py-1 bg-gray-800/60 text-gray-300 text-xs rounded-full border border-gray-700">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Links (Repository and Live Demo) - Ubah ini menjadi tombol terpisah jika Link membungkus kartu */}
+                <div className="flex justify-end space-x-4">
+                  {item.repositoryLink && (
                     <a
                       href={item.repositoryLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center px-3 py-1 border border-orange-500/50 text-white text-xs font-medium rounded-lg transition-all duration-300 hover:border-orange-500 hover:bg-orange-500/10 active:scale-95"
+                      // Hapus kelas group-hover/link jika Link membungkus kartu
+                      className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-gray-800 to-gray-700 border border-orange-500/30 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:from-orange-500/20 hover:to-orange-600/20 hover:border-orange-400 hover:shadow-lg hover:shadow-orange-500/20 active:scale-95"
+                      onClick={(e) => e.stopPropagation()} // Mencegah Link parent terpicu
                     >
+                      {/* Menggunakan SVG inline untuk konsistensi dengan kode asli */}
+                      <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
                       Repo
-                      <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
-                  </div>
-                )}
-              </div>
+                  )}
+                  {item.liveDemoLink && (
+                    <a
+                      href={item.liveDemoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      // Hapus kelas group-hover/link jika Link membungkus kartu
+                      className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-800 to-purple-700 border border-purple-500/30 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:from-purple-500/20 hover:to-purple-600/20 hover:border-purple-400 hover:shadow-lg hover:shadow-purple-500/20 active:scale-95"
+                      onClick={(e) => e.stopPropagation()} // Mencegah Link parent terpicu
+                    >
+                      {/* Menggunakan SVG inline untuk konsistensi dengan kode asli */}
+                      <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13 14.725V19h5V14.725a.75.75 0 00-.75-.75H13.75a.75.75 0 00-.75.75zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 1.5a8.5 8.5 0 110 17 8.5 8.5 0 010-17zM12 5.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM12 7a5 5 0 110 10 5 5 0 010-10zM12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM12 10a2 2 0 110 4 2 2 0 010-4z" />
+                      </svg>
+                      Live Demo
+                      <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+
+                {/* Project number indicator */}
+                <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gradient-to-r from-purple-500/20 to-orange-500/20 border border-purple-500/30 flex items-center justify-center text-purple-300 text-xs font-bold opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+              </Link>
             ))}
           </div>
 
-          {/* See All Projects Details Button at the very bottom */}
-          <div className="text-center mt-16">
+          {/* Enhanced CTA Button */}
+          <div className="text-center">
+            {/* Tombol "Explore All Projects" sekarang mengarahkan ke halaman ringkasan proyek */}
             <Link
-              to="/projects/all-details" // Link ke halaman detail semua proyek
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-orange-600 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95"
+              to="/projects/all-details-summary" // <--- PERUBAHAN PENTING DI SINI
+              className="group relative inline-flex items-center px-10 py-4 bg-gradient-to-r from-purple-600 via-purple-700 to-orange-600 text-white font-bold text-lg rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 active:scale-95 overflow-hidden"
             >
-              See All Projects Details
-              <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              {/* Button background animation */}
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Button content */}
+              <span className="relative flex items-center">
+                {/* Menggunakan SVG inline untuk konsistensi dengan kode asli */}
+                <svg className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0l-4-4m4 4l-4 4" />
+                </svg>
+                Explore All Projects
+                <svg className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+
+              {/* Glowing effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-600 to-orange-600 opacity-75 blur-xl group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
             </Link>
+            
+            {/* Subtitle text */}
+            <p className="text-gray-400 text-sm mt-4 max-w-md mx-auto">
+              Discover detailed information, technologies used, and live demos of all my projects
+            </p>
           </div>
         </div>
       </div>
