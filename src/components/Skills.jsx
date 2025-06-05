@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Code, Database, Palette, Users, Zap, Brain, Globe, Trophy } from 'lucide-react';
+import { Code, Database, Palette, Users, Zap, Brain, Globe, Trophy, Server, GraduationCap } from 'lucide-react'; // Added Server and GraduationCap for more specific icons
 
 const Skills = () => {
   const [activeSkill, setActiveSkill] = useState(null);
@@ -15,55 +15,58 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: "Frontend Development",
-      icon: <Code className="w-8 h-8" />,
-      skills: ['HTML5', 'CSS3', 'JavaScript ES6+', 'React', 'Responsive Design', 'UI/UX Principles'],
-      color: "from-blue-500 to-cyan-400",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop"
-    },
-    {
-      title: "Backend & Database",
-      icon: <Database className="w-8 h-8" />,
-      skills: ['PHP', 'Python', 'Flask', 'MySQL', 'SQLite', 'SQLAlchemy'],
-      color: "from-green-500 to-emerald-400",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop"
+      title: "Blockchain Development",
+      icon: <Zap className="w-8 h-8" />,
+      skills: ['Solidity', 'Hardhat', 'Smart Contracts', 'Ethereum Testnets', 'Solana Performance Analysis', 'Decentralized Applications (DApps)'],
+      color: "from-orange-500 to-red-400",
+      // Removed image property
     },
     {
       title: "AI & Machine Learning",
       icon: <Brain className="w-8 h-8" />,
-      skills: ['Image Recognition', 'Machine Learning', 'DeepAge', 'Fruits-360', 'Python AI'],
+      skills: ['Exploratory Data Analysis (EDA)', 'Data Preprocessing', 'Scikit-learn', 'TensorFlow', 'YOLO (Object Detection)'],
       color: "from-purple-500 to-pink-400",
-      image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=300&fit=crop"
+      // Removed image property
     },
     {
-      title: "Blockchain & Analytics",
-      icon: <Zap className="w-8 h-8" />,
-      skills: ['Ethereum Testing', 'Solana Performance', 'Testnet', 'Mempool Analysis', 'Power BI'],
-      color: "from-orange-500 to-red-400",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=300&fit=crop"
+      title: "Database & Data Engineering",
+      icon: <Database className="w-8 h-8" />,
+      skills: ['Database Design', 'SQL (MySQL/SQLite)', 'Data Pipelines (Kafka)', 'ETL Processes', 'Data Modeling'],
+      color: "from-blue-500 to-cyan-400",
+      // Removed image property
     },
     {
-      title: "Creative & Design",
-      icon: <Palette className="w-8 h-8" />,
-      skills: ['UI/UX Design', 'Creative Problem Solving', 'Innovation Mindset', 'Web Accessibility'],
-      color: "from-pink-500 to-rose-400",
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop"
-    },
-    {
-      title: "Leadership & Collaboration",
-      icon: <Users className="w-8 h-8" />,
-      skills: ['Team Collaboration', 'Scrum Framework', 'Meeting Coordination', 'Technical Writing'],
+      title: "Frontend Development",
+      icon: <Code className="w-8 h-8" />,
+      skills: ['React.js', 'TypeScript', 'Tailwind CSS', 'Responsive Design', 'UI/UX Principles'],
       color: "from-indigo-500 to-blue-400",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop"
+      // Removed image property
+    },
+    {
+      title: "Backend Development",
+      icon: <Server className="w-8 h-8" />,
+      skills: ['Node.js', 'Python (Flask)', 'PHP (Laravel)', 'RESTful APIs', 'API Design'],
+      color: "from-green-500 to-emerald-400",
+      // Removed image property
+    },
+    {
+      title: "Soft Skills & Project Management",
+      icon: <Users className="w-8 h-8" />,
+      skills: ['Team Collaboration', 'Agile Methodologies (Scrum)', 'Problem Solving', 'Technical Documentation', 'UI/UX Design Concepts'],
+      color: "from-pink-500 to-rose-400",
+      // Removed image property
     }
   ];
 
   const achievements = [
-    { icon: <Globe className="w-6 h-6" />, text: "5+ Web Applications Built", color: "text-blue-400" },
-    { icon: <Trophy className="w-6 h-6" />, text: "14-Day Sprint Cycles", color: "text-green-400" },
-    { icon: <Zap className="w-6 h-6" />, text: "Blockchain Testing Expert", color: "text-orange-400" },
-    { icon: <Brain className="w-6 h-6" />, text: "AI Model Implementation", color: "text-purple-400" }
+    { icon: <GraduationCap className="w-6 h-6" />, text: "Lisk & ICP Bootcamp Certificate Recipient", color: "text-purple-400" },
+    { icon: <Globe className="w-6 h-6" />, text: "Developed AI-Powered Career Finder Web App (NextPath)", color: "text-blue-400" },
+    { icon: <Zap className="w-6 h-6" />, text: "Conducted Comparative Blockchain Performance Analysis (Solana vs Ethereum)", color: "text-orange-400" },
+    { icon: <Database className="w-6 h-6" />, text: "Experienced in Data Pipeline & Database Management (Kafka)", color: "text-emerald-400" },
+    { icon: <Brain className="w-6 h-6" />, text: "Implemented ML Techniques for EDA & Predictive Modeling", color: "text-pink-400" }
   ];
+
+  // getPlaceholderUrl function is no longer needed as images are removed.
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
@@ -93,8 +96,7 @@ const Skills = () => {
               My <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400">Skills</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              A comprehensive showcase of technical expertise and creative abilities, 
-              spanning from cutting-edge web development to advanced machine learning implementations.
+              A comprehensive display of technical expertise and creative abilities gained through education, bootcamps, and real-world projects.
             </p>
             
             {/* Achievement Badges */}
@@ -121,23 +123,15 @@ const Skills = () => {
                 onMouseEnter={() => setActiveSkill(index)}
                 onMouseLeave={() => setActiveSkill(null)}
               >
-                {/* Card Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={category.image} 
-                    alt={category.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${category.color} opacity-60 group-hover:opacity-40 transition-opacity duration-300`} />
-                  <div className="absolute top-4 left-4">
-                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center text-white">
-                      {category.icon}
-                    </div>
+                {/* Icon at the top, replacing the image */}
+                <div className="p-6 pb-0 flex justify-center lg:justify-start">
+                  <div className={`w-16 h-16 rounded-xl flex items-center justify-center text-white bg-gradient-to-r ${category.color}`}>
+                    {category.icon}
                   </div>
                 </div>
 
                 {/* Card Content */}
-                <div className="p-6">
+                <div className="p-6 pt-4">
                   <h3 className="text-xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
                     {category.title}
                   </h3>
@@ -163,9 +157,7 @@ const Skills = () => {
         </div>
       </div>
 
-
-
-      {/* Floating Elements */}
+      {/* Floating Elements (unchanged as they are background animations) */}
       <div className="absolute top-1/4 left-10 w-4 h-4 bg-purple-400 rounded-full animate-bounce opacity-20" style={{ animationDelay: '0s' }} />
       <div className="absolute top-1/3 right-20 w-3 h-3 bg-pink-400 rounded-full animate-bounce opacity-20" style={{ animationDelay: '1s' }} />
       <div className="absolute bottom-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-bounce opacity-20" style={{ animationDelay: '2s' }} />

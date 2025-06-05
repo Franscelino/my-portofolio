@@ -17,7 +17,8 @@ const About = () => {
   ];
 
   const interests = [
-    { icon: <Code2 className="w-6 h-6" />, title: 'Web Development', desc: 'Building responsive and interactive applications' },
+    // Changed "Web Development" to "Blockchain Development"
+    { icon: <Code2 className="w-6 h-6" />, title: 'Blockchain Development', desc: 'Building responsive and interactive applications' },
     { icon: <Lightbulb className="w-6 h-6" />, title: 'AI & Machine Learning', desc: 'Exploring intelligent solutions and automation' },
     { icon: <Users className="w-6 h-6" />, title: 'Team Collaboration', desc: 'Working together to achieve common goals' },
     { icon: <Coffee className="w-6 h-6" />, title: 'Continuous Learning', desc: 'Always eager to discover new technologies' }

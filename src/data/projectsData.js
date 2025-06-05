@@ -1,30 +1,71 @@
 // src/data/projectsData.js
 const allProjectsData = [
     {
-        id: 'whatage-website', // ID unik untuk URL
+        id: 'nextpath-ai-career', 
+        name: 'Nextpath AI Career Finder',
+        imageUrl: '/public/Nexpathlanding.png', // Placeholder for main detail image
+        thumbnailUrl: '/public/Nexpathlanding.png', // Placeholder for summary thumbnail
+        repositoryLink: 'https://github.com/BRYAN1309/IN-FEST-2025.git', // Ganti dengan link GitHub repo Nextpath Anda
+        liveDemoLink: 'https://nextpath.my.id', // Link live demo Nextpath Anda
+        shortDetails: [
+            'AI-powered platform for personalized career recommendations.',
+            'Features AI chatbot, curated articles, and goal tracking.',
+            'Built with React, Tailwind CSS, and TypeScript.'
+        ], 
+        fullDescription: `Nextpath is an innovative AI-powered web application designed to help users discover career paths that align with their skills, interests, and goals. It offers a comprehensive suite of features, including an intelligent AI chatbot for interactive career guidance, a rich library of articles for industry insights, and a personalized goal-setting and tracking system to guide users through their career development. Built with modern web technologies like React, Tailwind CSS, and TypeScript, Nextpath provides a responsive, intuitive, and engaging user experience. The application demonstrates strong capabilities in frontend development, API integration, and leveraging AI for practical solutions.`,
+        technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'AI/ML Integration', 'RESTful APIs'],
+        features: [
+            'AI Chatbot: Interactive conversational agent for career advice.',
+            'Personalized Article Recommendations: Curated content based on user interests.',
+            'Career Goal Tracking: Set and monitor career milestones.',
+            'Intuitive User Interface: Clean and responsive design for seamless navigation.',
+            'Secure User Authentication: (If applicable, mention specific method, e.g., OAuth, JWT)',
+            'Robust Backend Integration: Seamless communication with AI models and data services.'
+        ],
+        challenges: [
+            'Integrating diverse AI models for accurate career matching and chatbot responses.',
+            'Optimizing API calls for real-time responsiveness and data retrieval.',
+            'Ensuring data privacy and security for user career information.',
+            'Managing complex state across various interactive features (chatbot, goals).'
+        ],
+        learnings: [
+            'Deepened expertise in React development, including state management and component architecture.',
+            'Mastered advanced Tailwind CSS for responsive and visually appealing designs.',
+            'Gained significant experience in integrating and consuming AI/ML APIs.',
+            'Improved skills in TypeScript for building robust and scalable applications.',
+            'Learned effective strategies for structuring complex front-end projects with Vite.'
+        ],
+        gallery: [
+            { url: '/public/Nextpathdashboard.png', caption: 'Nextpath Dashboard', description: 'Personalized user dashboard with career insights.' },
+            { url: '/public/Nextpathchatbot.png', caption: 'AI Chatbot Feature', description: 'Interactive AI chatbot for instant career guidance.' },
+            { url: '/public/articles.png', caption: 'Career Articles Section', description: 'Curated articles providing industry knowledge and trends.' },
+            { url: '/public/Nextpathgoal.png', caption: 'Personalized Goals Tracking', description: 'Feature to set and monitor career development goals.' }
+        ]
+    },
+    {
+        id: 'whatage-website', 
         name: 'WhatAge Website',
-        imageUrl: 'https://placehold.co/800x500/purple/white?text=WhatAge+Website+Detail', // Gambar yang lebih besar untuk detail
-        thumbnailUrl: 'https://placehold.co/400x250/purple/white?text=WhatAge+Website', // Gambar untuk halaman ringkasan
-        repositoryLink: 'https://github.com/your-username/whatage-website', // Ganti dengan tautan asli
-        liveDemoLink: 'https://whatage.vercel.app/', // Contoh tautan live demo
+        imageUrl: '/public/whatage1.png', // Gambar yang lebih besar untuk detail
+        thumbnailUrl: '/public/whatage1.png', // Gambar untuk halaman ringkasan
+        repositoryLink: 'https://github.com/dustinmondegreen/WhatAge.git', // Ganti dengan tautan asli
         shortDetails: [
             'An age prediction system using the DeepAge model.',
             'Implemented with Flask, SQLite, and Vanilla JS.',
             'Responsive and intuitive user interface.'
         ], // Ringkasan untuk halaman Projects
-        fullDescription: `The WhatAge Website is an innovative web application designed to predict a person's age from an uploaded image. It leverages a custom DeepAge machine learning model, ensuring high accuracy and performance. The backend is powered by Flask, handling image processing and model inference, while user data (if applicable) is managed securely with SQLite and SQLAlchemy. The frontend, built with pure Vanilla JavaScript, HTML, and CSS, offers a responsive and intuitive user interface. This project demonstrates practical application of AI in web development and a strong understanding of full-stack integration.`,
+        fullDescription: `The WhatAge Website is an innovative web application designed to predict a person's age from an uploaded data. It leverages a custom DeepAge machine learning model, ensuring high accuracy and performance. The backend is powered by Flask, handling image processing and model inference, while user data (if applicable) is managed securely with SQLite and SQLAlchemy. The frontend, built with pure Vanilla JavaScript, HTML, and CSS, offers a responsive and intuitive user interface. This project demonstrates practical application of AI in web development and a strong understanding of full-stack integration.`,
         technologies: ['Flask', 'SQLite', 'Vanilla JS', 'DeepAge Model', 'HTML', 'CSS', 'Python'],
         features: [
-            'Real-time age prediction from image uploads',
+            'Real-time age prediction from data uploads',
             'Secure data handling with SQLite',
             'Efficient backend processing with Flask',
             'Clean and responsive frontend design',
-            'Easy-to-use interface for image submission'
+            'Easy-to-use interface for data submission'
         ],
         challenges: [
             'Optimizing model inference speed for web deployment',
             'Ensuring cross-browser compatibility for frontend',
-            'Handling various image formats and sizes gracefully'
+            'Handling various data formats and sizes gracefully'
         ],
         learnings: [
             'Deepened understanding of Flask framework and its ecosystem',
@@ -32,9 +73,10 @@ const allProjectsData = [
             'Gained experience in frontend performance optimization'
         ],
         gallery: [
-            { url: 'https://placehold.co/600x400/purple/white?text=WhatAge+Screenshot+1', caption: 'Homepage with upload interface' },
-            { url: 'https://placehold.co/600x400/purple/white?text=WhatAge+Screenshot+2', caption: 'Prediction result display' },
-            { url: 'https://placehold.co/600x400/purple/white?text=WhatAge+Screenshot+3', caption: 'Mobile view responsiveness' }
+            { url: '/public/whatage1.png', caption: 'Homepage with upload interface' },
+            { url: '/public/whatage2.png', caption: 'Prediction result display' },
+            { url: '/public/whatage3.png', caption: 'Mobile view responsiveness' },
+            { url: '/public/whatage4.png', caption: 'Mobile view responsiveness' }
         ]
     },
     {

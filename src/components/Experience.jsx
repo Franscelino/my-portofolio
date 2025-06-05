@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, ExternalLink, Calendar, MapPin, Users, Award } from 'lucide-react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import React, { useState, useEffect } from 'react'; // Fixed import syntax
+import { ArrowRight, ExternalLink, Calendar, MapPin, Users, Award, GraduationCap, Zap, Link, Lightbulb } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Experience = () => {
   const [activeSection, setActiveSection] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate();
 
   // Track mouse position for dynamic effects
   useEffect(() => {
@@ -17,47 +17,46 @@ const Experience = () => {
   }, []);
 
   const experiences = [
+    // --- Combined University Experience ---
     {
-      type: 'binus',
-      title: 'Academic Excellence',
+      type: 'university-overview',
+      category: 'university', // This category property is still useful for potential future filtering
+      title: 'University & Campus Engagements',
       color: 'from-blue-500 to-purple-600',
-      icon: '🎓',
-      summary: 'Computer Science at BINUS with Database specialization',
-      stats: 'Ongoing Studies',
+      icon: <GraduationCap className="w-12 h-12" />,
+      summary: 'My comprehensive academic journey at BINUS University, coupled with significant leadership and mentorship roles within campus organizations, has built a strong foundation in both technical and soft skills.',
+      stats: 'Diverse Campus Roles',
       achievements: [
-        'Database Specialization Program',
-        'Mobility Program Participant',
-        'Advanced Labs & Research'
+        'Specialized in Database Systems during Computer Science studies.',
+        'Held prominent leadership and activist roles in BINUS Computer Club (BNCC).',
+        'Mentored incoming student cohorts as a Freshman Leader & Partner.',
+        'Participated in inter-campus academic mobility programs.'
       ],
-      keyMetrics: {
-        duration: 'Ongoing',
-        location: 'BINUS Bandung',
-        focus: 'Database Systems'
-      }
+      period: '2022 - Present',
+      location: 'BINUS University (Bandung & Jakarta)'
     },
+    // --- Combined External Bootcamps & Events ---
     {
-      type: 'bncc',
-      title: 'Leadership & Organization',
-      color: 'from-orange-500 to-red-500',
-      icon: '🚀',
-      summary: 'Event coordination and content creation at BNCC',
-      stats: '200+ Event Participants',
+      type: 'external-overview',
+      category: 'external', // This category property is still useful for potential future filtering
+      title: 'Blockchain & Industry Events',
+      color: 'from-green-500 to-cyan-500', // A distinct color for external focus
+      icon: <Zap className="w-12 h-12" />, // Represents innovation and industry events
+      summary: 'Actively engaged in cutting-edge blockchain bootcamps and prominent industry events, continuously expanding knowledge in Decentralized Finance (DeFi), DApp development, and high-performance blockchain technologies.',
+      stats: 'Continuous Industry Learning',
       achievements: [
-        'International Speaker Coordination',
-        'Multi-Event Organization',
-        'Cinematic Content Production',
-        'Strategic Partnership Development'
+        'Completed multiple intensive blockchain bootcamps (Lisk, ICP, Monad).',
+        'Participated in key Decentralized Finance (DeFi) and Web3 conferences (Defvest Bandung).',
+        'Gained hands-on experience with various blockchain protocols and tools.',
+        'Networked with leaders and innovators in the Web3 space.'
       ],
-      keyMetrics: {
-        participants: '200+',
-        events: '4+ Major Events',
-        role: 'Lead Coordinator'
-      }
-    },
+      period: '2023 - 2024',
+      location: 'Various Locations (Online, Jakarta, Bandung)'
+    }
   ];
 
   const handleSeeMore = () => {
-    navigate('/experience-detail'); // Use navigate to go to the new route
+    navigate('/experience-detail');
   };
 
   return (
@@ -109,7 +108,7 @@ const Experience = () => {
               <div className="w-12 h-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
             </div>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Journey through academic excellence and organizational leadership
+              Journey through academic excellence, organizational leadership, and intensive tech bootcamps.
             </p>
           </div>
 
@@ -120,26 +119,26 @@ const Experience = () => {
               <div className="text-sm text-gray-400">Years Experience</div>
             </div>
             <div className="text-center p-6 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl hover:border-orange-500/50 transition-all duration-300">
-              <div className="text-3xl font-bold text-orange-400 mb-2">200+</div>
-              <div className="text-sm text-gray-400">Event Participants</div>
+              <div className="text-3xl font-bold text-orange-400 mb-2">7+</div>
+              <div className="text-sm text-gray-400">Major Roles/Bootcamps</div>
             </div>
             <div className="text-center p-6 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl hover:border-pink-500/50 transition-all duration-300">
               <div className="text-3xl font-bold text-pink-400 mb-2">4+</div>
-              <div className="text-sm text-gray-400">Major Events</div>
+              <div className="text-sm text-gray-400">Organizations/Bootcamps</div>
             </div>
             <div className="text-center p-6 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl hover:border-blue-500/50 transition-all duration-300">
               <div className="text-3xl font-bold text-blue-400 mb-2">100%</div>
-              <div className="text-sm text-gray-400">Success Rate</div>
+              <div className="text-sm text-gray-400">Passion & Dedication</div>
             </div>
           </div>
 
-          {/* Condensed Experience Cards */}
+          {/* Experience Categories - Now only two main cards */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {experiences.map((experience, index) => (
               <div 
                 key={index}
                 className="group relative bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-2"
-                onMouseEnter={() => setActiveSection(index)}
+                onMouseEnter={() => setActiveSection(experience.type)}
                 onMouseLeave={() => setActiveSection(null)}
               >
                 {/* Card glow effect */}
@@ -155,7 +154,7 @@ const Experience = () => {
                       <h3 className={`text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${experience.color} group-hover:scale-105 transition-all duration-300`}>
                         {experience.title}
                       </h3>
-                      <div className={`h-1 w-16 bg-gradient-to-r ${experience.color} rounded-full mt-2 transform origin-left transition-all duration-500 ${activeSection === index ? 'scale-x-150' : 'scale-x-100'}`}></div>
+                      <div className={`h-1 w-16 bg-gradient-to-r ${experience.color} rounded-full mt-2 transform origin-left transition-all duration-500 ${activeSection === experience.type ? 'scale-x-150' : 'scale-x-100'}`}></div>
                     </div>
                   </div>
 
@@ -164,15 +163,18 @@ const Experience = () => {
                     {experience.summary}
                   </p>
 
-                  {/* Key Metrics */}
+                  {/* Period and Location */}
                   <div className="grid grid-cols-1 gap-3 mb-6">
-                    {Object.entries(experience.keyMetrics).map(([key, value], metricIndex) => (
-                      <div key={metricIndex} className="flex items-center text-sm">
-                        <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${experience.color} mr-3 flex-shrink-0`}></div>
-                        <span className="text-gray-400 capitalize mr-2">{key}:</span>
-                        <span className="text-white font-semibold">{value}</span>
-                      </div>
-                    ))}
+                    <div className="flex items-center text-sm">
+                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${experience.color} mr-3 flex-shrink-0`}></div>
+                      <span className="text-gray-400 capitalize mr-2">Period:</span>
+                      <span className="text-white font-semibold">{experience.period}</span>
+                    </div>
+                    <div className="flex items-center text-sm">
+                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${experience.color} mr-3 flex-shrink-0`}></div>
+                      <span className="text-gray-400 capitalize mr-2">Location:</span>
+                      <span className="text-white font-semibold">{experience.location}</span>
+                    </div>
                   </div>
 
                   {/* Stats Badge */}
@@ -183,17 +185,14 @@ const Experience = () => {
                   {/* Preview Achievements */}
                   <div className="space-y-2">
                     <h4 className="text-white font-semibold text-sm mb-3">Key Achievements:</h4>
-                    {experience.achievements.slice(0, 3).map((achievement, achievementIndex) => (
-                      <div key={achievementIndex} className="flex items-center text-gray-400 group-hover:text-gray-300 transition-all duration-300">
-                        <Award className="w-3 h-3 mr-2 text-yellow-400 flex-shrink-0" />
-                        <span className="text-sm">{achievement}</span>
-                      </div>
-                    ))}
-                    {experience.achievements.length > 3 && (
-                      <div className="flex items-center text-gray-500 text-sm mt-2">
-                        <span>+{experience.achievements.length - 3} more achievements</span>
-                      </div>
-                    )}
+                    <ul className="list-none space-y-2 text-gray-300">
+                      {experience.achievements.map((achievement, achievementIndex) => (
+                        <li key={achievementIndex} className="flex items-start">
+                          <Award className="w-3 h-3 mr-2 text-yellow-400 flex-shrink-0" />
+                          <span className="text-sm">{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
 
