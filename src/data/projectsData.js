@@ -1,17 +1,17 @@
 // src/data/projectsData.js
 const allProjectsData = [
     {
-        id: 'nextpath-ai-career', 
+        id: 'nextpath-ai-career',
         name: 'Nextpath AI Career Finder',
-        imageUrl: '/public/Nexpathlanding.png', // Placeholder for main detail image
-        thumbnailUrl: '/public/Nexpathlanding.png', // Placeholder for summary thumbnail
-        repositoryLink: 'https://github.com/BRYAN1309/IN-FEST-2025.git', // Ganti dengan link GitHub repo Nextpath Anda
-        liveDemoLink: 'https://nextpath.my.id', // Link live demo Nextpath Anda
+        imageUrl: '/public/Nexpathlanding.png',
+        thumbnailUrl: '/public/Nexpathlanding.png',
+        repositoryLink: 'https://github.com/BRYAN1309/IN-FEST-2025.git',
+        liveDemoLink: 'https://nextpath.my.id',
         shortDetails: [
             'AI-powered platform for personalized career recommendations.',
             'Features AI chatbot, curated articles, and goal tracking.',
             'Built with React, Tailwind CSS, and TypeScript.'
-        ], 
+        ],
         fullDescription: `Nextpath is an innovative AI-powered web application designed to help users discover career paths that align with their skills, interests, and goals. It offers a comprehensive suite of features, including an intelligent AI chatbot for interactive career guidance, a rich library of articles for industry insights, and a personalized goal-setting and tracking system to guide users through their career development. Built with modern web technologies like React, Tailwind CSS, and TypeScript, Nextpath provides a responsive, intuitive, and engaging user experience. The application demonstrates strong capabilities in frontend development, API integration, and leveraging AI for practical solutions.`,
         technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'AI/ML Integration', 'RESTful APIs'],
         features: [
@@ -43,16 +43,16 @@ const allProjectsData = [
         ]
     },
     {
-        id: 'whatage-website', 
+        id: 'whatage-website',
         name: 'WhatAge Website',
-        imageUrl: '/public/whatage1.png', // Gambar yang lebih besar untuk detail
-        thumbnailUrl: '/public/whatage1.png', // Gambar untuk halaman ringkasan
-        repositoryLink: 'https://github.com/dustinmondegreen/WhatAge.git', // Ganti dengan tautan asli
+        imageUrl: '/public/whatage1.png',
+        thumbnailUrl: '/public/whatage1.png',
+        repositoryLink: 'https://github.com/dustinmondegreen/WhatAge.git',
         shortDetails: [
             'An age prediction system using the DeepAge model.',
             'Implemented with Flask, SQLite, and Vanilla JS.',
             'Responsive and intuitive user interface.'
-        ], // Ringkasan untuk halaman Projects
+        ],
         fullDescription: `The WhatAge Website is an innovative web application designed to predict a person's age from an uploaded data. It leverages a custom DeepAge machine learning model, ensuring high accuracy and performance. The backend is powered by Flask, handling image processing and model inference, while user data (if applicable) is managed securely with SQLite and SQLAlchemy. The frontend, built with pure Vanilla JavaScript, HTML, and CSS, offers a responsive and intuitive user interface. This project demonstrates practical application of AI in web development and a strong understanding of full-stack integration.`,
         technologies: ['Flask', 'SQLite', 'Vanilla JS', 'DeepAge Model', 'HTML', 'CSS', 'Python'],
         features: [
@@ -80,49 +80,57 @@ const allProjectsData = [
         ]
     },
     {
-        id: 'book-management-system',
-        name: 'Book Management System',
-        imageUrl: 'https://placehold.co/800x500/orange/white?text=Book+Management+System+Detail',
-        thumbnailUrl: 'https://placehold.co/400x250/orange/white?text=Book+Management+System',
-        repositoryLink: 'https://github.com/your-username/book-management-system',
-        liveDemoLink: 'https://book-management.vercel.app/', // Contoh tautan live demo
+        id: 'clovio-online-fashion-store', // ID unik untuk proyek ini
+        name: 'Clovio - E-commerce Fashion Store',
+        imageUrl: '/public/Clovio1.png', // Placeholder image
+        thumbnailUrl: '/public/Clovio1.png', // Placeholder image
+        repositoryLink: 'https://github.com/Franscelino/clovio-repo', // Ganti dengan link GitHub Clovio Anda
+        liveDemoLink: null, // Ganti dengan link live demo jika ada
         shortDetails: [
-            'A complete CRUD system for book management.',
-            'Built with PHP and MySQL.',
-            'Features user authentication and search.'
+            'Full-stack e-commerce platform for a custom clothing brand.',
+            'Features product catalog, shopping cart, checkout, and admin dashboard.',
+            'Built with React.js (Frontend) and Laravel (Backend) with MySQL.'
         ],
-        fullDescription: `This Book Management System is a robust web application built with PHP and MySQL, offering full CRUD (Create, Read, Update, Delete) functionality for managing a book collection. It features a secure user authentication system with login, registration, and logout capabilities. The database schema in MySQL is designed to efficiently handle book information and establish clear relationships between users and their owned books. This project showcases strong backend development skills, database management, and secure web practices.`,
-        technologies: ['PHP', 'MySQL', 'Authentication', 'CRUD', 'HTML', 'CSS'],
+        fullDescription: `Clovio is a comprehensive online fashion store developed as a campus project, aimed at creating a dedicated web presence for a custom clothing brand. As the frontend developer, I was responsible for crafting a modern, intuitive, and responsive user interface using React.js, Tailwind CSS, and JSX. The platform boasts key e-commerce functionalities including a dynamic product catalog with search and filter options, detailed product pages, a seamless shopping cart experience, and a secure checkout process with payment integration. On the backend, Laravel handles robust API communication and data management with MySQL, supporting features like admin dashboards for product and order management. This project demonstrates proficiency in building full-stack applications, managing complex UI states, and integrating RESTful APIs.`,
+        technologies: ['React.js', 'Tailwind CSS', 'JSX', 'Vite', 'Laravel', 'MySQL', 'RESTful APIs', 'E-commerce'],
         features: [
-            'User registration, login, and logout',
-            'Add, view, edit, and delete book records',
-            'Search and filter books by various criteria',
-            'Admin panel for managing users and books',
-            'Responsive design for desktop and mobile'
+            'Product Catalog: Browse and filter clothing items by category, price, etc.',
+            'Product Detail Pages: View high-resolution images, descriptions, and size options.',
+            'Shopping Cart: Add, remove, and update quantities of items in the cart.',
+            'Secure Checkout Process: Multi-step checkout flow with order summary.',
+            'Payment Integration: (Optional: Sebutkan metode pembayaran jika spesifik, misal: Midtrans, Stripe)',
+            'User Authentication & Authorization: Secure login, registration, and user profiles.',
+            'Admin Dashboard: Manage products, orders, users, and site content.',
+            'Responsive Design: Optimized for seamless viewing on desktop and mobile devices.'
         ],
         challenges: [
-            'Implementing secure password hashing and session management',
-            'Optimizing database queries for large datasets',
-            'Ensuring input validation to prevent SQL injection'
+            'Integrating frontend (React) with backend (Laravel) APIs for smooth data flow.',
+            'Implementing complex state management for shopping cart and checkout processes.',
+            'Ensuring robust security measures for user authentication and payment transactions.',
+            'Optimizing database queries for efficient product retrieval and order processing.',
+            'Designing an intuitive and visually appealing UI/UX for an e-commerce platform.'
         ],
         learnings: [
-            'Mastered secure PHP development practices',
-            'Gained expertise in relational database design with MySQL',
-            'Understood the importance of user experience in data management systems'
+            'Enhanced skills in building scalable React applications with complex component interactions.',
+            'Gained practical experience in integrating third-party payment gateways.',
+            'Deepened understanding of Laravel framework for API development and database management.',
+            'Improved collaboration skills within a team setting for a full-stack project.',
+            'Learned best practices for e-commerce design and functionality.'
         ],
         gallery: [
-            { url: 'https://placehold.co/600x400/orange/white?text=BMS+Screenshot+1', caption: 'Book listing page' },
-            { url: 'https://placehold.co/600x400/orange/white?text=BMS+Screenshot+2', caption: 'Add new book form' },
-            { url: 'https://placehold.co/600x400/orange/white?text=BMS+Screenshot+3', caption: 'User dashboard' }
+            { url: 'https://placehold.co/600x400/8B5CF6/FFFFFF?text=Clovio+Homepage', caption: 'Clovio Homepage', description: 'Tampilan utama toko dengan katalog produk.' },
+            { url: 'https://placehold.co/600x400/F97316/FFFFFF?text=Clovio+Product+Detail', caption: 'Product Detail Page', description: 'Halaman detail produk dengan deskripsi dan opsi.' },
+            { url: 'https://placehold.co/600x400/8B5CF6/FFFFFF?text=Clovio+Shopping+Cart', caption: 'Shopping Cart', description: 'Ringkasan keranjang belanja sebelum checkout.' },
+            { url: 'https://placehold.co/600x400/F97316/FFFFFF?text=Clovio+Admin+Dashboard', caption: 'Admin Dashboard', description: 'Tampilan dashboard admin untuk manajemen produk.' },
         ]
     },
     {
-        id: 'blockchain-performance-testing-tool',
+        id: 'Building in Lisk L2 of Ethereum',
         name: 'Blockchain Performance Testing Tool',
         imageUrl: 'https://placehold.co/800x500/blue/white?text=Blockchain+Tool+Detail',
         thumbnailUrl: 'https://placehold.co/400x250/blue/white?text=Blockchain+Tool',
         repositoryLink: 'https://github.com/your-username/blockchain-perf-tool',
-        liveDemoLink: null, // Mungkin tidak ada live demo untuk alat ini
+        liveDemoLink: null,
         shortDetails: [
             'A Python-based tool to measure TPS, latency, and gas fees.',
             'Compares Ethereum vs. Solana performance.',
@@ -159,7 +167,7 @@ const allProjectsData = [
         imageUrl: 'https://placehold.co/800x500/green/white?text=Fruit+Recognition+Detail',
         thumbnailUrl: 'https://placehold.co/400x250/green/white?text=Fruit+Recognition',
         repositoryLink: 'https://github.com/your-username/fruit-recognition',
-        liveDemoLink: 'https://fruit-recognition.vercel.app/', // Contoh tautan live demo
+        liveDemoLink: 'https://fruit-recognition.vercel.app/',
         shortDetails: [
             'ML for fruit image recognition (Fruits-360 dataset).',
             'Integrated with nutritional data and dataset visualization.',
@@ -188,6 +196,79 @@ const allProjectsData = [
             { url: 'https://placehold.co/600x400/green/white?text=Fruit+App+Screenshot+1', caption: 'Fruit recognition interface' },
             { url: 'https://placehold.co/600x400/green/white?text=Fruit+App+Screenshot+2', caption: 'Nutritional table display' },
             { url: 'https://placehold.co/600x400/green/white?text=Fruit+App+Screenshot+3', caption: 'Dataset visualization' }
+        ]
+    },
+    {
+        id: 'blockchain-performance-analysis-paper',
+        name: 'Performance Analysis of Blockchain Platforms: Hyperledger Fabric and Ethereum',
+        // Anda perlu membuat gambar thumbnail untuk paper ini.
+        // Bisa berupa kolase grafik, infografis ringkasan, atau sampul paper yang didesain ulang.
+        imageUrl: '/images/blockchain-paper-detail.png', // Ganti dengan path gambar detail Anda
+        thumbnailUrl: '/images/blockchain-paper-thumbnail.png', // Ganti dengan path thumbnail Anda
+        repositoryLink: 'https://www.researchgate.net/publication/346579114', // Link ke ResearchGate atau repositori paper Anda
+        liveDemoLink: 'https://www.researchgate.net/publication/346579114', // Link langsung ke file PDF paper jika ada, atau ResearchGate
+        shortDetails: [
+            'Empirical evaluation comparing Hyperledger Fabric and Ethereum blockchain platforms.',
+            'Analyzes performance metrics: success rate, latency, throughput, and resource consumption.',
+            'Concludes on the superiority of Hyperledger Fabric in most aspects.',
+        ],
+        fullDescription: `This research conducts an empirical study to evaluate the performance of two prominent blockchain platforms: Hyperledger Fabric and Ethereum. The evaluation is based on measuring key metrics including success rate, average latency, throughput, and resource consumption. The study employed Hyperledger Caliper, a blockchain performance benchmarking tool, to execute 100 transactions for each platform. The findings offer valuable insights for practitioners in selecting the ideal blockchain platform based on application requirements.`,
+        technologies: [
+            'Blockchain Technology',
+            'Hyperledger Fabric',
+            'Ethereum',
+            'Performance Evaluation',
+            'Data Analysis',
+            'Academic Research',
+            'Hyperledger Caliper'
+        ],
+        features: [
+            'In-depth comparison of Hyperledger Fabric and Ethereum performance.',
+            'Analysis of success rate across different smart contract functions.',
+            'Detailed evaluation of average transaction latency.',
+            'Measurement and comparison of network throughput.',
+            'Assessment of resource (memory and CPU) consumption.',
+            'Insights into factors affecting blockchain platform selection for enterprise applications.',
+        ],
+        challenges: [
+            'Conducting a fair empirical evaluation of distinct blockchain platforms.',
+            'Ensuring consistent and comparable testing conditions across different platform versions.',
+            'Interpreting complex performance data to draw meaningful conclusions.',
+            'Addressing the limitations of performance benchmarking tools in capturing real-world scenarios.',
+        ],
+        learnings: [
+            'Gained a deep understanding of blockchain performance characteristics and bottlenecks.',
+            'Developed expertise in utilizing blockchain benchmarking tools like Hyperledger Caliper.',
+            'Learned to critically analyze and present empirical data from complex distributed systems.',
+            'Understood the trade-offs between different blockchain architectures and their implications for enterprise adoption.',
+        ],
+        gallery: [
+            {
+                url: '/images/blockchain-paper-fig5.png', // Ganti dengan path gambar Fig 5
+                caption: 'Success Rates of Hyperledger Fabric and Ethereum',
+                description: 'Grafik ini menunjukkan tingkat keberhasilan transaksi dari Hyperledger Fabric dan Ethereum untuk fungsi Open, Query, dan Transfer. Ethereum mencapai 100% tingkat keberhasilan untuk fungsi Transfer, sementara Fabric memiliki tingkat keberhasilan transfer di bawah 50% untuk sebagian besar versinya, kecuali Fabric 1.4.4.'
+            },
+            {
+                url: '/images/blockchain-paper-fig6.png', // Ganti dengan path gambar Fig 6
+                caption: 'Average Latency of Hyperledger Fabric and Ethereum',
+                description: 'Menampilkan latensi rata-rata untuk setiap platform. Ethereum memiliki latensi rata-rata lebih dari 4 kali lipat dari Hyperledger Fabric untuk fungsi Open.'
+            },
+            {
+                url: '/images/blockchain-paper-fig7.png', // Ganti dengan path gambar Fig 7
+                caption: 'Throughput of Hyperledger Fabric and Ethereum',
+                description: 'Menggambarkan throughput (transaksi per detik) dari kedua platform. Sebagian besar versi Hyperledger Fabric menunjukkan throughput yang lebih tinggi daripada Ethereum.'
+            },
+            {
+                url: '/images/blockchain-paper-fig8.png', // Ganti dengan path gambar Fig 8
+                caption: 'Average Memory Consumption of Hyperledger Fabric and Ethereum',
+                description: 'Grafik ini menunjukkan konsumsi memori rata-rata. Ethereum mengonsumsi memori hingga 20 kali lebih banyak dibandingkan Hyperledger Fabric.'
+            },
+            {
+                url: '/images/blockchain-paper-fig9.png', // Ganti dengan path gambar Fig 9
+                caption: 'Average CPU Usage of Hyperledger Fabric and Ethereum',
+                description: 'Visualisasi penggunaan CPU rata-rata. Ethereum mengonsumsi lebih banyak daya CPU dibandingkan Hyperledger Fabric, terutama untuk fungsi Query dan Transfer.'
+            },
+            // Tambahkan gambar-gambar lain dari paper jika relevan (misalnya, diagram arsitektur)
         ]
     },
 ];

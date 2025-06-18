@@ -9,13 +9,14 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ProjectDetailPage from './page/AllProjectsDetailsPage';
-import ExperienceDetail from './page/ExperienceDetail';
+import SoftSkillsExperiencePage from './page/softSkillsExperiencePage.jsx';
+import HardSkillsExperiencePage from './page/hardSkillsExperiencePage.jsx';
 
 function App() {
   return (
     <Router> {/* Bungkus seluruh aplikasi dengan Router */}
       <div className="bg-primary-dark text-text-light min-h-screen">
-        <Navbar />
+        <Navbar hideNavItems={false} />
         <main>
           <Routes> 
             <Route path="/" element={ // Halaman utama (home)
@@ -30,7 +31,8 @@ function App() {
             } />
             <Route path="/projects/:id" element={<ProjectDetailPage />} />
             <Route path="/projects/all-details-summary" element={<ProjectDetailPage isSummaryPage={true} />} />
-            <Route path="/experience-detail" element={<ExperienceDetail />} />
+            <Route path="/experience/soft-skills" element={<SoftSkillsExperiencePage />} />
+            <Route path="/experience/hard-skills" element={<HardSkillsExperiencePage />} />
           </Routes>
         </main>
         <Footer />

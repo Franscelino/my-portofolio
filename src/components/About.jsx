@@ -18,7 +18,7 @@ const About = () => {
 
   const interests = [
     // Changed "Web Development" to "Blockchain Development"
-    { icon: <Code2 className="w-6 h-6" />, title: 'Blockchain Development', desc: 'Building responsive and interactive applications' },
+    { icon: <Code2 className="w-6 h-6" />, title: 'Blockchain Development', desc: 'Deep understanding of decentralized applications and smart contracts' },
     { icon: <Lightbulb className="w-6 h-6" />, title: 'AI & Machine Learning', desc: 'Exploring intelligent solutions and automation' },
     { icon: <Users className="w-6 h-6" />, title: 'Team Collaboration', desc: 'Working together to achieve common goals' },
     { icon: <Coffee className="w-6 h-6" />, title: 'Continuous Learning', desc: 'Always eager to discover new technologies' }
@@ -27,15 +27,15 @@ const About = () => {
   const tabContent = {
     journey: {
       title: "My Journey",
-      content: "I am a technology student who enjoys learning, building, and experimenting through various projects. This portfolio contains the results of my journey and process in the world of digital development. Every line of code I write and every project I complete represents a step forward in my continuous learning adventure."
+      content: "gatau"
     },
     philosophy: {
       title: "My Philosophy",
-      content: "I believe that process is an important part of any work, and I am always open to new opportunities and collaborations. Technology is not just about writing code—it's about solving real problems, creating meaningful experiences, and building bridges between ideas and implementation."
+      content: "gatau juga"
     },
     goals: {
       title: "My Goals",
-      content: "Looking forward, I aim to contribute to innovative projects that make a positive impact. I'm passionate about combining creativity with technical skills to build solutions that matter. My goal is to grow as both a developer and a collaborator in the ever-evolving tech landscape."
+      content: "sukses"
     }
   };
 

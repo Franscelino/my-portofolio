@@ -31,14 +31,14 @@ const Skills = () => {
     {
       title: "Database & Data Engineering",
       icon: <Database className="w-8 h-8" />,
-      skills: ['Database Design', 'SQL (MySQL/SQLite)', 'Data Pipelines (Kafka)', 'ETL Processes', 'Data Modeling'],
+      skills: ['Database Design', 'SQL (MySQL/SQLite)', 'Data Pipelines (Kafka)', 'Data Modeling', 'Big Data Query'],
       color: "from-blue-500 to-cyan-400",
       // Removed image property
     },
     {
       title: "Frontend Development",
       icon: <Code className="w-8 h-8" />,
-      skills: ['React.js', 'TypeScript', 'Tailwind CSS', 'Responsive Design', 'UI/UX Principles'],
+      skills: ['React.js', 'TypeScript', 'Tailwind CSS', 'Responsive Design', 'UI/UX'],
       color: "from-indigo-500 to-blue-400",
       // Removed image property
     },
