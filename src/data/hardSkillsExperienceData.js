@@ -23,8 +23,6 @@ const hardSkillsExperiences = [
         photos: [
             { url: '/database1.jpg', caption: 'Database Design Class', description: 'Working on a database schema design project.' },
             { url: '/database2.jpg', caption: 'SQL Optimization Lab', description: 'Practicing advanced SQL query optimization techniques.' },
-            { url: 'https://placehold.co/600x400/1f2937/9ca3af?text=BINUS+Campus', caption: 'BINUS Bandung Campus - My academic home', description: 'The modern facilities and learning environment at BINUS Bandung' },
-            { url: 'https://placehold.co/600x400/1f2937/9ca3af?text=Mobility+Program', caption: 'Mobility Program at BINUS Anggrek', description: 'Participating in specialized Database courses at the main campus' }
         ]
     },
     {
@@ -49,30 +47,6 @@ const hardSkillsExperiences = [
         photos: [
             { url: '/lisk1.png', caption: 'Lisk Bootcamp Certificate', description: 'Proof of completion for the Lisk Blockchain Bootcamp' },
             { url: '/lisk2.png', caption: 'Lisk DApp Development Code', description: 'Code snippets from building a sample DApp on Lisk' }
-        ]
-    },
-    {
-        type: 'icp-bootcamp',
-        title: 'ICP Blockchain Bootcamp Participant',
-        icon: 'LinkIcon',
-        date: 'September 2023',
-        location: 'Online',
-        overview: 'Participated in a comprehensive online bootcamp covering the Internet Computer Protocol (ICP). Deepened my knowledge of decentralized cloud computing, canister smart contract development, and WebAssembly integration.',
-        achievements: [
-            'Learned canister smart contract development on ICP using Motoko/Rust.',
-            'Understood ICP\'s actor model and WebAssembly integration.',
-            'Explored chain-key cryptography for scalable decentralized applications.'
-        ],
-        skills: ['ICP', 'Canister Smart Contracts', 'Motoko', 'Rust', 'WebAssembly', 'Decentralized Cloud'],
-        impact: 'Acquired specialized skills in a unique blockchain paradigm, understanding a new approach to building fully decentralized internet services.',
-        lessons: [
-            'The potential of a truly decentralized internet computing platform.',
-            'Challenges and benefits of developing on a novel blockchain architecture.',
-            'Importance of security and scalability in decentralized systems.'
-        ],
-        photos: [
-            { url: 'https://placehold.co/600x400/1f2937/9ca3af?text=ICP+Bootcamp+Content', caption: 'ICP Bootcamp Learning Material', description: 'Key modules and concepts from the ICP bootcamp' },
-            { url: 'https://placehold.co/600x400/1f2937/9ca3af?text=Canister+Development', caption: 'ICP Canister Development', description: 'Example of smart contract code on the Internet Computer' }
         ]
     },
     {

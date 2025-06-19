@@ -29,29 +29,6 @@ const softSkillsExperiences = [
         ]
     },
     {
-        type: 'bncc-activist-mc',
-        title: 'BNCC Activist: Master of Ceremonies (Study Banding)',
-        icon: 'Users',
-        date: 'October 2022',
-        location: 'BINUS University & CCI Telkom',
-        overview: 'Served as the Master of Ceremonies for a collaborative study banding event between CCI Telkom and BNCC All Region, facilitating smooth transitions and engaging interactions.',
-        achievements: [
-            'Successfully hosted collaborative study banding event with CCI Telkom and BNCC All Region.',
-            'Ensured professional flow and engagement for a large, diverse audience.',
-            'Facilitated inter-regional BNCC collaboration and networking.'
-        ],
-        skills: ['Public Speaking', 'Event Hosting', 'Facilitation', 'Interpersonal Communication', 'Event Management'],
-        impact: 'Contributed to a successful collaborative event, strengthening ties between BNCC regions and external organizations, enhancing the club\'s reputation.',
-        lessons: [
-            'The importance of clear and concise communication in multi-stakeholder events.',
-            'Adapting presentation style and energy to keep diverse audiences engaged.'
-        ],
-        photos: [
-            { url: 'https://placehold.co/600x400/1f2937/9ca3af?text=MC+Study+Banding', caption: 'Hosting Study Banding Event', description: 'Engaging with participants during the collaborative study banding.' },
-            { url: 'https://placehold.co/600x400/1f2937/9ca3af?text=CCI+Collaboration', caption: 'CCI Telkom & BNCC Collaboration', description: 'Networking session with representatives from CCI Telkom.' }
-        ]
-    },
-    {
         type: 'Event Coordination',
         title: 'Techwinter: Exploring Your path career through the tech challanges',
         icon: 'Lightbulb',
@@ -72,12 +49,12 @@ const softSkillsExperiences = [
             'Effective communication and adaptability are key when handling a large participant base and complex event components.'
         ],
         photos: [
-            { url: '/techbin1.JPG', caption: 'Opening of Techwinter Seminar', description: 'Participants gathering for the commencement of the Techwinter event.' },
-            { url: '/techbin2.JPG', caption: 'Keynote Speaker Session', description: 'Faqihza Mukhlish from Kelas Terbuka delivering his insightful talk.' },
-            { url: '/techbin3.JPG', caption: 'Interactive Q&A', description: 'Attendees engaging in a lively question and answer session with the speaker.' },
-            { url: '/techbin4.JPG', caption: 'Onsite Participants', description: 'A view of the enthusiastic onsite audience during the seminar.' },
-            { url: '/techbin5.JPG', caption: 'Virtual Engagement', description: 'Monitoring online participants and their interactions during the hybrid event.' },
-            { url: '/techbin6.JPG', caption: 'Event Coordination in Action', description: 'Behind-the-scenes coordination ensuring smooth event flow.' }
+            { url: '/techbin1.jpg', caption: 'Opening of Techwinter Seminar', description: 'Participants gathering for the commencement of the Techwinter event.' },
+            { url: '/techbin2.jpg', caption: 'Keynote Speaker Session', description: 'Faqihza Mukhlish from Kelas Terbuka delivering his insightful talk.' },
+            { url: '/techbin3.jpg', caption: 'Interactive Q&A', description: 'Attendees engaging in a lively question and answer session with the speaker.' },
+            { url: '/techbin4.jpg', caption: 'Onsite Participants', description: 'A view of the enthusiastic onsite audience during the seminar.' },
+            { url: '/techbin5.jpg', caption: 'Virtual Engagement', description: 'Monitoring online participants and their interactions during the hybrid event.' },
+            { url: '/techbin6.jpg', caption: 'Event Coordination in Action', description: 'Behind-the-scenes coordination ensuring smooth event flow.' }
         ]
     },
     {
@@ -127,12 +104,12 @@ const softSkillsExperiences = [
             'Effective resource allocation and scheduling are critical for multi-day, multi-session events.'
         ],
         photos: [
-            { url: '/techblast1.JPG', caption: 'Techblast Opening Ceremony', description: 'High school students gathered for the opening of the Techblast event at BINUS Bandung.' },
-            { url: '/techblast2.JPG', caption: 'University Tour Session', description: 'Students exploring the campus facilities during the university tour as part of Techblast.' },
-            { url: '/techblast3.JPG', caption: 'Interactive Workshop', description: 'Participants engaging in a hands-on workshop session during the Techblast event.' },
-            { url: '/techblast4.JPG', caption: 'Talk Show & Q&A', description: 'A captivating talk show session with guest speakers and active student participation.' },
-            { url: '/techblast5.JPG', caption: 'Techblast Additional Photo 1', description: 'Further engagement during Techblast activities.' },
-            { url: '/techblast6.JPG', caption: 'Another view of students participating in Techblast.', description: 'Another view of students participating in Techblast.' }
+            { url: '/techblast1.jpg', caption: 'Techblast Opening Ceremony', description: 'High school students gathered for the opening of the Techblast event at BINUS Bandung.' },
+            { url: '/techblast2.jpg', caption: 'University Tour Session', description: 'Students exploring the campus facilities during the university tour as part of Techblast.' },
+            { url: '/techblast3.jpg', caption: 'Interactive Workshop', description: 'Participants engaging in a hands-on workshop session during the Techblast event.' },
+            { url: '/techblast4.jpg', caption: 'Talk Show & Q&A', description: 'A captivating talk show session with guest speakers and active student participation.' },
+            { url: '/techblast5.jpg', caption: 'Techblast Additional Photo 1', description: 'Further engagement during Techblast activities.' },
+            { url: '/techblast6.jpg', caption: 'Another view of students participating in Techblast.', description: 'Another view of students participating in Techblast.' }
         ]
     },
     {
