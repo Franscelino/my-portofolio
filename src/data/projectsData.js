@@ -43,6 +43,55 @@ const allProjectsData = [
         ]
     },
     {
+        id: 'clovio-online-fashion-store', // ID unik untuk proyek ini
+        name: 'Clovio - E-commerce Fashion Store',
+        imageUrl: '/public/Clovio1.jpg', // Placeholder image
+        thumbnailUrl: '/public/Clovio1.jpg', // Placeholder image
+        repositoryLink: 'https://github.com/Franscelino/clovio-repo', // Ganti dengan link GitHub Clovio Anda
+        liveDemoLink: null, // Ganti dengan link live demo jika ada
+        shortDetails: [
+            'Full-stack e-commerce platform for a custom clothing brand.',
+            'Features product catalog, shopping cart, checkout, and admin dashboard.',
+            'Built with React.js (Frontend) and Laravel (Backend) with MySQL.'
+        ],
+        fullDescription: `Clovio is a comprehensive online fashion store developed as a campus project, aimed at creating a dedicated web presence for a custom clothing brand. As the frontend developer, I was responsible for crafting a modern, intuitive, and responsive user interface using React.js, Tailwind CSS, and JSX. The platform boasts key e-commerce functionalities including a dynamic product catalog with search and filter options, detailed product pages, a seamless shopping cart experience, and a secure checkout process with payment integration. On the backend, Laravel handles robust API communication and data management with MySQL, supporting features like admin dashboards for product and order management. This project demonstrates proficiency in building full-stack applications, managing complex UI states, and integrating RESTful APIs.`,
+        technologies: ['React.js', 'Tailwind CSS', 'JSX', 'Vite', 'Laravel', 'MySQL', 'RESTful APIs', 'E-commerce'],
+        features: [
+            'Product Catalog: Browse and filter clothing items by category, price, etc.',
+            'Product Detail Pages: View high-resolution images, descriptions, and size options.',
+            'Shopping Cart: Add, remove, and update quantities of items in the cart.',
+            'Secure Checkout Process: Multi-step checkout flow with order summary.',
+            'Payment Integration: (Optional: Sebutkan metode pembayaran jika spesifik, misal: Midtrans, Stripe)',
+            'User Authentication & Authorization: Secure login, registration, and user profiles.',
+            'Admin Dashboard: Manage products, orders, users, and site content.',
+            'Responsive Design: Optimized for seamless viewing on desktop and mobile devices.'
+        ],
+        challenges: [
+            'Integrating frontend (React) with backend (Laravel) APIs for smooth data flow.',
+            'Implementing complex state management for shopping cart and checkout processes.',
+            'Ensuring robust security measures for user authentication and payment transactions.',
+            'Optimizing database queries for efficient product retrieval and order processing.',
+            'Designing an intuitive and visually appealing UI/UX for an e-commerce platform.'
+        ],
+        learnings: [
+            'Enhanced skills in building scalable React applications with complex component interactions.',
+            'Gained practical experience in integrating third-party payment gateways.',
+            'Deepened understanding of Laravel framework for API development and database management.',
+            'Improved collaboration skills within a team setting for a full-stack project.',
+            'Learned best practices for e-commerce design and functionality.'
+        ],
+        gallery: [
+            { url: '/public/Clovio1.jpg', caption: 'Clovio Homepage', description: 'The Main View of Landing Page.' },
+            { url: '/public/Clovio2.jpg', caption: 'Login Register Page', description: 'User login and registration page.' },
+            { url: '/public/Clovio3.jpg', caption: 'Category Page', description: 'Summary of product categories.' },
+            { url: '/public/Clovio4.jpg', caption: 'Catalog Page', description: 'Product catalog view for admin.' },
+            { url: '/public/Clovio5.jpg', caption: 'Order History', description: 'User order history view.' },
+            { url: '/public/Clovio6.jpg', caption: 'Shopping Cart Page', description: 'Checkout process with order summary.' },
+            { url: '/public/Clovio7.jpg', caption: 'Checkout Page', description: 'Checkout page with order summary.' },
+            { url: '/public/Clovio8.jpg', caption: 'Admin Dashboard', description: 'Admin dashboard for managing products and orders.' }
+        ]
+    },
+    {
         id: 'whatage-website',
         name: 'WhatAge Website',
         imageUrl: '/public/whatage1.png',
@@ -80,195 +129,59 @@ const allProjectsData = [
         ]
     },
     {
-        id: 'clovio-online-fashion-store', // ID unik untuk proyek ini
-        name: 'Clovio - E-commerce Fashion Store',
-        imageUrl: '/public/Clovio1.png', // Placeholder image
-        thumbnailUrl: '/public/Clovio1.png', // Placeholder image
-        repositoryLink: 'https://github.com/Franscelino/clovio-repo', // Ganti dengan link GitHub Clovio Anda
-        liveDemoLink: null, // Ganti dengan link live demo jika ada
-        shortDetails: [
-            'Full-stack e-commerce platform for a custom clothing brand.',
-            'Features product catalog, shopping cart, checkout, and admin dashboard.',
-            'Built with React.js (Frontend) and Laravel (Backend) with MySQL.'
-        ],
-        fullDescription: `Clovio is a comprehensive online fashion store developed as a campus project, aimed at creating a dedicated web presence for a custom clothing brand. As the frontend developer, I was responsible for crafting a modern, intuitive, and responsive user interface using React.js, Tailwind CSS, and JSX. The platform boasts key e-commerce functionalities including a dynamic product catalog with search and filter options, detailed product pages, a seamless shopping cart experience, and a secure checkout process with payment integration. On the backend, Laravel handles robust API communication and data management with MySQL, supporting features like admin dashboards for product and order management. This project demonstrates proficiency in building full-stack applications, managing complex UI states, and integrating RESTful APIs.`,
-        technologies: ['React.js', 'Tailwind CSS', 'JSX', 'Vite', 'Laravel', 'MySQL', 'RESTful APIs', 'E-commerce'],
-        features: [
-            'Product Catalog: Browse and filter clothing items by category, price, etc.',
-            'Product Detail Pages: View high-resolution images, descriptions, and size options.',
-            'Shopping Cart: Add, remove, and update quantities of items in the cart.',
-            'Secure Checkout Process: Multi-step checkout flow with order summary.',
-            'Payment Integration: (Optional: Sebutkan metode pembayaran jika spesifik, misal: Midtrans, Stripe)',
-            'User Authentication & Authorization: Secure login, registration, and user profiles.',
-            'Admin Dashboard: Manage products, orders, users, and site content.',
-            'Responsive Design: Optimized for seamless viewing on desktop and mobile devices.'
-        ],
-        challenges: [
-            'Integrating frontend (React) with backend (Laravel) APIs for smooth data flow.',
-            'Implementing complex state management for shopping cart and checkout processes.',
-            'Ensuring robust security measures for user authentication and payment transactions.',
-            'Optimizing database queries for efficient product retrieval and order processing.',
-            'Designing an intuitive and visually appealing UI/UX for an e-commerce platform.'
-        ],
-        learnings: [
-            'Enhanced skills in building scalable React applications with complex component interactions.',
-            'Gained practical experience in integrating third-party payment gateways.',
-            'Deepened understanding of Laravel framework for API development and database management.',
-            'Improved collaboration skills within a team setting for a full-stack project.',
-            'Learned best practices for e-commerce design and functionality.'
-        ],
-        gallery: [
-            { url: 'https://placehold.co/600x400/8B5CF6/FFFFFF?text=Clovio+Homepage', caption: 'Clovio Homepage', description: 'Tampilan utama toko dengan katalog produk.' },
-            { url: 'https://placehold.co/600x400/F97316/FFFFFF?text=Clovio+Product+Detail', caption: 'Product Detail Page', description: 'Halaman detail produk dengan deskripsi dan opsi.' },
-            { url: 'https://placehold.co/600x400/8B5CF6/FFFFFF?text=Clovio+Shopping+Cart', caption: 'Shopping Cart', description: 'Ringkasan keranjang belanja sebelum checkout.' },
-            { url: 'https://placehold.co/600x400/F97316/FFFFFF?text=Clovio+Admin+Dashboard', caption: 'Admin Dashboard', description: 'Tampilan dashboard admin untuk manajemen produk.' },
-        ]
-    },
-    {
-        id: 'Building in Lisk L2 of Ethereum',
-        name: 'Blockchain Performance Testing Tool',
-        imageUrl: 'https://placehold.co/800x500/blue/white?text=Blockchain+Tool+Detail',
-        thumbnailUrl: 'https://placehold.co/400x250/blue/white?text=Blockchain+Tool',
-        repositoryLink: 'https://github.com/your-username/blockchain-perf-tool',
-        liveDemoLink: null,
-        shortDetails: [
-            'A Python-based tool to measure TPS, latency, and gas fees.',
-            'Compares Ethereum vs. Solana performance.',
-            'Generates detailed performance reports.'
-        ],
-        fullDescription: `The Blockchain Performance Testing Tool is a Python-based utility designed to rigorously evaluate the performance of different blockchain networks, specifically Ethereum and Solana. It automates the process of measuring key metrics such as Transactions Per Second (TPS), transaction latency, and gas fees for various operations. The tool incorporates automated logging to generate detailed reports, allowing for a comparative analysis of blockchain efficiency. This project demonstrates proficiency in blockchain interaction, scripting, and data analysis.`,
-        technologies: ['Python', 'Ethereum', 'Solana', 'Web3.py', 'Solana.py', 'Performance Testing', 'Data Analysis'],
-        features: [
-            'Automated TPS and latency measurements',
-            'Gas fee analysis for smart contract interactions',
-            'Comparative reports for different blockchain networks',
-            'Customizable test scenarios',
-            'Detailed logging and data export'
-        ],
-        challenges: [
-            'Accurately simulating real-world network conditions',
-            'Handling asynchronous operations and network delays',
-            'Parsing and analyzing complex blockchain transaction data'
-        ],
-        learnings: [
-            'Gained deep insights into blockchain performance bottlenecks',
-            'Improved scripting and automation skills in Python',
-            'Understood the nuances of interacting with different blockchain APIs'
-        ],
-        gallery: [
-            { url: 'https://placehold.co/600x400/blue/white?text=Blockchain+Tool+Screenshot+1', caption: 'Tool CLI interface' },
-            { url: 'https://placehold.co/600x400/blue/white?text=Blockchain+Tool+Screenshot+2', caption: 'Performance graph example' },
-            { url: 'https://placehold.co/600x400/blue/white?text=Blockchain+Tool+Screenshot+3', caption: 'Report generation output' }
-        ]
-    },
-    {
-        id: 'fruit-image-recognition',
-        name: 'Fruit Image Recognition + Nutritional Table',
-        imageUrl: 'https://placehold.co/800x500/green/white?text=Fruit+Recognition+Detail',
-        thumbnailUrl: 'https://placehold.co/400x250/green/white?text=Fruit+Recognition',
-        repositoryLink: 'https://github.com/your-username/fruit-recognition',
-        liveDemoLink: 'https://fruit-recognition.vercel.app/',
-        shortDetails: [
-            'ML for fruit image recognition (Fruits-360 dataset).',
-            'Integrated with nutritional data and dataset visualization.',
-            'User-friendly interface for image submission.'
-        ],
-        fullDescription: `This project involves a machine learning application for fruit image recognition, trained on the extensive Fruits-360 dataset. Beyond simple identification, it integrates a nutritional table feature, providing users with instant access to dietary information about the recognized fruit. The project also includes visualizations of the dataset, offering insights into the training data distribution. This showcases skills in machine learning model development, data integration, and user-facing application design.`,
-        technologies: ['Machine Learning', 'Python', 'TensorFlow/Keras', 'Fruits-360 Dataset', 'Data Visualization', 'Streamlit (or Flask/React)'],
-        features: [
-            'Accurate fruit identification from images',
-            'Display of nutritional information for recognized fruits',
-            'Interactive dataset visualizations',
-            'Support for various fruit types',
-            'Simple image upload and processing'
-        ],
-        challenges: [
-            'Achieving high accuracy with diverse image inputs',
-            'Efficiently loading and processing large datasets',
-            'Integrating external nutritional APIs (if applicable)'
-        ],
-        learnings: [
-            'Enhanced understanding of image classification techniques',
-            'Gained experience in data preprocessing for ML models',
-            'Learned how to present complex ML outputs in a user-friendly way'
-        ],
-        gallery: [
-            { url: 'https://placehold.co/600x400/green/white?text=Fruit+App+Screenshot+1', caption: 'Fruit recognition interface' },
-            { url: 'https://placehold.co/600x400/green/white?text=Fruit+App+Screenshot+2', caption: 'Nutritional table display' },
-            { url: 'https://placehold.co/600x400/green/white?text=Fruit+App+Screenshot+3', caption: 'Dataset visualization' }
-        ]
-    },
-    {
         id: 'blockchain-performance-analysis-paper',
-        name: 'Performance Analysis of Blockchain Platforms: Hyperledger Fabric and Ethereum',
-        // Anda perlu membuat gambar thumbnail untuk paper ini.
-        // Bisa berupa kolase grafik, infografis ringkasan, atau sampul paper yang didesain ulang.
-        imageUrl: '/images/blockchain-paper-detail.png', // Ganti dengan path gambar detail Anda
-        thumbnailUrl: '/images/blockchain-paper-thumbnail.png', // Ganti dengan path thumbnail Anda
-        repositoryLink: 'https://www.researchgate.net/publication/346579114', // Link ke ResearchGate atau repositori paper Anda
-        liveDemoLink: 'https://www.researchgate.net/publication/346579114', // Link langsung ke file PDF paper jika ada, atau ResearchGate
+        name: 'Ethereum vs. Solana: A Comparative Study of Blockchain Architecture on Performance, Security, and Ecosystem Development',
+        imageUrl: '/public/ethsol1.png',
+        thumbnailUrl: '/public/ethsol1.png',
+        paperDownloadLink: 'uploaded:PROCS-ICCSCI 2025_Kelompok28 (1).pdf', // Link to your uploaded PDF
         shortDetails: [
-            'Empirical evaluation comparing Hyperledger Fabric and Ethereum blockchain platforms.',
-            'Analyzes performance metrics: success rate, latency, throughput, and resource consumption.',
-            'Concludes on the superiority of Hyperledger Fabric in most aspects.',
+            'Comparative study of Ethereum and Solana blockchain architectures.',
+            'Analyzes performance (TPS, latency, gas fees), consensus mechanisms, security, and DApp ecosystem.',
+            'Accepted at 9th International Conference on Computer Science and Computational Intelligence 2025 (ICCSCI 2025).'
         ],
-        fullDescription: `This research conducts an empirical study to evaluate the performance of two prominent blockchain platforms: Hyperledger Fabric and Ethereum. The evaluation is based on measuring key metrics including success rate, average latency, throughput, and resource consumption. The study employed Hyperledger Caliper, a blockchain performance benchmarking tool, to execute 100 transactions for each platform. The findings offer valuable insights for practitioners in selecting the ideal blockchain platform based on application requirements.`,
+        fullDescription: `Blockchain technology has emerged as a breakthrough in decentralized systems. The development of applications, systems, programs, and financial solutions can now be managed in a decentralized manner, revolutionizing the previously centralized paradigm. In this new system, performance, scalability, transaction costs, and network security present both challenges and compelling topics for research. This paper conducts a comparative analysis through experiments and evaluations of Ethereum and Solana, the two largest Layer 1 blockchain networks today. The comparison focuses on performance, consensus mechanisms, security, and ecosystem development. Performance is assessed through Transactions Per Second (TPS) and latency, while gas fees are compared under different network conditions. The study also analyzes Ethereum's Proof-of-Stake (PoS) versus Solana's Proof-of-History (PoH)+PoS consensus mechanisms. Network security is examined by reviewing historical vulnerabilities and corresponding responses. The DApp (Decentralized Application) ecosystem is evaluated based on Adoption Efficiency Index (AEI) and sector specialization (DeFi, NFT, gaming). Through this analysis, the paper aims to provide a deeper understanding of the differences, strengths, and weaknesses of both networks, helping developers choose the most suitable blockchain platform.`,
         technologies: [
             'Blockchain Technology',
-            'Hyperledger Fabric',
             'Ethereum',
-            'Performance Evaluation',
-            'Data Analysis',
-            'Academic Research',
-            'Hyperledger Caliper'
+            'Solana',
+            'Proof-of-Stake (PoS)',
+            'Proof-of-History (PoH)',
+            'Decentralized Applications (DApps)',
+            'Performance Analysis',
+            'Security Analysis',
+            'Ecosystem Evaluation',
+            'Academic Research'
         ],
         features: [
-            'In-depth comparison of Hyperledger Fabric and Ethereum performance.',
-            'Analysis of success rate across different smart contract functions.',
-            'Detailed evaluation of average transaction latency.',
-            'Measurement and comparison of network throughput.',
-            'Assessment of resource (memory and CPU) consumption.',
-            'Insights into factors affecting blockchain platform selection for enterprise applications.',
+            'Comparative performance analysis (TPS, latency, gas fees).',
+            'Evaluation of consensus mechanisms: PoS (Ethereum) vs PoH+PoS (Solana).',
+            'Review of historical vulnerabilities and security responses for both networks.',
+            'Analysis of DApp ecosystem development, including Adoption Efficiency Index (AEI) and sector specialization.',
+            'Insights for developers in choosing suitable blockchain platforms.'
         ],
         challenges: [
-            'Conducting a fair empirical evaluation of distinct blockchain platforms.',
-            'Ensuring consistent and comparable testing conditions across different platform versions.',
-            'Interpreting complex performance data to draw meaningful conclusions.',
-            'Addressing the limitations of performance benchmarking tools in capturing real-world scenarios.',
+            'Addressing the blockchain trilemma (decentralization, security, scalability).',
+            'Comparing network conditions and transaction costs accurately.',
+            'Analyzing complex consensus mechanisms and their implications.',
+            'Reviewing and categorizing historical security incidents effectively.',
+            'Evaluating diverse DApp ecosystems based on adoption and specialization.'
         ],
         learnings: [
-            'Gained a deep understanding of blockchain performance characteristics and bottlenecks.',
-            'Developed expertise in utilizing blockchain benchmarking tools like Hyperledger Caliper.',
-            'Learned to critically analyze and present empirical data from complex distributed systems.',
-            'Understood the trade-offs between different blockchain architectures and their implications for enterprise adoption.',
+            'Gained in-depth understanding of Ethereum and Solana architectures and their trade-offs.',
+            'Developed expertise in evaluating blockchain performance, security, and ecosystem dynamics.',
+            'Learned to conduct comparative research on complex decentralized systems.',
+            'Acquired insights into real-world challenges and solutions in blockchain development.',
+            'Understood the strategic considerations for blockchain platform selection.'
         ],
         gallery: [
-            {
-                url: '/images/blockchain-paper-fig5.png', // Ganti dengan path gambar Fig 5
-                caption: 'Success Rates of Hyperledger Fabric and Ethereum',
-                description: 'Grafik ini menunjukkan tingkat keberhasilan transaksi dari Hyperledger Fabric dan Ethereum untuk fungsi Open, Query, dan Transfer. Ethereum mencapai 100% tingkat keberhasilan untuk fungsi Transfer, sementara Fabric memiliki tingkat keberhasilan transfer di bawah 50% untuk sebagian besar versinya, kecuali Fabric 1.4.4.'
-            },
-            {
-                url: '/images/blockchain-paper-fig6.png', // Ganti dengan path gambar Fig 6
-                caption: 'Average Latency of Hyperledger Fabric and Ethereum',
-                description: 'Menampilkan latensi rata-rata untuk setiap platform. Ethereum memiliki latensi rata-rata lebih dari 4 kali lipat dari Hyperledger Fabric untuk fungsi Open.'
-            },
-            {
-                url: '/images/blockchain-paper-fig7.png', // Ganti dengan path gambar Fig 7
-                caption: 'Throughput of Hyperledger Fabric and Ethereum',
-                description: 'Menggambarkan throughput (transaksi per detik) dari kedua platform. Sebagian besar versi Hyperledger Fabric menunjukkan throughput yang lebih tinggi daripada Ethereum.'
-            },
-            {
-                url: '/images/blockchain-paper-fig8.png', // Ganti dengan path gambar Fig 8
-                caption: 'Average Memory Consumption of Hyperledger Fabric and Ethereum',
-                description: 'Grafik ini menunjukkan konsumsi memori rata-rata. Ethereum mengonsumsi memori hingga 20 kali lebih banyak dibandingkan Hyperledger Fabric.'
-            },
-            {
-                url: '/images/blockchain-paper-fig9.png', // Ganti dengan path gambar Fig 9
-                caption: 'Average CPU Usage of Hyperledger Fabric and Ethereum',
-                description: 'Visualisasi penggunaan CPU rata-rata. Ethereum mengonsumsi lebih banyak daya CPU dibandingkan Hyperledger Fabric, terutama untuk fungsi Query dan Transfer.'
-            },
-            // Tambahkan gambar-gambar lain dari paper jika relevan (misalnya, diagram arsitektur)
+            { url: '/public/ethsol2.png', caption: 'Performance Comparison - Sequential Transactions', description: 'Combined visualization of TPS, Latency, and Gas Fee for sequential transactions on Ethereum and Solana (Fig. 1).' },
+            { url: '/public/ethsol3.png', caption: 'Performance Comparison - Parallel Transactions', description: 'Combined visualization of TPS, Latency, and Gas Fee for parallel transactions on Ethereum and Solana (Fig. 2).' },
+            { url: '/public/ethsol4.png', caption: 'Transaction-level Latency and Gas Fee - Sequential', description: 'Transaction-level comparison of latency and gas fees for Ethereum and Solana in sequential execution (Fig. 3).' },
+            { url: '/public/ethsol5.png', caption: 'Distribution of Solana Leaders', description: 'Bar chart showing the distribution of block proposers on the Solana network (Fig. 4).' },
+            { url: '/public/ethsol6.png', caption: 'Distribution of Ethereum Proposers', description: 'Bar chart illustrating the distribution of block proposers on the Ethereum network (Fig. 5).' },
+            { url: '/public/ethsol7.png', caption: 'Block Delay Time Comparison: Ethereum vs Solana', description: 'Line graph comparing block delay times between Ethereum and Solana (Fig. 6).' },
+            { url: '/public/ethsol8.png', caption: 'Average TTA & TTP of Incidents: Solana vs Ethereum', description: 'Bar chart comparing the average Time to Acknowledge (TTA) and Time to Patch (TTP) for security incidents on Solana and Ethereum (Fig. 7a).' },
+            { url: '/public/ethsol9.png', caption: 'Average Incident Transparency: Solana vs Ethereum', description: 'Bar chart illustrating the average incident transparency levels for Solana and Ethereum (Fig. 7b).' }
         ]
     },
 ];

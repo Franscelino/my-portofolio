@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import allProjectsData from '../data/projectsData'; 
-import { Code, ExternalLink, Play, Camera, Lightbulb, Zap, ArrowLeft, Heart, Star, TrendingUp, ArrowRight } from 'lucide-react';
+import allProjectsData from '../data/projectsData';
+import { Code, ExternalLink, Play, Camera, Lightbulb, Zap, ArrowLeft, Heart, Star, TrendingUp, ArrowRight, FileText, Download } from 'lucide-react'; // Added FileText and Download icons
 import Navbar from '../components/Navbar';
 
-const AllProjectsDetailsPage = ({ isSummaryPage }) => { 
-    const { id } = useParams(); 
+const AllProjectsDetailsPage = ({ isSummaryPage }) => {
+    const { id } = useParams();
     const [selectedImage, setSelectedImage] = useState(null);
 
     const project = isSummaryPage ? null : allProjectsData.find(p => p.id === id);
@@ -17,16 +17,16 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
         if (isSummaryPage && allProjectsData.length === 0) {
             console.warn("allProjectsData is empty when rendering summary page!");
         }
-    }, [id, isSummaryPage]); 
+    }, [id, isSummaryPage]);
 
     const ImageModal = ({ image, onClose }) => {
         if (!image) return null;
-        
+
         return (
             <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4" onClick={onClose}>
                 <div className="max-w-4xl max-h-[90vh] relative">
-                    <img 
-                        src={image.url} 
+                    <img
+                        src={image.url}
                         alt={image.caption}
                         className="w-full h-full object-contain rounded-lg"
                     />
@@ -34,7 +34,7 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
                         <h3 className="text-white font-semibold text-lg mb-2">{image.caption}</h3>
                         <p className="text-gray-300">{image.description}</p>
                     </div>
-                    <button 
+                    <button
                         onClick={onClose}
                         className="absolute top-4 right-4 text-white hover:text-gray-300 text-2xl"
                     >
@@ -47,8 +47,8 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
 
     if (isSummaryPage) {
         return (
-            <> {/* Gunakan fragment untuk membungkus Navbar dan section */}
-                <Navbar hideNavItems={true} /> {/* Render Navbar dengan prop hideNavItems */}
+            <> {/* Fragment to wrap Navbar and section */}
+                <Navbar hideNavItems={true} /> {/* Render Navbar with hideNavItems prop */}
                 <section className="py-24 bg-black relative overflow-hidden text-white section-padding">
                     <div className="animated-bg-elements">
                         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
@@ -78,16 +78,16 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
                                     {allProjectsData.map((projectItem) => (
                                         <Link
                                             key={projectItem.id}
-                                            to={`/projects/${projectItem.id}`} 
+                                            to={`/projects/${projectItem.id}`}
                                             className="card-base p-6 hover:shadow-lg relative overflow-hidden flex flex-col justify-between"
                                         >
                                             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-orange-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                                            
+
                                             {projectItem.thumbnailUrl && (
                                                 <div className="mb-4 rounded-lg overflow-hidden border border-gray-700 group-hover:border-orange-400 transition-colors duration-300">
-                                                    <img 
-                                                        src={projectItem.thumbnailUrl} 
-                                                        alt={projectItem.name} 
+                                                    <img
+                                                        src={projectItem.thumbnailUrl}
+                                                        alt={projectItem.name}
                                                         className="w-full h-32 object-cover object-center"
                                                         onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x250/gray/white?text=Image+Not+Available'; }}
                                                     />
@@ -115,7 +115,7 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
                                                 </div>
                                             )}
 
-                                            <div className="flex justify-end mt-auto"> 
+                                            <div className="flex justify-end mt-auto">
                                                 <span className="inline-flex items-center text-purple-400 hover:text-orange-400 transition-colors duration-300 text-sm">
                                                     View Details
                                                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -134,8 +134,8 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
 
     if (project) {
         return (
-            <> {/* Gunakan fragment untuk membungkus Navbar dan section */}
-                <Navbar hideNavItems={true} /> {/* Render Navbar dengan prop hideNavItems */}
+            <> {/* Fragment to wrap Navbar and section */}
+                <Navbar hideNavItems={true} /> {/* Render Navbar with hideNavItems prop */}
                 <section className="py-24 bg-black relative overflow-hidden text-white section-padding">
                     <div className="animated-bg-elements">
                         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
@@ -152,16 +152,16 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
                                 Back to Projects Summary
                             </Link>
 
-                            <h1 className="section-title text-center mb-12">
+                            <h1 className="section-title text-center mb-12 text-4xl md:text-5xl font-black">
                                 {project.name}
                             </h1>
 
                             {project.imageUrl && (
                                 <div className="mb-10 rounded-xl overflow-hidden border border-gray-700 shadow-lg">
-                                    <img 
-                                        src={project.imageUrl} 
-                                        alt={project.name} 
-                                        className="w-full h-auto object-cover" 
+                                    <img
+                                        src={project.imageUrl}
+                                        alt={project.name}
+                                        className="w-full h-auto object-cover"
                                         onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/800x500/gray/white?text=Image+Not+Available'; }}
                                     />
                                 </div>
@@ -192,6 +192,19 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
                                         <ExternalLink className="w-4 h-4 ml-2" />
                                     </a>
                                 )}
+                                {/* New button for paper download */}
+                                {project.paperDownloadLink && (
+                                    <a
+                                        href={project.paperDownloadLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-bold text-base rounded-full transition-all duration-300 hover:from-teal-500 hover:to-blue-500 hover:shadow-lg hover:shadow-teal-500/25 active:scale-95"
+                                    >
+                                        <Download className="w-5 h-5 mr-2" />
+                                        Download Paper
+                                        <ExternalLink className="w-4 h-4 ml-2" />
+                                    </a>
+                                )}
                             </div>
 
                             {/* Rendering fullDetails content */}
@@ -209,10 +222,10 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
                                             } else if (block.type === 'image') {
                                                 return (
                                                     <div key={index} className="my-6">
-                                                        <img 
-                                                            src={block.src} 
-                                                            alt={block.alt} 
-                                                            className="w-full rounded-lg border border-gray-700 shadow-md" 
+                                                        <img
+                                                            src={block.src}
+                                                            alt={block.alt}
+                                                            className="w-full rounded-lg border border-gray-700 shadow-md"
                                                         />
                                                         {block.caption && <p className="text-center text-sm text-gray-400 mt-2">{block.caption}</p>}
                                                     </div>
@@ -259,7 +272,7 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
                             {project.challenges && project.challenges.length > 0 && (
                                 <div className="mb-10">
                                     <h2 className="text-3xl font-bold text-white mb-4 flex items-center">
-                                        <Zap className="w-6 h-6 mr-3 text-red-400" /> Challenges 
+                                        <Zap className="w-6 h-6 mr-3 text-red-400" /> Challenges
                                     </h2>
                                     <ul className="list-none space-y-3 text-gray-300">
                                         {project.challenges.map((challenge, index) => (
@@ -295,15 +308,15 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
                                     </h2>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         {project.gallery.map((image, index) => (
-                                            <div 
-                                                key={index} 
+                                            <div
+                                                key={index}
                                                 className="relative group cursor-pointer rounded-lg overflow-hidden border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
                                                 onClick={() => setSelectedImage(image)}
                                             >
-                                                <img 
-                                                    src={image.url} 
-                                                    alt={image.caption} 
-                                                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" 
+                                                <img
+                                                    src={image.url}
+                                                    alt={image.caption}
+                                                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                                                 />
                                                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                                     <Play className="w-8 h-8 text-white" />
@@ -331,8 +344,8 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
     }
 
     return (
-        <> {/* Gunakan fragment untuk membungkus Navbar dan section */}
-            <Navbar hideNavItems={true} /> {/* Render Navbar dengan prop hideNavItems */}
+        <> {/* Fragment to wrap Navbar and section */}
+            <Navbar hideNavItems={true} /> {/* Render Navbar with hideNavItems prop */}
             <section className="py-24 bg-black relative overflow-hidden min-h-screen flex items-center justify-center text-white">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
