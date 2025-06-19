@@ -95,13 +95,13 @@ const HardSkillsExperiencePage = () => {
                             e.target.src = "https://placehold.co/600x400/1f2937/9ca3af?text=Image+Not+Found";
                         }}
                     />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
-                        <h3 className="text-white font-semibold text-lg mb-2">{image.caption}</h3>
-                        <p className="text-gray-300">{image.description}</p>
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6 rounded-b-lg">
+                        <h3 className="text-sm sm:text-lg font-semibold text-white mb-1 sm:mb-2">{image.caption}</h3>
+                        <p className="text-xs sm:text-sm text-gray-300">{image.description}</p>
                     </div>
                     <button
                         onClick={onClose}
-                        className="absolute top-4 right-4 text-white hover:text-gray-300 text-2xl"
+                        className="absolute top-2 right-2 text-white hover:text-gray-300 text-xl sm:text-2xl"
                     >
                         ×
                     </button>
@@ -113,127 +113,112 @@ const HardSkillsExperiencePage = () => {
     return (
         <>
             <Navbar hideNavItems={true} />
-            <section id="hard-skills-experience-detail" className="py-32 bg-black relative overflow-hidden min-h-screen section-padding">
+            <section id="hard-skills-experience-detail" className="py-16 sm:py-24 bg-black relative overflow-hidden min-h-screen section-padding">
                 <div className="animated-bg-elements">
                     <div className="absolute inset-0 opacity-30">
-                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-900/20 via-transparent to-orange-900/20 animate-pulse"></div>
-                        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-blue-900/10 via-transparent to-transparent"></div>
+                        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
+                        <div className="blob-effect top-1/4 right-1/4 w-40 h-40 sm:w-48 sm:h-48 bg-orange-500/10 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                        <div className="blob-effect bottom-1/4 left-1/4 w-48 h-48 sm:w-56 sm:h-56 bg-purple-500/10 animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+                        <div className="particle-effect top-1/2 left-1/2 w-1.5 h-1.5 sm:w-2 bg-purple-400 animate-bounce opacity-30"></div>
+                        <div className="particle-effect top-1/3 right-1/4 w-1.5 h-1.5 sm:w-2 bg-orange-400 animate-bounce opacity-30" style={{ animationDelay: '1s' }}></div>
                     </div>
 
-                    <div className="absolute top-1/4 right-1/6 w-72 h-72 border-2 border-purple-500/20 rounded-full animate-spin" style={{ animationDuration: '20s' }}>
-                        <div className="absolute inset-4 border border-orange-500/30 rounded-full animate-pulse"></div>
-                    </div>
-                    <div className="absolute bottom-1/3 left-1/5 w-48 h-48 border border-blue-500/20 rounded-full animate-bounce" style={{ animationDuration: '3s' }}></div>
-
-                    {[...Array(15)].map((_, i) => (
-                        <div
-                            key={i}
-                            className="absolute w-1 h-1 bg-purple-400/40 rounded-full animate-ping"
-                            style={{
-                                left: `${Math.random() * 100}%`,
-                                top: `${Math.random() * 100}%`,
-                                animationDelay: `${Math.random() * 3}s`,
-                                animationDuration: `${2 + Math.random() * 2}s`
-                            }}
-                        ></div>
-                    ))}
-
-                    <div
-                        className="absolute w-96 h-96 rounded-full pointer-events-none transition-all duration-1000 ease-out"
+                    <div className="absolute w-64 h-64 rounded-full pointer-events-none transition-all duration-1000 ease-out"
                         style={{
                             background: 'radial-gradient(circle, rgba(147, 51, 234, 0.1) 0%, transparent 70%)',
                             left: mousePosition.x - 192,
                             top: mousePosition.y - 192,
                         }}
                     ></div>
+
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10">
+                <div className="container mx-auto px-4 sm:px-6 relative z-10">
                     <div className="max-w-7xl mx-auto">
-                        <div className="flex items-center justify-between mb-12">
+                        <div className="flex items-center justify-between mb-8 sm:mb-12">
                             <button
                                 onClick={handleGoBack}
-                                className="flex items-center text-white hover:text-purple-400 transition-all duration-300 group"
+                                className="flex items-center text-white hover:text-purple-400 transition-all duration-300 group text-sm sm:text-base"
                             >
-                                <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-all duration-300" />
-                                <span className="text-lg">Back to Experience Summary</span>
+                                <ArrowLeft className="w-4 h-4 sm:w-5 mr-1 sm:mr-2 group-hover:-translate-x-1 transition-all duration-300" />
+                                Back to Experience Summary
                             </button>
 
-                            <div className="flex items-center space-x-4 text-sm text-gray-400">
+                            <div className="flex items-center space-x-2 sm:space-x-4 text-xs sm:text-sm text-gray-400">
                                 <span className="flex items-center">
-                                    <Calendar className="w-4 h-4 mr-1" />
+                                    <Calendar className="w-3 h-3 sm:w-4 mr-1" />
                                     Last Updated: {new Date().toLocaleDateString('en-US')}
                                 </span>
                             </div>
                         </div>
 
-                        <div className="text-center mb-20">
-                            <h1 className="text-5xl md:text-6xl font-black text-white mb-6">
+                        <div className="text-center mb-16 sm:mb-20">
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 sm:mb-6">
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400">Hard Skill</span> Experiences
                             </h1>
-                            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                            <p className="text-sm sm:text-xl text-gray-300 max-w-2xl mx-auto px-4">
                                 Detailed insights into my academic journey and technical training.
                             </p>
-                            <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-orange-500 mx-auto rounded-full mt-4"></div>
+                            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-purple-500 to-orange-500 mx-auto rounded-full mt-3 sm:mt-4"></div>
                         </div>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
                             {sortedExperiences.map((exp, index) => {
                                 const IconComponent = iconComponents[exp.icon];
                                 return (
                                 <div
                                     key={index}
-                                    className={`experience-card bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 relative overflow-hidden transform opacity-0 translate-y-10 transition-all duration-700 ease-out ${visibleItems.has(index) ? 'opacity-100 translate-y-0' : ''}`}
+                                    className={`experience-card bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 sm:p-8 relative overflow-hidden transform opacity-0 translate-y-10 transition-all duration-700 ease-out ${visibleItems.has(index) ? 'opacity-100 translate-y-0' : ''}`}
                                     style={{ transitionDelay: `${index * 100}ms` }}
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
                                     <div className="relative z-10">
-                                        <div className="flex items-center mb-6">
-                                            <div className="text-5xl mr-4 flex-shrink-0 text-white">
-                                                {IconComponent && <IconComponent className="w-12 h-12" />}
+                                        <div className="flex items-center mb-4 sm:mb-6">
+                                            <div className="text-4xl sm:text-5xl mr-3 sm:mr-4 flex-shrink-0 text-white">
+                                                {IconComponent && <IconComponent className="w-10 h-10 sm:w-12" />}
                                             </div>
                                             <div className="flex-1">
-                                                <h3 className="text-2xl font-bold text-white mb-1">
+                                                <h3 className="text-xl sm:text-2xl font-bold text-white mb-0.5 sm:mb-1">
                                                     {exp.title}
                                                 </h3>
-                                                <p className="text-sm text-gray-400 flex items-center">
-                                                    <Calendar className="w-4 h-4 mr-2" /> {exp.date}
-                                                    <span className="mx-2 text-gray-600">|</span>
-                                                    <MapPin className="w-4 h-4 mr-2" /> {exp.location}
+                                                <p className="text-xs sm:text-sm text-gray-400 flex items-center">
+                                                    <Calendar className="w-3 h-3 sm:w-4 mr-1 sm:mr-2" /> {exp.date}
+                                                    <span className="mx-1.5 sm:mx-2 text-gray-600">|</span>
+                                                    <MapPin className="w-3 h-3 sm:w-4 mr-1 sm:mr-2" /> {exp.location}
                                                 </p>
                                             </div>
                                         </div>
 
-                                        <p className="text-gray-300 leading-relaxed mb-6">
+                                        <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4 sm:mb-6">
                                             {exp.overview}
                                         </p>
 
                                         {exp.photos && exp.photos.length > 0 && (
-                                            <div className="mb-6">
-                                                <h4 className="text-xl font-semibold text-white mb-3 flex items-center">
-                                                    <Camera className="w-5 h-5 mr-2 text-cyan-400" /> Gallery
+                                            <div className="mb-4 sm:mb-6">
+                                                <h4 className="text-base sm:text-xl font-semibold text-white mb-2 sm:mb-3 flex items-center">
+                                                    <Camera className="w-4 h-4 sm:w-5 mr-1.5 sm:mr-2 text-cyan-400" /> Gallery
                                                 </h4>
-                                                <div className="grid grid-cols-2 gap-4">
+                                                <div className="grid grid-cols-2 gap-3 sm:gap-4">
                                                     {exp.photos.map((photo, i) => (
                                                         <div
                                                             key={i}
-                                                            className="relative group cursor-pointer rounded-lg overflow-hidden border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
+                                                            className="relative group cursor-pointer rounded-lg overflow-hidden border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 aspect-video"
                                                             onClick={() => setSelectedImage(photo)}
                                                         >
                                                             <img
                                                                 src={photo.url}
                                                                 alt={photo.caption}
-                                                                className="w-full h-32 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                                                 onError={(e) => {
                                                                     e.target.onerror = null;
                                                                     e.target.src = "https://placehold.co/600x400/1f2937/9ca3af?text=Image+Not+Found";
                                                                 }}
                                                             />
                                                             <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                                <Play className="w-6 h-6 text-white" />
+                                                                <Play className="w-5 h-5 sm:w-6 text-white" />
                                                             </div>
-                                                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-1.5 sm:p-2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                                                 {photo.caption}
                                                             </div>
                                                         </div>
@@ -242,49 +227,49 @@ const HardSkillsExperiencePage = () => {
                                             </div>
                                         )}
 
-                                        <div className="mb-6">
-                                            <h4 className="text-xl font-semibold text-white mb-3 flex items-center">
-                                                <Award className="w-5 h-5 mr-2 text-purple-400" /> Key Achievements
+                                        <div className="mb-4 sm:mb-6">
+                                            <h4 className="text-base sm:text-xl font-semibold text-white mb-2 sm:mb-3 flex items-center">
+                                                <Award className="w-4 h-4 sm:w-5 mr-1.5 sm:mr-2 text-purple-400" /> Key Achievements
                                             </h4>
-                                            <ul className="list-none space-y-2 text-gray-300">
+                                            <ul className="list-none space-y-1.5 sm:space-y-2 text-gray-300">
                                                 {exp.achievements.map((item, i) => (
                                                     <li key={i} className="flex items-start">
-                                                        <span className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex-shrink-0 mt-2 mr-3"></span>
-                                                        {item}
+                                                        <span className="w-1.5 h-1.5 sm:w-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex-shrink-0 mt-1.5 sm:mt-2 mr-2 sm:mr-3"></span>
+                                                        <span className="text-sm sm:text-base">{item}</span>
                                                     </li>
                                                 ))}
                                             </ul>
                                         </div>
 
-                                        <div className="mb-6">
-                                            <h4 className="text-xl font-semibold text-white mb-3 flex items-center">
-                                                <Code className="w-5 h-5 mr-2 text-orange-400" /> Skills Used
+                                        <div className="mb-4 sm:mb-6">
+                                            <h4 className="text-base sm:text-xl font-semibold text-white mb-2 sm:mb-3 flex items-center">
+                                                <Code className="w-4 h-4 sm:w-5 mr-1.5 sm:mr-2 text-orange-400" /> Skills Used
                                             </h4>
-                                            <div className="flex flex-wrap gap-3">
+                                            <div className="flex flex-wrap gap-2 sm:gap-3">
                                                 {exp.skills.map((skill, i) => (
-                                                    <span key={i} className="px-4 py-2 bg-gray-800/60 rounded-full text-sm text-gray-300 border border-gray-700 hover:border-purple-500 transition-colors duration-200">
+                                                    <span key={i} className="px-3 py-1 sm:px-4 sm:py-2 bg-gray-800/60 rounded-full text-xs sm:text-sm text-gray-300 border border-gray-700 hover:border-purple-500 transition-colors duration-200">
                                                         {skill}
                                                     </span>
                                                 ))}
                                             </div>
                                         </div>
 
-                                        <div className="mb-6">
-                                            <h4 className="text-xl font-semibold text-white mb-3 flex items-center">
-                                                <TrendingUp className="w-5 h-5 mr-2 text-green-400" /> Impact
+                                        <div className="mb-4 sm:mb-6">
+                                            <h4 className="text-base sm:text-xl font-semibold text-white mb-2 sm:mb-3 flex items-center">
+                                                <TrendingUp className="w-4 h-4 sm:w-5 mr-1.5 sm:mr-2 text-green-400" /> Impact
                                             </h4>
-                                            <p className="text-gray-300 leading-relaxed">{exp.impact}</p>
+                                            <p className="text-sm sm:text-base text-gray-300 leading-relaxed">{exp.impact}</p>
                                         </div>
 
                                         <div className="mb-0">
-                                            <h4 className="text-xl font-semibold text-white mb-3 flex items-center">
-                                                <Lightbulb className="w-5 h-5 mr-2 text-yellow-400" /> Lessons Learned
+                                            <h4 className="text-base sm:text-xl font-semibold text-white mb-2 sm:mb-3 flex items-center">
+                                                <Lightbulb className="w-4 h-4 sm:w-5 mr-1.5 sm:mr-2 text-yellow-400" /> Lessons Learned
                                             </h4>
-                                            <ul className="list-none space-y-2 text-gray-300">
+                                            <ul className="list-none space-y-1.5 sm:space-y-2 text-gray-300">
                                                 {exp.lessons.map((item, i) => (
                                                     <li key={i} className="flex items-start">
-                                                        <span className="w-2 h-2 bg-gradient-to-r from-orange-400 to-red-400 rounded-full flex-shrink-0 mt-2 mr-3"></span>
-                                                        {item}
+                                                        <span className="w-1.5 h-1.5 sm:w-2 bg-gradient-to-r from-orange-400 to-red-400 rounded-full flex-shrink-0 mt-1.5 sm:mt-2 mr-2 sm:mr-3"></span>
+                                                        <span className="text-sm sm:text-base">{item}</span>
                                                     </li>
                                                 ))}
                                             </ul>

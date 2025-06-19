@@ -9,6 +9,10 @@ const About = () => {
     setIsVisible(true);
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const stats = [
     { number: '3+', label: 'Years Learning', icon: <BookOpen className="w-5 h-5" /> },
     { number: '15+', label: 'Projects Built', icon: <Code2 className="w-5 h-5" /> },
@@ -40,7 +44,6 @@ const About = () => {
 
   return (
     <section id="about" className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
-      {/* Enhanced Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
         <div className="absolute top-20 right-20 w-64 h-64 border border-purple-500/10 rounded-full animate-pulse"></div>
@@ -53,7 +56,6 @@ const About = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
-          {/* Enhanced Section Title */}
           <div className="text-center mb-20">
             <div className="inline-block mb-6">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-orange-500 rounded-full flex items-center justify-center mb-4 mx-auto animate-pulse">
@@ -66,11 +68,8 @@ const About = () => {
             <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-orange-500 mx-auto rounded-full"></div>
           </div>
 
-          {/* Main Content Grid */}
           <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
-            {/* Profile Section */}
             <div className={`relative group transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-              {/* Enhanced Profile Image */}
               <div className="relative flex justify-center items-center mb-8">
                 <div className="relative p-3 bg-gradient-to-br from-purple-600/30 via-pink-600/30 to-orange-600/30 rounded-3xl backdrop-blur-sm border border-gray-700/50 shadow-2xl transition-all duration-500 group-hover:scale-105">
                   <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden border-2 border-gray-800 group-hover:border-purple-400 transition-all duration-500">
@@ -82,7 +81,6 @@ const About = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
 
-                  {/* Floating Elements */}
                   <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200 animate-bounce">
                     <Code2 className="w-6 h-6 text-white" />
                   </div>
@@ -92,7 +90,6 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-4">
                 {stats.map((stat, index) => (
                   <div key={index} className="bg-gray-900/40 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 group/stat">
@@ -108,14 +105,12 @@ const About = () => {
               </div>
             </div>
 
-            {/* Content Section */}
             <div className={`space-y-8 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               <div className="space-y-6">
                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
                   Passionate <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400">Technology</span> Student
                 </h3>
 
-                {/* Tab Navigation */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {Object.keys(tabContent).map((tab) => (
                     <button
@@ -132,7 +127,6 @@ const About = () => {
                   ))}
                 </div>
 
-                {/* Tab Content */}
                 <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
                   <h4 className="text-xl font-semibold text-white mb-4">{tabContent[activeTab].title}</h4>
                   <p className="text-base md:text-lg text-gray-300 leading-relaxed">
@@ -141,7 +135,6 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Location Badge */}
               <div className="flex items-center gap-2 text-gray-400">
                 <MapPin className="w-4 h-4" />
                 <span className="text-sm">Based in Indonesia</span>
@@ -149,7 +142,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Interests Section */}
           <div className={`transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
               What I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400">Passionate</span> About

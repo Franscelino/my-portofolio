@@ -1,162 +1,127 @@
 import React, { useState, useEffect } from 'react';
-import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
-const Navbar = ({ hideNavItems = false }) => { 
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const navigate = useNavigate(); // Initialize useNavigate
+const Navbar = ({ hideNavItems = false }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const navigate = useNavigate();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+    const scrollToSection = (sectionId, e) => {
+        if (e) e.preventDefault();
 
-  // New function to handle navigation to a specific section ID
-  const scrollToSection = (sectionId, e) => {
-    e.preventDefault(); // Prevent default anchor link behavior
-    const targetElement = document.getElementById(sectionId);
-    if (targetElement) {
-      // Navigate to the root path with the hash, then scroll
-      navigate(`/#${sectionId}`); 
-      // Use setTimeout to ensure the navigation completes before scrolling
-      setTimeout(() => {
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 100); // Small delay to allow URL hash to update
-    } else {
-      // If the target element doesn't exist on the current page, navigate directly
-      // This is for cases where 'Skills' might be on a different page, but based on your setup,
-      // 'Skills' is usually on the homepage.
-      navigate(`/#${sectionId}`);
-    }
-    setIsOpen(false); // Close mobile menu after clicking
-  };
+        navigate(`/#${sectionId}`);
+        setTimeout(() => {
+            const targetElement = document.getElementById(sectionId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 100);
 
-  return (
-    <>
-      <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? 'bg-black/20 backdrop-blur-xl shadow-2xl' : 'bg-transparent backdrop-blur-sm'
-      }`}>
-        <div className="container mx-auto flex justify-between items-center py-4 px-6">
-          
-          {/* Logo */}
-          <div className="relative group ml-8">
-            {/* Logo still navigates to root, but uses the new scroll mechanism */}
-            <a href="/" onClick={(e) => scrollToSection('', e)} className="flex items-center">
-              <div className="relative">
-                <img 
-                  src="/Logo.svg" 
-                  alt="Logo" 
-                  className="h-16 w-auto transition-all duration-300 group-hover:scale-110 drop-shadow-lg" 
-                />
-                <div className="absolute inset-0 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-            </a>
-          </div>
+        setIsOpen(false);
+    };
 
-          {/* Desktop Navigation */}
-          {!hideNavItems && ( 
-            <div className="hidden md:flex items-center space-x-12">
-              {['About', 'Skills', 'Experience', 'Projects'].map((item) => (
-                <div key={item} className="relative group">
-                  <a
-                    href={`#${item.toLowerCase()}`}
-                    onClick={(e) => scrollToSection(item.toLowerCase(), e)} // Call scrollToSection
-                    className="relative px-4 py-2 text-white/90 font-medium text-sm tracking-wide uppercase transition-all duration-300 hover:text-white active:scale-95"
-                  >
-                    {item}
-                    {/* Only border gradient on hover, transparent background */}
-                    <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 p-[1px] bg-gradient-to-r from-purple-500 to-orange-500 blur-sm">
-                      <div className="w-full h-full bg-transparent rounded-xl"></div>
+    return (
+        <>
+            <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+                scrolled ? 'bg-black/80 backdrop-blur-xl shadow-2xl' : 'bg-transparent backdrop-blur-sm'
+            }`}>
+                <div className="container mx-auto flex justify-between items-center py-4 px-6">
+
+                    {/* Logo */}
+                    <div className="relative group">
+                        <Link to="/" onClick={(e) => scrollToSection('', e)} className="flex items-center">
+                            <div className="relative">
+                                <img
+                                    src="/Logo.svg"
+                                    alt="Logo"
+                                    className="h-12 sm:h-16 w-auto transition-all duration-300 group-hover:scale-110 drop-shadow-lg"
+                                />
+                            </div>
+                        </Link>
                     </div>
-                    {/* Click effects */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-orange-500/30 rounded-xl scale-0 transition-all duration-200 ease-out group-active:scale-110 group-active:opacity-60"></div>
-                    <div className="absolute inset-0 bg-white rounded-xl opacity-0 transition-all duration-150 group-active:opacity-10"></div>
-                  </a>
+
+                    {/* Desktop Navigation */}
+                    {!hideNavItems && (
+                        <div className="hidden md:flex items-center space-x-8 lg:space-x-12">
+                            <Link to="/#about" onClick={(e) => scrollToSection('about', e)} className="relative text-white/90 font-medium text-base tracking-wide uppercase transition-all duration-300 hover:text-white group">
+                                About
+                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+                            </Link>
+                            <Link to="/#skills" onClick={(e) => scrollToSection('skills', e)} className="relative text-white/90 font-medium text-base tracking-wide uppercase transition-all duration-300 hover:text-white group">
+                                Skills
+                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+                            </Link>
+                            <Link to="/#experience" onClick={(e) => scrollToSection('experience', e)} className="relative text-white/90 font-medium text-base tracking-wide uppercase transition-all duration-300 hover:text-white group">
+                                Experience
+                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+                            </Link>
+                            <Link to="/#projects" onClick={(e) => scrollToSection('projects', e)} className="relative text-white/90 font-medium text-base tracking-wide uppercase transition-all duration-300 hover:text-white group">
+                                Projects
+                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+                            </Link>
+                        </div>
+                    )}
+
+                    {/* Contact Button Desktop */}
+                    {!hideNavItems && (
+                        <div className="hidden md:block">
+                            <div className="relative group">
+                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-orange-500 rounded-xl blur-lg opacity-70 group-hover:opacity-100 transition-all duration-300"></div>
+                                <Link
+                                    to="/#contact"
+                                    onClick={(e) => scrollToSection('contact', e)}
+                                    className="relative block px-6 py-2 bg-gradient-to-r from-purple-500 to-orange-500 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95"
+                                >
+                                    Contact
+                                    <div className="absolute inset-0 bg-white rounded-xl opacity-0 transition-all duration-150 group-active:opacity-20"></div>
+                                </Link>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Mobile Menu Button */}
+                    <div className="md:hidden">
+                        <button
+                            onClick={toggleMenu}
+                            className="relative p-2 text-white/80 hover:text-white transition-colors duration-300"
+                        >
+                            <div className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
+                                {isOpen ? (
+                                    <X size={28} />
+                                ) : (
+                                    <Menu size={28} />
+                                )}
+                            </div>
+                        </button>
+                    </div>
                 </div>
-              ))}
-            </div>
-          )}
 
-          {/* Contact Button */}
-          {!hideNavItems && ( 
-            <div className="hidden md:block">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-orange-500 rounded-xl blur-lg opacity-70 group-hover:opacity-100 transition-all duration-300"></div>
-                <a
-                  href="#contact"
-                  onClick={(e) => scrollToSection('contact', e)} // Call scrollToSection
-                  className="relative block px-8 py-3 bg-gradient-to-r from-purple-500 to-orange-500 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95"
-                >
-                  Contact
-                  <div className="absolute inset-0 bg-white rounded-xl opacity-0 transition-all duration-150 group-active:opacity-20"></div>
-                </a>
-              </div>
-            </div>
-          )}
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu} // Still uses toggleMenu for button icon
-              className="relative p-2 text-white/80 hover:text-white transition-colors duration-300"
-            >
-              <div className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
-                {isOpen ? (
-                  <XMarkIcon className="h-7 w-7" />
-                ) : (
-                  <Bars3Icon className="h-7 w-7" />
+                {/* Mobile Menu Overlay */}
+                {isOpen && !hideNavItems && (
+                    <div className="md:hidden fixed inset-0 bg-black/90 z-40 flex flex-col items-center justify-center space-y-8 animate-fade-in pt-20">
+                        <Link to="/#about" className="text-white text-3xl hover:text-purple-400 transition-colors duration-300" onClick={(e) => scrollToSection('about', e)}>About</Link>
+                        <Link to="/#skills" className="text-white text-3xl hover:text-purple-400 transition-colors duration-300" onClick={(e) => scrollToSection('skills', e)}>Skills</Link>
+                        <Link to="/#experience" className="text-white text-3xl hover:text-purple-400 transition-colors duration-300" onClick={(e) => scrollToSection('experience', e)}>Experience</Link>
+                        <Link to="/#projects" className="text-white text-3xl hover:text-purple-400 transition-colors duration-300" onClick={(e) => scrollToSection('projects', e)}>Projects</Link>
+                        <Link to="/#contact" className="text-white text-3xl hover:text-purple-400 transition-colors duration-300" onClick={(e) => scrollToSection('contact', e)}>Contact</Link>
+                    </div>
                 )}
-              </div>
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {!hideNavItems && ( 
-          <div className={`md:hidden transition-all duration-500 ease-in-out ${
-            isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-          }`}>
-            <div className="bg-black/30 backdrop-blur-xl border-t border-white/10">
-              <div className="container mx-auto px-6 py-6 space-y-4">
-                {['About', 'Skills', 'Experience', 'Projects'].map((item, index) => (
-                  <div key={item} className="relative group" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <a
-                      href={`#${item.toLowerCase()}`}
-                      onClick={(e) => scrollToSection(item.toLowerCase(), e)} // Call scrollToSection
-                      className="block px-4 py-3 text-white/90 font-medium transition-all duration-300 hover:text-white hover:pl-6 rounded-lg hover:bg-white/5"
-                    >
-                      {item}
-                      <div className="absolute left-0 top-1/2 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-orange-500 transition-all duration-300 group-hover:w-2 -translate-y-1/2"></div>
-                    </a>
-                  </div>
-                ))}
-                <div className="pt-4">
-                  <div className="relative group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-orange-500 rounded-xl blur opacity-50 group-hover:opacity-80 transition-all duration-300"></div>
-                    <a
-                      href="#contact"
-                      onClick={(e) => scrollToSection('contact', e)} // Call scrollToSection
-                      className="relative block text-center px-6 py-3 bg-gradient-to-r from-purple-500 to-orange-500 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-[1.02]"
-                    >
-                      Contact
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </nav>
-    </>
-  );
+            </nav>
+        </>
+    );
 };
 
 export default Navbar;
