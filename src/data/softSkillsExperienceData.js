@@ -2,7 +2,7 @@ const softSkillsExperiences = [
     {
         type: 'Event Hosting',
         title: 'Master of Ceremonies (MC) - Studi Banding BNCC x CCI Telkom',
-        icon: 'Mic', 
+        icon: 'Mic',
         date: '07 March 2022',
         location: 'BINUS University',
         overview: 'Served as the Master of Ceremonies for the collaborative "Studi Banding" (Comparative Study) event between BNCC and CCI Telkom. My role involved ensuring the smooth flow of the agenda, engaging the audience, and introducing speakers and segments.',
@@ -20,46 +20,40 @@ const softSkillsExperiences = [
             'The value of professionalism and composure in a live setting, even when facing unexpected challenges.'
         ],
         photos: [
-            { url: '/public/stuban1.jpg', caption: 'Opening the Studi Banding Event', description: 'Kicking off the collaborative event between BNCC and CCI Telkom.' },
-            { url: '/public/stuban2.jpg', caption: 'Engaging the Audience', description: 'Interacting with participants and keeping the energy high during a segment.' },
-            { url: '/public/stuban3.jpg', caption: 'Introducing a Speaker', description: 'Presenting a key speaker during the study banding session.' },
-            { url: '/public/stuban4.jpg', caption: 'Facilitating a Q&A Session', description: 'Guiding the question and answer segment with participants and speakers.' },
-            { url: '/public/stuban5.jpg', caption: 'Closing Remarks', description: 'Delivering the closing remarks and thanking all attendees and organizers.' },
-            { url: '/public/stuban6.jpg', caption: 'Group Photo with Participants', description: 'A memorable moment with the attendees and organizers of Studi Banding.' }
+            { url: '/stuban1.jpg', caption: 'Opening the Studi Banding Event', description: 'Kicking off the collaborative event between BNCC and CCI Telkom.' },
+            { url: '/stuban2.jpg', caption: 'Engaging the Audience', description: 'Interacting with participants and keeping the energy high during a segment.' },
+            { url: '/stuban3.jpg', caption: 'Introducing a Speaker', description: 'Presenting a key speaker during the study banding session.' },
+            { url: '/stuban4.jpg', caption: 'Facilitating a Q&A Session', description: 'Guiding the question and answer segment with participants and speakers.' },
+            { url: '/stuban5.jpg', caption: 'Closing Remarks', description: 'Delivering the closing remarks and thanking all attendees and organizers.' },
+            { url: '/stuban6.jpg', caption: 'Group Photo with Participants', description: 'A memorable moment with the attendees and organizers of Studi Banding.' }
         ]
     },
     {
-        type: 'bncc-activist-techblast-coord',
-        title: 'BNCC Activist: Event Coordinator (Techblast)',
-        icon: 'Lightbulb',
-        date: '16 September 2023', 
-        location: 'BINUS University Bandung',
-        overview: 'Coordinated the event division for Techblast, a two-day outreach event designed to introduce high school students to university life and technology at BINUS Bandung. My responsibilities included organizing talk shows, university tours, and interactive workshops for the visiting students.',
+        type: 'bncc-activist-mc',
+        title: 'BNCC Activist: Master of Ceremonies (Study Banding)',
+        icon: 'Users',
+        date: 'October 2022',
+        location: 'BINUS University & CCI Telkom',
+        overview: 'Served as the Master of Ceremonies for a collaborative study banding event between CCI Telkom and BNCC All Region, facilitating smooth transitions and engaging interactions.',
         achievements: [
-            'Successfully coordinated all aspects of the two-day Techblast event, engaging numerous high school students.',
-            'Efficiently managed logistics for talk shows, university tours, and hands-on workshops.',
-            'Ensured a smooth and engaging experience for all student participants visiting BINUS Bandung.',
-            'Contributed to fostering interest in technology and university education among high school attendees.'
+            'Successfully hosted collaborative study banding event with CCI Telkom and BNCC All Region.',
+            'Ensured professional flow and engagement for a large, diverse audience.',
+            'Facilitated inter-regional BNCC collaboration and networking.'
         ],
-        skills: ['Event Coordination', 'Logistics Management', 'Program Planning', 'Team Collaboration', 'Stakeholder Communication', 'Youth Engagement', 'Workshop Facilitation'],
-        impact: 'Played a pivotal role in expanding BNCC\'s engagement with high school students, creating a memorable and educational experience that highlighted the opportunities at BINUS Bandung and fostered early interest in computer science and related fields.',
+        skills: ['Public Speaking', 'Event Hosting', 'Facilitation', 'Interpersonal Communication', 'Event Management'],
+        impact: 'Contributed to a successful collaborative event, strengthening ties between BNCC regions and external organizations, enhancing the club\'s reputation.',
         lessons: [
-            'The importance of clear and concise communication when managing multiple concurrent event activities.',
-            'Adapting event programming to suit a younger audience to maximize engagement and learning outcomes.',
-            'Effective resource allocation and scheduling are critical for multi-day, multi-session events.'
+            'The importance of clear and concise communication in multi-stakeholder events.',
+            'Adapting presentation style and energy to keep diverse audiences engaged.'
         ],
         photos: [
-            { url: '/public/techblast1.JPG', caption: 'Techblast Opening Ceremony', description: 'High school students gathered for the opening of the Techblast event at BINUS Bandung.' },
-            { url: '/public/techblast2.JPG', caption: 'University Tour Session', description: 'Students exploring the campus facilities during the university tour as part of Techblast.' },
-            { url: '/public/techblast3.JPG', caption: 'Interactive Workshop', description: 'Participants engaging in a hands-on workshop session during the Techblast event.' },
-            { url: '/public/techblast4.JPG', caption: 'Talk Show & Q&A', description: 'A captivating talk show session with guest speakers and active student participation.' },
-            { url: '/public/techblast5.JPG', caption: 'Techblast Additional Photo 1', description: 'Further engagement during Techblast activities.' },
-            { url: '/public/techblast6.JPG', caption: 'Another view of students participating in Techblast.', description: 'Another view of students participating in Techblast.' }
+            { url: 'https://placehold.co/600x400/1f2937/9ca3af?text=MC+Study+Banding', caption: 'Hosting Study Banding Event', description: 'Engaging with participants during the collaborative study banding.' },
+            { url: 'https://placehold.co/600x400/1f2937/9ca3af?text=CCI+Collaboration', caption: 'CCI Telkom & BNCC Collaboration', description: 'Networking session with representatives from CCI Telkom.' }
         ]
     },
     {
-        type: 'Event Coordination', // Set type to Event Coordination
-        title: 'Techwinter: Exploring Your path career through the tech challanges', // Updated title
+        type: 'Event Coordination',
+        title: 'Techwinter: Exploring Your path career through the tech challanges',
         icon: 'Lightbulb',
         date: 'November 2022',
         location: 'BINUS University',
@@ -78,19 +72,19 @@ const softSkillsExperiences = [
             'Effective communication and adaptability are key when handling a large participant base and complex event components.'
         ],
         photos: [
-            { url: '/public/techbin1.JPG', caption: 'Opening of Techwinter Seminar', description: 'Participants gathering for the commencement of the Techwinter event.' },
-            { url: '/public/techbin2.JPG', caption: 'Keynote Speaker Session', description: 'Faqihza Mukhlish from Kelas Terbuka delivering his insightful talk.' },
-            { url: '/public/techbin3.JPG', caption: 'Interactive Q&A', description: 'Attendees engaging in a lively question and answer session with the speaker.' },
-            { url: '/public/techbin4.JPG', caption: 'Onsite Participants', description: 'A view of the enthusiastic onsite audience during the seminar.' },
-            { url: '/public/techbin5.JPG', caption: 'Virtual Engagement', description: 'Monitoring online participants and their interactions during the hybrid event.' },
-            { url: '/public/techbin6.JPG', caption: 'Event Coordination in Action', description: 'Behind-the-scenes coordination ensuring smooth event flow.' }
+            { url: '/techbin1.JPG', caption: 'Opening of Techwinter Seminar', description: 'Participants gathering for the commencement of the Techwinter event.' },
+            { url: '/techbin2.JPG', caption: 'Keynote Speaker Session', description: 'Faqihza Mukhlish from Kelas Terbuka delivering his insightful talk.' },
+            { url: '/techbin3.JPG', caption: 'Interactive Q&A', description: 'Attendees engaging in a lively question and answer session with the speaker.' },
+            { url: '/techbin4.JPG', caption: 'Onsite Participants', description: 'A view of the enthusiastic onsite audience during the seminar.' },
+            { url: '/techbin5.JPG', caption: 'Virtual Engagement', description: 'Monitoring online participants and their interactions during the hybrid event.' },
+            { url: '/techbin6.JPG', caption: 'Event Coordination in Action', description: 'Behind-the-scenes coordination ensuring smooth event flow.' }
         ]
     },
     {
         type: 'Freshmen Leader',
         title: 'Freshmen Leader (FL) - New Student Orientation',
         icon: 'Users',
-        date: 'September 2023',
+        date: 'August 2022',
         location: 'BINUS University Bandung',
         overview: 'Served as a Freshmen Leader (FL) for the new student orientation program at BINUS University Bandung. My role involved guiding and assisting incoming university students through their initial two-week transition to campus life, fostering a welcoming and supportive environment.',
         achievements: [
@@ -107,15 +101,44 @@ const softSkillsExperiences = [
             'Adapting quickly to unexpected situations and finding practical solutions to support new students effectively.'
         ],
         photos: [
-            { url: '/public/fl1.jpg', caption: 'Welcoming New Freshmen', description: 'Greeting incoming students during the orientation program.' },
-            { url: '/public/fl2.jpg', caption: 'Facilitating Group Activities', description: 'Leading interactive sessions to help new students connect and bond.' },
-            { url: '/public/fl3.jpg', caption: 'Guiding Campus Tour', description: 'Showing new students around the BINUS Bandung campus facilities.' }
+            { url: '/fl1.jpg', caption: 'Welcoming New Freshmen', description: 'Greeting incoming students during the orientation program.' },
+            { url: '/fl2.jpg', caption: 'Facilitating Group Activities', description: 'Leading interactive sessions to help new students connect and bond.' },
+            { url: '/fl3.jpg', caption: 'Guiding Campus Tour', description: 'Showing new students around the BINUS Bandung campus facilities.' }
+        ]
+    },
+    {
+        type: 'bncc-activist-techblast-coord',
+        title: 'BNCC Activist: Event Coordinator (Techblast)',
+        icon: 'Lightbulb',
+        date: '16 September 2023',
+        location: 'BINUS University Bandung',
+        overview: 'Coordinated the event division for Techblast, a two-day outreach event designed to introduce high school students to university life and technology at BINUS Bandung. My responsibilities included organizing talk shows, university tours, and interactive workshops for the visiting students.',
+        achievements: [
+            'Successfully coordinated all aspects of the two-day Techblast event, engaging numerous high school students.',
+            'Efficiently managed logistics for talk shows, university tours, and hands-on workshops.',
+            'Ensured a smooth and engaging experience for all student participants visiting BINUS Bandung.',
+            'Contributed to fostering interest in technology and university education among high school attendees.'
+        ],
+        skills: ['Event Coordination', 'Logistics Management', 'Program Planning', 'Team Collaboration', 'Stakeholder Communication', 'Youth Engagement', 'Workshop Facilitation'],
+        impact: 'Played a pivotal role in expanding BNCC\'s engagement with high school students, creating a memorable and educational experience that highlighted the opportunities at BINUS Bandung and fostered early interest in computer science and related fields.',
+        lessons: [
+            'The importance of clear and concise communication when managing multiple concurrent event activities.',
+            'Adapting event programming to suit a younger audience to maximize engagement and learning outcomes.',
+            'Effective resource allocation and scheduling are critical for multi-day, multi-session events.'
+        ],
+        photos: [
+            { url: '/techblast1.JPG', caption: 'Techblast Opening Ceremony', description: 'High school students gathered for the opening of the Techblast event at BINUS Bandung.' },
+            { url: '/techblast2.JPG', caption: 'University Tour Session', description: 'Students exploring the campus facilities during the university tour as part of Techblast.' },
+            { url: '/techblast3.JPG', caption: 'Interactive Workshop', description: 'Participants engaging in a hands-on workshop session during the Techblast event.' },
+            { url: '/techblast4.JPG', caption: 'Talk Show & Q&A', description: 'A captivating talk show session with guest speakers and active student participation.' },
+            { url: '/techblast5.JPG', caption: 'Techblast Additional Photo 1', description: 'Further engagement during Techblast activities.' },
+            { url: '/techblast6.JPG', caption: 'Another view of students participating in Techblast.', description: 'Another view of students participating in Techblast.' }
         ]
     },
     {
         type: 'BNCC Officer',
         title: 'BNCC Officer: Mentor (Event Division) - Techbinar 2025 Smart Learning Based on AI',
-        icon: 'Award', 
+        icon: 'Award',
         date: 'Q1 2025',
         location: 'BINUS Computer Club (BNCC)',
         overview: 'As a mentor for the Event Division within the BNCC Officer board, I provided guidance and oversight for Techbinar 2025, focusing on "Smart Learning Based on AI." This hybrid event successfully engaged over 500 participants, both onsite and online, featuring a prominent speaker, Avip Syaifulloh from Web Programming Unpas.',
@@ -134,16 +157,16 @@ const softSkillsExperiences = [
             'Continuously adapting mentorship strategies to foster innovation and efficiency in event execution.'
         ],
         photos: [
-            { url: '/public/stafftechbin1.jpg', caption: 'Mentoring Session for Techbinar 2025', description: 'Guiding the event division team in planning Techbinar 2025.' },
-            { url: '/public/stafftechbin2.jpg', caption: 'Speaker Avip Syaifulloh at Techbinar 2025', description: 'Avip Syaifulloh from Web Programming Unpas delivering his talk.' },
-            { url: '/public/stafftechbin3.jpg', caption: 'Techbinar 2025 Onsite Audience', description: 'A view of the engaged onsite participants at the AI-focused Techbinar.' }
+            { url: '/stafftechbin1.jpg', caption: 'Mentoring Session for Techbinar 2025', description: 'Guiding the event division team in planning Techbinar 2025.' },
+            { url: '/stafftechbin2.jpg', caption: 'Speaker Avip Syaifulloh at Techbinar 2025', description: 'Avip Syaifulloh from Web Programming Unpas delivering his talk.' },
+            { url: '/stafftechbin3.jpg', caption: 'Techbinar 2025 Onsite Audience', description: 'A view of the engaged onsite participants at the AI-focused Techbinar.' }
         ]
     },
     {
         type: 'Freshmen Partner',
         title: 'Freshmen Partner (FP) - Mentorship Program for Binusian 28',
-        icon: 'Users', 
-        date: 'January 2024 - March 2025', 
+        icon: 'Users',
+        date: 'September 2023 - Present',
         location: 'BINUS University Bandung',
         overview: 'Participated in the Freshmen Partner (FP) program, a year-long mentorship initiative by BINUS University to guide new students (Binusian 28) through their first year. I was responsible for mentoring a group of 7-9 freshmen, providing academic, social, and personal support.',
         achievements: [
@@ -160,9 +183,9 @@ const softSkillsExperiences = [
             'Recognizing and leveraging peer support networks to enhance the overall student experience.'
         ],
         photos: [
-            { url: '/public/fp1.jpg', caption: 'Freshmen Partner Group Session', description: 'Engaging with Binusian 28 mentees during a group meeting.' },
-            { url: '/public/fp2.jpg', caption: 'Guiding Discussions with Freshmen', description: 'Facilitating discussions and providing advice to my mentees.' },
-            { url: '/public/fp3.jpg', caption: 'Supporting Binusian 28 Students', description: 'A moment with the Freshmen Partner group, fostering a supportive environment.' }
+            { url: '/fp1.jpg', caption: 'Freshmen Partner Group Session', description: 'Engaging with Binusian 28 mentees during a group meeting.' },
+            { url: '/fp2.jpg', caption: 'Guiding Discussions with Freshmen', description: 'Facilitating discussions and providing advice to my mentees.' },
+            { url: '/fp3.jpg', caption: 'Supporting Binusian 28 Students', description: 'A moment with the Freshmen Partner group, fostering a supportive environment.' }
         ]
     },
 ];

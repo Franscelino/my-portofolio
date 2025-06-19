@@ -3,8 +3,8 @@ const allProjectsData = [
     {
         id: 'nextpath-ai-career',
         name: 'Nextpath AI Career Finder',
-        imageUrl: '/public/Nexpathlanding.png',
-        thumbnailUrl: '/public/Nexpathlanding.png',
+        imageUrl: '/Nexpathlanding.png', // Corrected path
+        thumbnailUrl: '/Nexpathlanding.png', // Corrected path
         repositoryLink: 'https://github.com/BRYAN1309/IN-FEST-2025.git',
         liveDemoLink: 'https://nextpath.my.id',
         shortDetails: [
@@ -36,19 +36,19 @@ const allProjectsData = [
             'Learned effective strategies for structuring complex front-end projects with Vite.'
         ],
         gallery: [
-            { url: '/public/Nexpathdashboard.png', caption: 'Nextpath Dashboard', description: 'Personalized user dashboard with career insights.' },
-            { url: '/public/Nexpathchatbot.png', caption: 'AI Chatbot Feature', description: 'Interactive AI chatbot for instant career guidance.' },
-            { url: '/public/articles.png', caption: 'Career Articles Section', description: 'Curated articles providing industry knowledge and trends.' },
-            { url: '/public/Nextpathgoal.png', caption: 'Personalized Goals Tracking', description: 'Feature to set and monitor career development goals.' }
+            { url: '/Nextpathdashboard.png', caption: 'Nextpath Dashboard', description: 'Personalized user dashboard with career insights.' }, // Corrected path
+            { url: '/Nextpathchatbot.png', caption: 'AI Chatbot Feature', description: 'Interactive AI chatbot for instant career guidance.' }, // Corrected path
+            { url: '/articles.png', caption: 'Career Articles Section', description: 'Curated articles providing industry knowledge and trends.' }, // Corrected path
+            { url: '/Nextpathgoal.png', caption: 'Personalized Goals Tracking', description: 'Feature to set and monitor career development goals.' } // Corrected path
         ]
     },
     {
-        id: 'clovio-online-fashion-store', // Unique ID for this project
+        id: 'clovio-online-fashion-store',
         name: 'Clovio - E-commerce Fashion Store',
-        imageUrl: '/public/Clovio1.jpg', // Placeholder image
-        thumbnailUrl: '/public/Clovio1.jpg', // Placeholder image
-        repositoryLink: 'https://github.com/Franscelino/clovio-repo', // Replace with your Clovio GitHub link
-        liveDemoLink: null, // Replace with live demo link if available
+        imageUrl: '/Clovio1.jpg', // Corrected path
+        thumbnailUrl: '/Clovio1.jpg', // Corrected path
+        repositoryLink: 'https://github.com/Franscelino/clovio-repo',
+        liveDemoLink: null,
         shortDetails: [
             'Full-stack e-commerce platform for a custom clothing brand.',
             'Features product catalog, shopping cart, checkout, and admin dashboard.',
@@ -81,21 +81,21 @@ const allProjectsData = [
             'Learned best practices for e-commerce design and functionality.'
         ],
         gallery: [
-            { url: '/public/Clovio1.jpg', caption: 'Clovio Homepage', description: 'The Main View of Landing Page.' },
-            { url: '/public/Clovio2.jpg', caption: 'Login Register Page', description: 'User login and registration page.' },
-            { url: '/public/Clovio3.jpg', caption: 'Category Page', description: 'Summary of product categories.' },
-            { url: '/public/Clovio4.jpg', caption: 'Catalog Page', description: 'Product catalog view for admin.' },
-            { url: '/public/Clovio5.jpg', caption: 'Order History', description: 'User order history view.' },
-            { url: '/public/Clovio6.jpg', caption: 'Shopping Cart Page', description: 'Checkout process with order summary.' },
-            { url: '/public/Clovio7.jpg', caption: 'Checkout Page', description: 'Checkout page with order summary.' },
-            { url: '/public/Clovio8.jpg', caption: 'Admin Dashboard', description: 'Admin dashboard for managing products and orders.' }
+            { url: '/Clovio1.jpg', caption: 'Clovio Homepage', description: 'The Main View of Landing Page.' }, // Corrected path
+            { url: '/Clovio2.jpg', caption: 'Login Register Page', description: 'User login and registration page.' }, // Corrected path
+            { url: '/Clovio3.jpg', caption: 'Category Page', description: 'Summary of product categories.' }, // Corrected path
+            { url: '/Clovio4.jpg', caption: 'Catalog Page', description: 'Product catalog view for admin.' }, // Corrected path
+            { url: '/Clovio5.jpg', caption: 'Order History', description: 'User order history view.' }, // Corrected path
+            { url: '/Clovio6.jpg', caption: 'Shopping Cart Page', description: 'Checkout process with order summary.' }, // Corrected path
+            { url: '/Clovio7.jpg', caption: 'Checkout Page', description: 'Checkout page with order summary.' }, // Corrected path
+            { url: '/Clovio8.jpg', caption: 'Admin Dashboard', description: 'Admin dashboard for managing products and orders.' } // Corrected path
         ]
     },
     {
         id: 'whatage-website',
         name: 'WhatAge Website',
-        imageUrl: '/public/whatage1.png',
-        thumbnailUrl: '/public/whatage1.png',
+        imageUrl: '/whatage1.png', // Corrected path
+        thumbnailUrl: '/whatage1.png', // Corrected path
         repositoryLink: 'https://github.com/dustinmondegreen/WhatAge.git',
         shortDetails: [
             'An age prediction system using the DeepAge model.',
@@ -122,18 +122,18 @@ const allProjectsData = [
             'Gained experience in frontend performance optimization'
         ],
         gallery: [
-            { url: '/public/whatage1.png', caption: 'Homepage with upload interface' },
-            { url: '/public/whatage2.png', caption: 'Prediction result display' },
-            { url: '/public/whatage3.png', caption: 'Mobile view responsiveness' },
-            { url: '/public/whatage4.png', caption: 'Mobile view responsiveness' }
+            { url: '/whatage1.png', caption: 'Homepage with upload interface' }, // Corrected path
+            { url: '/whatage2.png', caption: 'Prediction result display' }, // Corrected path
+            { url: '/whatage3.png', caption: 'Mobile view responsiveness' }, // Corrected path
+            { url: '/whatage4.png', caption: 'Mobile view responsiveness' } // Corrected path
         ]
     },
     {
         id: 'blockchain-performance-analysis-paper',
         name: 'Ethereum vs. Solana: A Comparative Study of Blockchain Architecture on Performance, Security, and Ecosystem Development',
-        imageUrl: '/public/ethsol1.png',
-        thumbnailUrl: '/public/ethsol1.png',
-        paperDownloadLink: 'uploaded:PROCS-ICCSCI 2025_Kelompok28 (1).pdf', // Link to your uploaded PDF
+        imageUrl: '/ethsol1.png', // Corrected path
+        thumbnailUrl: '/ethsol1.png', // Corrected path
+        paperDownloadLink: 'uploaded:PROCS-ICCSCI 2025_Kelompok28 (1).pdf',
         shortDetails: [
             'Comparative study of Ethereum and Solana blockchain architectures.',
             'Analyzes performance (TPS, latency, gas fees), consensus mechanisms, security, and DApp ecosystem.',
@@ -174,23 +174,23 @@ const allProjectsData = [
             'Understood the strategic considerations for blockchain platform selection.'
         ],
         gallery: [
-            { url: '/public/ethsol2.png', caption: 'Performance Comparison - Sequential Transactions', description: 'Combined visualization of TPS, Latency, and Gas Fee for sequential transactions on Ethereum and Solana (Fig. 1).' },
-            { url: '/public/ethsol3.png', caption: 'Performance Comparison - Parallel Transactions', description: 'Combined visualization of TPS, Latency, and Gas Fee for parallel transactions on Ethereum and Solana (Fig. 2).' },
-            { url: '/public/ethsol4.png', caption: 'Transaction-level Latency and Gas Fee - Sequential', description: 'Transaction-level comparison of latency and gas fees for Ethereum and Solana in sequential execution (Fig. 3).' },
-            { url: '/public/ethsol5.png', caption: 'Distribution of Solana Leaders', description: 'Bar chart showing the distribution of block proposers on the Solana network (Fig. 4).' },
-            { url: '/public/ethsol6.png', caption: 'Distribution of Ethereum Proposers', description: 'Bar chart illustrating the distribution of block proposers on the Ethereum network (Fig. 5).' },
-            { url: '/public/ethsol7.png', caption: 'Block Delay Time Comparison: Ethereum vs Solana', description: 'Line graph comparing block delay times between Ethereum and Solana (Fig. 6).' },
-            { url: '/public/ethsol8.png', caption: 'Average TTA & TTP of Incidents: Solana vs Ethereum', description: 'Bar chart comparing the average Time to Acknowledge (TTA) and Time to Patch (TTP) for security incidents on Solana and Ethereum (Fig. 7a).' },
-            { url: '/public/ethsol9.png', caption: 'Average Incident Transparency: Solana vs Ethereum', description: 'Bar chart illustrating the average incident transparency levels for Solana and Ethereum (Fig. 7b).' }
+            { url: '/ethsol2.png', caption: 'Performance Comparison - Sequential Transactions', description: 'Combined visualization of TPS, Latency, and Gas Fee for sequential transactions on Ethereum and Solana (Fig. 1).' }, // Corrected path
+            { url: '/ethsol3.png', caption: 'Performance Comparison - Parallel Transactions', description: 'Combined visualization of TPS, Latency, and Gas Fee for parallel transactions on Ethereum and Solana (Fig. 2).' }, // Corrected path
+            { url: '/ethsol4.png', caption: 'Transaction-level Latency and Gas Fee - Sequential', description: 'Transaction-level comparison of latency and gas fees for Ethereum and Solana in sequential execution (Fig. 3).' }, // Corrected path
+            { url: '/ethsol5.png', caption: 'Distribution of Solana Leaders', description: 'Bar chart showing the distribution of block proposers on the Solana network (Fig. 4).' }, // Corrected path
+            { url: '/ethsol6.png', caption: 'Distribution of Ethereum Proposers', description: 'Bar chart illustrating the distribution of block proposers on the Ethereum network (Fig. 5).' }, // Corrected path
+            { url: '/ethsol7.png', caption: 'Block Delay Time Comparison: Ethereum vs Solana', description: 'Line graph comparing block delay times between Ethereum and Solana (Fig. 6).' }, // Corrected path
+            { url: '/ethsol8.png', caption: 'Average TTA & TTP of Incidents: Solana vs Ethereum', description: 'Bar chart comparing the average Time to Acknowledge (TTA) and Time to Patch (TTP) for security incidents on Solana and Ethereum (Fig. 7a).' }, // Corrected path
+            { url: '/ethsol9.png', caption: 'Average Incident Transparency: Solana vs Ethereum', description: 'Bar chart illustrating the average incident transparency levels for Solana and Ethereum (Fig. 7b).' } // Corrected path
         ]
     },
     {
         id: 'decentralized-voting-dapp',
         name: 'Decentralized Voting System - Full Stack DApp',
-        imageUrl: '/public/vote1.png',
-        thumbnailUrl: '/public/vote1.png',
-        repositoryLink: 'https://github.com/Franscelino/Decentralization-Vote.git', // Replace with your GitHub repo link
-        liveDemoLink: null, // Fill if you have a live demo
+        imageUrl: '/vote1.png', // Corrected path
+        thumbnailUrl: '/vote1.png', // Corrected path
+        repositoryLink: 'https://github.com/Franscelino/Decentralization-Vote.git',
+        liveDemoLink: null,
         shortDetails: [
             'Secure and transparent decentralized voting system on the blockchain.',
             'Built with Solidity smart contracts, React + Vite + Tailwind CSS frontend.',
@@ -231,23 +231,23 @@ const allProjectsData = [
             'Improved skills in debugging and troubleshooting blockchain issues.'
         ],
         gallery: [
-            { url: '/public/vote1.png', caption: 'DApp Main View', description: 'Homepage of the voting system.' },
-            { url: '/public/vote2.png', caption: 'Voting Details and Options', description: 'Poll details and available options.' },
-            { url: '/public/vote3.png', caption: 'Poll Creation Form', description: 'Interface for creating a new poll.' },
-            { url: '/public/vote4.png', caption: 'MetaMask Transaction Confirmation', description: 'MetaMask pop-up for transaction confirmation.' },
-            { url: '/public/vote5.png', caption: 'Poll Results Display (Bar Chart)', description: 'Visual representation of voting results after the poll ends.' },
-            { url: '/public/vote6.png', caption: 'Poll Results Display (Percentages)', description: 'Voting results with percentages for each option.' },
-            { url: '/public/vote7.png', caption: 'User Voting Status', description: 'Indication of whether the user has voted.' },
-            { url: '/public/vote8.png', caption: 'Error/Success Messages', description: 'Notifications to the user about operation status.' },
-            { url: '/public/vote9.png', caption: 'Responsive Design (Mobile)', description: 'DApp interface optimized for mobile devices.' }
+            { url: '/vote1.png', caption: 'DApp Main View', description: 'Homepage of the voting system.' }, // Corrected path
+            { url: '/vote2.png', caption: 'Voting Details and Options', description: 'Poll details and available options.' }, // Corrected path
+            { url: '/vote3.png', caption: 'Poll Creation Form', description: 'Interface for creating a new poll.' }, // Corrected path
+            { url: '/vote4.png', caption: 'MetaMask Transaction Confirmation', description: 'MetaMask pop-up for transaction confirmation.' }, // Corrected path
+            { url: '/vote5.png', caption: 'Poll Results Display (Bar Chart)', description: 'Visual representation of voting results after the poll ends.' }, // Corrected path
+            { url: '/vote6.png', caption: 'Poll Results Display (Percentages)', description: 'Voting results with percentages for each option.' }, // Corrected path
+            { url: '/vote7.png', caption: 'User Voting Status', description: 'Indication of whether the user has voted.' }, // Corrected path
+            { url: '/vote8.png', caption: 'Error/Success Messages', description: 'Notifications to the user about operation status.' }, // Corrected path
+            { url: '/vote9.png', caption: 'Responsive Design (Mobile)', description: 'DApp interface optimized for mobile devices.' } // Corrected path
         ]
     },
     {
         id: 'ai-age-prediction-paper',
-        name: 'Evaluating Gradient Boosting and Deep Tabular Models for Life Expectancy Prediction',
-        imageUrl: '/public/age1.png',
-        thumbnailUrl: '/public/age1.png',
-        paperDownloadLink: 'Evaluating Gradient Boosting and Deep Tabular Models for Life Expectancy Prediction.pdf', // Link to your uploaded PDF
+        name: 'AI Age Prediction: A Comparative Study of XGBoost, CatBoost, and TabNet',
+        imageUrl: '/age1.png', // Corrected path
+        thumbnailUrl: '/age1.png', // Corrected path
+        paperDownloadLink: 'https://placehold.co/600x400/1f2937/9ca3af?text=AI+Paper+Download',
         shortDetails: [
             'Academic paper comparing XGBoost, CatBoost, and TabNet for age prediction.',
             'Explores performance, interpretability, and feature importance of different models.',
@@ -288,14 +288,15 @@ const allProjectsData = [
             'Improved academic writing and research presentation skills.'
         ],
         gallery: [
-            { url: '/public/age2.png', caption: 'Feature Importance - XGBoost', description: 'Visualization of key features influencing XGBoost age predictions.' },
-            { url: '/public/age3.png', caption: 'Feature Importance - CatBoost', description: 'Visualization of key features influencing CatBoost age predictions.' },
-            { url: '/public/age4.png', caption: 'TabNet Attentive Transformer Output', description: 'Illustrating TabNet\'s attention mechanism on input features.' },
-            { url: '/public/age5.png', caption: 'Prediction Distribution vs. Actual Age', description: 'Scatter plot or histogram comparing predicted age distribution with actual age distribution.' },
-            { url: '/public/age6.png', caption: 'Training Loss Over Epochs (TabNet)', description: 'Graph showing the training and validation loss progression for TabNet.' },
-            { url: '/public/age7.png', caption: 'Model Training Time Comparison', description: 'Bar chart comparing the training duration for each of the three models.' },
-            { url: '/public/age8.png', caption: 'Age Prediction Error Analysis', description: 'Analysis of prediction errors across different age groups.' },
-            { url: '/public/age9.png', caption: 'Overall Model Architecture', description: 'High-level diagram of the AI age prediction system architecture.' }
+            { url: '/age1.png', caption: 'Model Performance Comparison (MAE)', description: 'Mean Absolute Error comparison across XGBoost, CatBoost, and TabNet for age prediction.' }, // Corrected path
+            { url: '/age2.png', caption: 'Feature Importance - XGBoost', description: 'Visualization of key features influencing XGBoost age predictions.' }, // Corrected path
+            { url: '/age3.png', caption: 'Feature Importance - CatBoost', description: 'Visualization of key features influencing CatBoost age predictions.' }, // Corrected path
+            { url: '/age4.png', caption: 'TabNet Attentive Transformer Output', description: 'Illustrating TabNet\'s attention mechanism on input features.' }, // Corrected path
+            { url: '/age5.png', caption: 'Prediction Distribution vs. Actual Age', description: 'Scatter plot or histogram comparing predicted age distribution with actual age distribution.' }, // Corrected path
+            { url: '/age6.png', caption: 'Training Loss Over Epochs (TabNet)', description: 'Graph showing the training and validation loss progression for TabNet.' }, // Corrected path
+            { url: '/age7.png', caption: 'Model Training Time Comparison', description: 'Bar chart comparing the training duration for each of the three models.' }, // Corrected path
+            { url: '/age8.png', caption: 'Age Prediction Error Analysis', description: 'Analysis of prediction errors across different age groups.' }, // Corrected path
+            { url: '/age9.png', caption: 'Overall Model Architecture', description: 'High-level diagram of the AI age prediction system architecture.' } // Corrected path
         ]
     }
 ];
