@@ -25,7 +25,7 @@ const allProjectsData = [
         challenges: [
             'Integrating diverse AI models for accurate career matching and chatbot responses.',
             'Optimizing API calls for real-time responsiveness and data retrieval.',
-            'Ensuring data privacy and security for user career information.',
+            'Ensuring data privacy and security for user information.',
             'Managing complex state across various interactive features (chatbot, goals).'
         ],
         learnings: [
@@ -36,19 +36,19 @@ const allProjectsData = [
             'Learned effective strategies for structuring complex front-end projects with Vite.'
         ],
         gallery: [
-            { url: '/public/Nextpathdashboard.png', caption: 'Nextpath Dashboard', description: 'Personalized user dashboard with career insights.' },
-            { url: '/public/Nextpathchatbot.png', caption: 'AI Chatbot Feature', description: 'Interactive AI chatbot for instant career guidance.' },
+            { url: '/public/Nexpathdashboard.png', caption: 'Nextpath Dashboard', description: 'Personalized user dashboard with career insights.' },
+            { url: '/public/Nexpathchatbot.png', caption: 'AI Chatbot Feature', description: 'Interactive AI chatbot for instant career guidance.' },
             { url: '/public/articles.png', caption: 'Career Articles Section', description: 'Curated articles providing industry knowledge and trends.' },
             { url: '/public/Nextpathgoal.png', caption: 'Personalized Goals Tracking', description: 'Feature to set and monitor career development goals.' }
         ]
     },
     {
-        id: 'clovio-online-fashion-store', // ID unik untuk proyek ini
+        id: 'clovio-online-fashion-store', // Unique ID for this project
         name: 'Clovio - E-commerce Fashion Store',
         imageUrl: '/public/Clovio1.jpg', // Placeholder image
         thumbnailUrl: '/public/Clovio1.jpg', // Placeholder image
-        repositoryLink: 'https://github.com/Franscelino/clovio-repo', // Ganti dengan link GitHub Clovio Anda
-        liveDemoLink: null, // Ganti dengan link live demo jika ada
+        repositoryLink: 'https://github.com/Franscelino/clovio-repo', // Replace with your Clovio GitHub link
+        liveDemoLink: null, // Replace with live demo link if available
         shortDetails: [
             'Full-stack e-commerce platform for a custom clothing brand.',
             'Features product catalog, shopping cart, checkout, and admin dashboard.',
@@ -61,7 +61,7 @@ const allProjectsData = [
             'Product Detail Pages: View high-resolution images, descriptions, and size options.',
             'Shopping Cart: Add, remove, and update quantities of items in the cart.',
             'Secure Checkout Process: Multi-step checkout flow with order summary.',
-            'Payment Integration: (Optional: Sebutkan metode pembayaran jika spesifik, misal: Midtrans, Stripe)',
+            'Payment Integration: (Optional: Mention specific method, e.g., Midtrans, Stripe)',
             'User Authentication & Authorization: Secure login, registration, and user profiles.',
             'Admin Dashboard: Manage products, orders, users, and site content.',
             'Responsive Design: Optimized for seamless viewing on desktop and mobile devices.'
@@ -184,6 +184,120 @@ const allProjectsData = [
             { url: '/public/ethsol9.png', caption: 'Average Incident Transparency: Solana vs Ethereum', description: 'Bar chart illustrating the average incident transparency levels for Solana and Ethereum (Fig. 7b).' }
         ]
     },
+    {
+        id: 'decentralized-voting-dapp',
+        name: 'Decentralized Voting System - Full Stack DApp',
+        imageUrl: '/public/vote1.png',
+        thumbnailUrl: '/public/vote1.png',
+        repositoryLink: 'https://github.com/Franscelino/Decentralization-Vote.git', // Replace with your GitHub repo link
+        liveDemoLink: null, // Fill if you have a live demo
+        shortDetails: [
+            'Secure and transparent decentralized voting system on the blockchain.',
+            'Built with Solidity smart contracts, React + Vite + Tailwind CSS frontend.',
+            'Deployed to Ethereum Sepolia testnet.'
+        ],
+        fullDescription: `This project is a complete decentralized voting application (DApp) designed for fair, transparent, and immutable elections using blockchain technology. The core of this DApp is a Solidity smart contract deployed to the Ethereum Sepolia Testnet, which manages poll creation, vote recording, and result calculation. Each vote is recorded per wallet address to ensure unique voting, and voting results are displayed as visual percentages accessible to everyone after the poll ends. The frontend is built using React.js with Vite for fast bundling, and Tailwind CSS for responsive and modern styling. Users can connect their MetaMask wallets, create new polls, cast their votes, and view results in real-time or after the poll concludes. This project emphasizes core functionality: robust smart contract implementation, seamless frontend-backend integration, and an intuitive user interface for a decentralized voting experience.`,
+        technologies: [
+            'Solidity',
+            'Hardhat',
+            'Ethers.js',
+            'React.js',
+            'Vite',
+            'Tailwind CSS',
+            'MetaMask',
+            'Sepolia Testnet',
+            'Blockchain'
+        ],
+        features: [
+            'Poll Creation by Anyone: Any user can create new polls.',
+            'Anonymous Voting: Votes are recorded per wallet address, but option preferences remain anonymous.',
+            'Vote Verification: Each address can only vote once per poll.',
+            'Visual Result Display: Voting results are displayed in percentages for each option.',
+            'Universal Result Access: Poll results are viewable by everyone after the poll ends.',
+            'MetaMask Integration: Easy wallet connectivity for blockchain interaction.',
+            'Blockchain Transparency: All vote transactions are recorded on the Sepolia Testnet.'
+        ],
+        challenges: [
+            'Ensuring the security and immutability of the voting smart contract.',
+            'Managing real-time state synchronization between the blockchain and the frontend.',
+            'Optimizing gas costs for smart contract operations.',
+            'Developing an intuitive UI/UX for complex blockchain interactions.'
+        ],
+        learnings: [
+            'In-depth understanding of the smart contract development lifecycle with Hardhat.',
+            'Mastering Ethers.js integration with React applications for DApp interaction.',
+            'Implementing best practices for smart contract security and gas cost management.',
+            'Experience building a fully decentralized full-stack application.',
+            'Improved skills in debugging and troubleshooting blockchain issues.'
+        ],
+        gallery: [
+            { url: '/public/vote1.png', caption: 'DApp Main View', description: 'Homepage of the voting system.' },
+            { url: '/public/vote2.png', caption: 'Voting Details and Options', description: 'Poll details and available options.' },
+            { url: '/public/vote3.png', caption: 'Poll Creation Form', description: 'Interface for creating a new poll.' },
+            { url: '/public/vote4.png', caption: 'MetaMask Transaction Confirmation', description: 'MetaMask pop-up for transaction confirmation.' },
+            { url: '/public/vote5.png', caption: 'Poll Results Display (Bar Chart)', description: 'Visual representation of voting results after the poll ends.' },
+            { url: '/public/vote6.png', caption: 'Poll Results Display (Percentages)', description: 'Voting results with percentages for each option.' },
+            { url: '/public/vote7.png', caption: 'User Voting Status', description: 'Indication of whether the user has voted.' },
+            { url: '/public/vote8.png', caption: 'Error/Success Messages', description: 'Notifications to the user about operation status.' },
+            { url: '/public/vote9.png', caption: 'Responsive Design (Mobile)', description: 'DApp interface optimized for mobile devices.' }
+        ]
+    },
+    {
+        id: 'ai-age-prediction-paper',
+        name: 'Evaluating Gradient Boosting and Deep Tabular Models for Life Expectancy Prediction',
+        imageUrl: '/public/age1.png',
+        thumbnailUrl: '/public/age1.png',
+        paperDownloadLink: 'Evaluating Gradient Boosting and Deep Tabular Models for Life Expectancy Prediction.pdf', // Link to your uploaded PDF
+        shortDetails: [
+            'Academic paper comparing XGBoost, CatBoost, and TabNet for age prediction.',
+            'Explores performance, interpretability, and feature importance of different models.',
+            'Contributes to the field of AI for demographic analysis.'
+        ],
+        fullDescription: `This academic paper presents a comparative analysis of three prominent machine learning models—XGBoost, CatBoost, and TabNet—for the task of age prediction. The research investigates the strengths and weaknesses of each model in terms of predictive accuracy, training efficiency, and interpretability when applied to demographic data. Through extensive experimentation and evaluation, the paper provides insights into which models perform optimally under various conditions, highlighting their unique advantages in handling tabular data for complex prediction tasks like age estimation. This study aims to contribute valuable knowledge to the AI community, particularly in the domain of explainable AI and robust model selection for real-world applications.`,
+        technologies: [
+            'Python',
+            'Machine Learning',
+            'XGBoost',
+            'CatBoost',
+            'TabNet',
+            'Data Analysis',
+            'Predictive Modeling',
+            'Feature Engineering',
+            'Model Evaluation',
+            'Academic Research'
+        ],
+        features: [
+            'Comparative analysis of state-of-the-art tree-based and neural network models.',
+            'Detailed performance metrics (e.g., MAE, RMSE) for age prediction.',
+            'Analysis of model interpretability and feature importance for each algorithm.',
+            'Identification of optimal model configurations for age prediction tasks.',
+            'Contribution to understanding AI applications in demographic data analysis.'
+        ],
+        challenges: [
+            'Handling diverse and potentially noisy demographic datasets for robust training.',
+            'Optimizing hyperparameters for each model to achieve peak performance.',
+            'Ensuring fairness and mitigating bias in age prediction models.',
+            'Interpreting complex model decisions (especially for TabNet) for practical insights.',
+            'Comparative visualization of diverse model outputs for clear analysis.'
+        ],
+        learnings: [
+            'Deepened understanding of ensemble methods (XGBoost, CatBoost) and neural networks (TabNet).',
+            'Proficiency in advanced data preprocessing and feature engineering techniques.',
+            'Developed skills in rigorous experimental design and statistical analysis for academic papers.',
+            'Gained insights into the practical considerations and ethical implications of AI in sensitive domains like age prediction.',
+            'Improved academic writing and research presentation skills.'
+        ],
+        gallery: [
+            { url: '/public/age2.png', caption: 'Feature Importance - XGBoost', description: 'Visualization of key features influencing XGBoost age predictions.' },
+            { url: '/public/age3.png', caption: 'Feature Importance - CatBoost', description: 'Visualization of key features influencing CatBoost age predictions.' },
+            { url: '/public/age4.png', caption: 'TabNet Attentive Transformer Output', description: 'Illustrating TabNet\'s attention mechanism on input features.' },
+            { url: '/public/age5.png', caption: 'Prediction Distribution vs. Actual Age', description: 'Scatter plot or histogram comparing predicted age distribution with actual age distribution.' },
+            { url: '/public/age6.png', caption: 'Training Loss Over Epochs (TabNet)', description: 'Graph showing the training and validation loss progression for TabNet.' },
+            { url: '/public/age7.png', caption: 'Model Training Time Comparison', description: 'Bar chart comparing the training duration for each of the three models.' },
+            { url: '/public/age8.png', caption: 'Age Prediction Error Analysis', description: 'Analysis of prediction errors across different age groups.' },
+            { url: '/public/age9.png', caption: 'Overall Model Architecture', description: 'High-level diagram of the AI age prediction system architecture.' }
+        ]
+    }
 ];
 
 export default allProjectsData;

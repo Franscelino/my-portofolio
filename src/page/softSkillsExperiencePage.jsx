@@ -15,7 +15,7 @@ import {
     Code,
     Briefcase,
     Link as LinkIcon,
-    Mic 
+    Mic
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import softSkillsExperiences from '../data/softSkillsExperienceData';
@@ -36,8 +36,12 @@ const SoftSkillsExperiencePage = () => {
         TrendingUp: TrendingUp,
         Code: Code,
         Briefcase: Briefcase,
-        Mic: Mic, // Added Mic here
+        Mic: Mic,
     };
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     useEffect(() => {
         console.log("Soft Skills Experiences Data:", softSkillsExperiences);
@@ -96,7 +100,6 @@ const SoftSkillsExperiencePage = () => {
                         src={image.url}
                         alt={image.caption}
                         className="w-full h-full object-contain rounded-lg"
-                        // Fallback image in case of error
                         onError={(e) => {
                             e.target.onerror = null;
                             e.target.src = "https://placehold.co/600x400/CCCCCC/333333?text=Image+Not+Found";
@@ -119,10 +122,8 @@ const SoftSkillsExperiencePage = () => {
 
     return (
         <>
-            {/* Navbar will be rendered with hideNavItems={true} prop */}
             <Navbar hideNavItems={true} />
             <section id="soft-skills-experience-detail" className="py-32 bg-black relative overflow-hidden min-h-screen section-padding">
-                {/* Advanced Background Elements */}
                 <div className="animated-bg-elements">
                     <div className="absolute inset-0 opacity-30">
                         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-900/20 via-transparent to-orange-900/20 animate-pulse"></div>
@@ -159,7 +160,6 @@ const SoftSkillsExperiencePage = () => {
 
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="max-w-7xl mx-auto">
-                        {/* Navigation Header */}
                         <div className="flex items-center justify-between mb-12">
                             <button
                                 onClick={handleGoBack}
@@ -177,7 +177,6 @@ const SoftSkillsExperiencePage = () => {
                             </div>
                         </div>
 
-                        {/* Main Title */}
                         <div className="text-center mb-20">
                             <h1 className="text-5xl md:text-6xl font-black text-white mb-6">
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400">Soft Skill</span> Experiences
@@ -188,7 +187,6 @@ const SoftSkillsExperiencePage = () => {
                             <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-orange-500 mx-auto rounded-full mt-4"></div>
                         </div>
 
-                        {/* Experience Cards Grid */}
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                             {sortedExperiences.map((exp, index) => {
                                 const IconComponent = iconComponents[exp.icon];
@@ -198,14 +196,11 @@ const SoftSkillsExperiencePage = () => {
                                     className={`experience-card bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 relative overflow-hidden transform opacity-0 translate-y-10 transition-all duration-700 ease-out ${visibleItems.has(index) ? 'opacity-100 translate-y-0' : ''}`}
                                     style={{ transitionDelay: `${index * 100}ms` }}
                                 >
-                                    {/* Card glow effect */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
 
                                     <div className="relative z-10">
-                                        {/* Icon and Title */}
                                         <div className="flex items-center mb-6">
                                             <div className="text-5xl mr-4 flex-shrink-0 text-white">
-                                                {/* Render icon if found */}
                                                 {IconComponent && <IconComponent className="w-12 h-12" />}
                                             </div>
                                             <div className="flex-1">
@@ -220,29 +215,26 @@ const SoftSkillsExperiencePage = () => {
                                             </div>
                                         </div>
 
-                                        {/* Overview */}
                                         <p className="text-gray-300 leading-relaxed mb-6">
                                             {exp.overview}
                                         </p>
 
-                                        {/* Photos Section */}
                                         {exp.photos && exp.photos.length > 0 && (
                                             <div className="mb-6">
                                                 <h4 className="text-xl font-semibold text-white mb-3 flex items-center">
                                                     <Camera className="w-5 h-5 mr-2 text-cyan-400" /> Gallery
                                                 </h4>
-                                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"> {/* Dynamic grid for photos */}
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                                                     {exp.photos.map((photo, i) => (
                                                         <div
                                                             key={i}
-                                                            className="relative group cursor-pointer rounded-lg overflow-hidden border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 aspect-video" // Added aspect-video for consistent sizing
+                                                            className="relative group cursor-pointer rounded-lg overflow-hidden border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 aspect-video"
                                                             onClick={() => setSelectedImage(photo)}
                                                         >
                                                             <img
                                                                 src={photo.url}
                                                                 alt={photo.caption}
                                                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                                                // Fallback image in case of error
                                                                 onError={(e) => {
                                                                     e.target.onerror = null;
                                                                     e.target.src = "https://placehold.co/600x400/CCCCCC/333333?text=Image+Not+Found";
@@ -260,7 +252,6 @@ const SoftSkillsExperiencePage = () => {
                                             </div>
                                         )}
 
-                                        {/* Key Achievements */}
                                         <div className="mb-6">
                                             <h4 className="text-xl font-semibold text-white mb-3 flex items-center">
                                                 <Award className="w-5 h-5 mr-2 text-purple-400" /> Key Achievements
@@ -275,7 +266,6 @@ const SoftSkillsExperiencePage = () => {
                                             </ul>
                                         </div>
 
-                                        {/* Skills */}
                                         <div className="mb-6">
                                             <h4 className="text-xl font-semibold text-white mb-3 flex items-center">
                                                 <Code className="w-5 h-5 mr-2 text-orange-400" /> Skills Used
@@ -289,7 +279,6 @@ const SoftSkillsExperiencePage = () => {
                                             </div>
                                         </div>
 
-                                        {/* Impact */}
                                         <div className="mb-6">
                                             <h4 className="text-xl font-semibold text-white mb-3 flex items-center">
                                                 <TrendingUp className="w-5 h-5 mr-2 text-green-400" /> Impact
@@ -297,7 +286,6 @@ const SoftSkillsExperiencePage = () => {
                                             <p className="text-gray-300 leading-relaxed">{exp.impact}</p>
                                         </div>
 
-                                        {/* Lessons Learned */}
                                         <div className="mb-0">
                                             <h4 className="text-xl font-semibold text-white mb-3 flex items-center">
                                                 <Lightbulb className="w-5 h-5 mr-2 text-yellow-400" /> Lessons Learned
@@ -319,7 +307,6 @@ const SoftSkillsExperiencePage = () => {
                     </div>
                 </div>
 
-                {/* Image Modal */}
                 <ImageModal image={selectedImage} onClose={() => setSelectedImage(null)} />
             </section>
         </>

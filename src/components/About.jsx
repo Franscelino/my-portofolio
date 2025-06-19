@@ -17,7 +17,6 @@ const About = () => {
   ];
 
   const interests = [
-    // Changed "Web Development" to "Blockchain Development"
     { icon: <Code2 className="w-6 h-6" />, title: 'Blockchain Development', desc: 'Deep understanding of decentralized applications and smart contracts' },
     { icon: <Lightbulb className="w-6 h-6" />, title: 'AI & Machine Learning', desc: 'Exploring intelligent solutions and automation' },
     { icon: <Users className="w-6 h-6" />, title: 'Team Collaboration', desc: 'Working together to achieve common goals' },
@@ -27,15 +26,15 @@ const About = () => {
   const tabContent = {
     journey: {
       title: "My Journey",
-      content: "gatau"
+      content: "My venture into technology sparked from innate curiosity. From computer science fundamentals, I gravitated towards the disruptive potential of blockchain and the intelligence of AI. Each project and new skill acquired refined my passion, transforming intricate concepts into functional innovations."
     },
     philosophy: {
       title: "My Philosophy",
-      content: "gatau juga"
+      content: "I see myself as a work in progress, constantly striving to become a better version of who I was yesterday. Whether it's learning a new tech stack, organizing an event, or simplifying complex ideas into action, growth never stops.\n\n“We are what we repeatedly do. Excellence, then, is not an act, but a habit.”\n— Aristotle"
     },
     goals: {
       title: "My Goals",
-      content: "sukses"
+      content: "I aspire to forge meaningful advancements in blockchain and AI, crafting solutions that are both technically robust and intuitively impactful. My objective is to collaborate with visionary teams, continuously expanding my expertise to contribute to pioneering endeavors. Ultimately, I aim to simplify complexity and cultivate lasting value in the digital sphere."
     }
   };
 
@@ -75,14 +74,14 @@ const About = () => {
               <div className="relative flex justify-center items-center mb-8">
                 <div className="relative p-3 bg-gradient-to-br from-purple-600/30 via-pink-600/30 to-orange-600/30 rounded-3xl backdrop-blur-sm border border-gray-700/50 shadow-2xl transition-all duration-500 group-hover:scale-105">
                   <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden border-2 border-gray-800 group-hover:border-purple-400 transition-all duration-500">
-                    <img 
+                    <img
                       src="/profile.jpg"
-                      alt="Profile" 
+                      alt="Profile"
                       className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
-                  
+
                   {/* Floating Elements */}
                   <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200 animate-bounce">
                     <Code2 className="w-6 h-6 text-white" />
@@ -115,7 +114,7 @@ const About = () => {
                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
                   Passionate <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400">Technology</span> Student
                 </h3>
-                
+
                 {/* Tab Navigation */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {Object.keys(tabContent).map((tab) => (
@@ -123,8 +122,8 @@ const About = () => {
                       key={tab}
                       onClick={() => setActiveTab(tab)}
                       className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                        activeTab === tab 
-                          ? 'bg-gradient-to-r from-purple-500 to-orange-500 text-white' 
+                        activeTab === tab
+                          ? 'bg-gradient-to-r from-purple-500 to-orange-500 text-white'
                           : 'bg-gray-800/50 text-gray-400 hover:text-white hover:bg-gray-700/50'
                       }`}
                     >
@@ -155,7 +154,7 @@ const About = () => {
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
               What I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400">Passionate</span> About
             </h3>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {interests.map((interest, index) => (
                 <div key={index} className="group bg-gray-900/40 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105">
