@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = ({ hideNavItems = false }) => {
+    // ... (kode useEffect, toggleMenu, handleNavigate tidak berubah) ...
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const navigate = useNavigate();
@@ -22,12 +23,10 @@ const Navbar = ({ hideNavItems = false }) => {
     
     const handleNavigate = (path, e) => {
         e.preventDefault();
-        const sectionId = path.substring(2); // Menghapus '/#'
+        const sectionId = path.substring(2);
 
         if (location.pathname !== '/') {
-            // Jika kita tidak di halaman utama, navigasi dulu ke sana
             navigate('/');
-            // Beri sedikit waktu agar halaman utama termuat sebelum scroll
             setTimeout(() => {
                 const targetElement = document.getElementById(sectionId);
                 if (targetElement) {
@@ -35,7 +34,6 @@ const Navbar = ({ hideNavItems = false }) => {
                 }
             }, 100);
         } else {
-            // Jika sudah di halaman utama, langsung scroll
             const targetElement = document.getElementById(sectionId);
             if (targetElement) {
                 targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -44,13 +42,13 @@ const Navbar = ({ hideNavItems = false }) => {
         setIsOpen(false);
     };
 
+
     return (
         <>
             <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
                 scrolled ? 'bg-black/80 backdrop-blur-xl shadow-2xl' : 'bg-transparent backdrop-blur-sm'
             }`}>
                 <div className="container mx-auto flex justify-between items-center py-4 px-6">
-
                     {/* Logo */}
                     <div className="relative group">
                         <Link to="/" onClick={(e) => handleNavigate('/#', e)} className="flex items-center">
@@ -70,24 +68,23 @@ const Navbar = ({ hideNavItems = false }) => {
                             <Link to="/#about" onClick={(e) => handleNavigate('/#about', e)} className="nav-link">About</Link>
                             <Link to="/#experience" onClick={(e) => handleNavigate('/#experience', e)} className="nav-link">Experience</Link>
                             <Link to="/#projects" onClick={(e) => handleNavigate('/#projects', e)} className="nav-link">Projects</Link>
-                            
-                            {/* === PERUBAHAN DI SINI === */}
                             <Link to="/#certifications" onClick={(e) => handleNavigate('/#certifications', e)} className="nav-link">Certifications</Link>
                         </div>
                     )}
 
-                    {/* Contact Button Desktop */}
+                    {/* === PERUBAHAN DI SINI: Tombol Contact diganti Download CV === */}
                     {!hideNavItems && (
                         <div className="hidden md:block">
                             <div className="relative group">
                                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-orange-500 rounded-xl blur-lg opacity-70 group-hover:opacity-100 transition-all duration-300"></div>
-                                <Link
-                                    to="/#contact"
-                                    onClick={(e) => handleNavigate('/#contact', e)}
+                                {/* Ganti <Link> dengan <a>, tambahkan href dan download */}
+                                <a
+                                    href="/Franscelino_Melvyn_CV.pdf"
+                                    download="Franscelino_Melvyn_CV.pdf"
                                     className="relative block px-6 py-2 bg-gradient-to-r from-purple-500 to-orange-500 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95"
                                 >
-                                    Contact
-                                </Link>
+                                    Download CV
+                                </a>
                             </div>
                         </div>
                     )}
@@ -95,7 +92,7 @@ const Navbar = ({ hideNavItems = false }) => {
                     {/* Mobile Menu Button */}
                     <div className="md:hidden">
                         <button onClick={toggleMenu} className="relative p-2 text-white/80 hover:text-white transition-colors duration-300">
-                            <div className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
+                           <div className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
                                 {isOpen ? <X size={28} /> : <Menu size={28} />}
                             </div>
                         </button>
@@ -108,16 +105,14 @@ const Navbar = ({ hideNavItems = false }) => {
                         <Link to="/#about" className="text-white text-3xl" onClick={(e) => handleNavigate('/#about', e)}>About</Link>
                         <Link to="/#experience" className="text-white text-3xl" onClick={(e) => handleNavigate('/#experience', e)}>Experience</Link>
                         <Link to="/#projects" className="text-white text-3xl" onClick={(e) => handleNavigate('/#projects', e)}>Projects</Link>
-                        
-                        {/* === PERUBAHAN DI SINI UNTUK MOBILE === */}
                         <Link to="/#certifications" className="text-white text-3xl" onClick={(e) => handleNavigate('/#certifications', e)}>Certifications</Link>
-                        
-                        <Link to="/#contact" className="text-white text-3xl" onClick={(e) => handleNavigate('/#contact', e)}>Contact</Link>
+                        {/* Ganti Contact di Mobile Menu juga */}
+                        <a href="/Franscelino_Melvyn_CV.pdf" download="Franscelino_Melvyn_CV.pdf" className="text-white text-3xl hover:text-purple-400 transition-colors duration-300">Download CV</a>
                     </div>
                 )}
             </nav>
 
-            {/* Menambahkan Style untuk Nav Link agar lebih rapi */}
+            {/* ... (kode style tidak berubah) ... */}
             <style jsx>{`
                 .nav-link {
                     position: relative;
