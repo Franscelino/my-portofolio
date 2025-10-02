@@ -131,7 +131,7 @@ const Experience = () => {
               <div className="text-xs sm:text-sm text-gray-400">Organizations/Bootcamps</div>
             </div>
             <div className="text-center p-4 sm:p-6 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl hover:border-blue-500/50 transition-all duration-300"> {/* Adjusted padding */}
-              <div className="text-2xl sm:text-3xl font-bold text-blue-400 mb-2">100%</div> {/* Adjusted font size */}
+              <div className="text-2xl sm:text-3xl font-bold text-blue-400 mb-2">99,9%</div> {/* Adjusted font size */}
               <div className="text-xs sm:text-sm text-gray-400">Passion & Dedication</div>
             </div>
           </div>

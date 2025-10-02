@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = ({ hideNavItems = false }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,18 +19,28 @@ const Navbar = ({ hideNavItems = false }) => {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+    
+    const handleNavigate = (path, e) => {
+        e.preventDefault();
+        const sectionId = path.substring(2); // Menghapus '/#'
 
-    const scrollToSection = (sectionId, e) => {
-        if (e) e.preventDefault();
-
-        navigate(`/#${sectionId}`);
-        setTimeout(() => {
+        if (location.pathname !== '/') {
+            // Jika kita tidak di halaman utama, navigasi dulu ke sana
+            navigate('/');
+            // Beri sedikit waktu agar halaman utama termuat sebelum scroll
+            setTimeout(() => {
+                const targetElement = document.getElementById(sectionId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
+        } else {
+            // Jika sudah di halaman utama, langsung scroll
             const targetElement = document.getElementById(sectionId);
             if (targetElement) {
                 targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
-        }, 100);
-
+        }
         setIsOpen(false);
     };
 
@@ -42,7 +53,7 @@ const Navbar = ({ hideNavItems = false }) => {
 
                     {/* Logo */}
                     <div className="relative group">
-                        <Link to="/" onClick={(e) => scrollToSection('', e)} className="flex items-center">
+                        <Link to="/" onClick={(e) => handleNavigate('/#', e)} className="flex items-center">
                             <div className="relative">
                                 <img
                                     src="/Logo.svg"
@@ -56,22 +67,12 @@ const Navbar = ({ hideNavItems = false }) => {
                     {/* Desktop Navigation */}
                     {!hideNavItems && (
                         <div className="hidden md:flex items-center space-x-8 lg:space-x-12">
-                            <Link to="/#about" onClick={(e) => scrollToSection('about', e)} className="relative text-white/90 font-medium text-base tracking-wide uppercase transition-all duration-300 hover:text-white group">
-                                About
-                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
-                            </Link>
-                            <Link to="/#skills" onClick={(e) => scrollToSection('skills', e)} className="relative text-white/90 font-medium text-base tracking-wide uppercase transition-all duration-300 hover:text-white group">
-                                Skills
-                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
-                            </Link>
-                            <Link to="/#experience" onClick={(e) => scrollToSection('experience', e)} className="relative text-white/90 font-medium text-base tracking-wide uppercase transition-all duration-300 hover:text-white group">
-                                Experience
-                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
-                            </Link>
-                            <Link to="/#projects" onClick={(e) => scrollToSection('projects', e)} className="relative text-white/90 font-medium text-base tracking-wide uppercase transition-all duration-300 hover:text-white group">
-                                Projects
-                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
-                            </Link>
+                            <Link to="/#about" onClick={(e) => handleNavigate('/#about', e)} className="nav-link">About</Link>
+                            <Link to="/#experience" onClick={(e) => handleNavigate('/#experience', e)} className="nav-link">Experience</Link>
+                            <Link to="/#projects" onClick={(e) => handleNavigate('/#projects', e)} className="nav-link">Projects</Link>
+                            
+                            {/* === PERUBAHAN DI SINI === */}
+                            <Link to="/#certifications" onClick={(e) => handleNavigate('/#certifications', e)} className="nav-link">Certifications</Link>
                         </div>
                     )}
 
@@ -82,11 +83,10 @@ const Navbar = ({ hideNavItems = false }) => {
                                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-orange-500 rounded-xl blur-lg opacity-70 group-hover:opacity-100 transition-all duration-300"></div>
                                 <Link
                                     to="/#contact"
-                                    onClick={(e) => scrollToSection('contact', e)}
+                                    onClick={(e) => handleNavigate('/#contact', e)}
                                     className="relative block px-6 py-2 bg-gradient-to-r from-purple-500 to-orange-500 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95"
                                 >
                                     Contact
-                                    <div className="absolute inset-0 bg-white rounded-xl opacity-0 transition-all duration-150 group-active:opacity-20"></div>
                                 </Link>
                             </div>
                         </div>
@@ -94,16 +94,9 @@ const Navbar = ({ hideNavItems = false }) => {
 
                     {/* Mobile Menu Button */}
                     <div className="md:hidden">
-                        <button
-                            onClick={toggleMenu}
-                            className="relative p-2 text-white/80 hover:text-white transition-colors duration-300"
-                        >
+                        <button onClick={toggleMenu} className="relative p-2 text-white/80 hover:text-white transition-colors duration-300">
                             <div className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
-                                {isOpen ? (
-                                    <X size={28} />
-                                ) : (
-                                    <Menu size={28} />
-                                )}
+                                {isOpen ? <X size={28} /> : <Menu size={28} />}
                             </div>
                         </button>
                     </div>
@@ -112,14 +105,48 @@ const Navbar = ({ hideNavItems = false }) => {
                 {/* Mobile Menu Overlay */}
                 {isOpen && !hideNavItems && (
                     <div className="md:hidden fixed inset-0 bg-black/90 z-40 flex flex-col items-center justify-center space-y-8 animate-fade-in pt-20">
-                        <Link to="/#about" className="text-white text-3xl hover:text-purple-400 transition-colors duration-300" onClick={(e) => scrollToSection('about', e)}>About</Link>
-                        <Link to="/#skills" className="text-white text-3xl hover:text-purple-400 transition-colors duration-300" onClick={(e) => scrollToSection('skills', e)}>Skills</Link>
-                        <Link to="/#experience" className="text-white text-3xl hover:text-purple-400 transition-colors duration-300" onClick={(e) => scrollToSection('experience', e)}>Experience</Link>
-                        <Link to="/#projects" className="text-white text-3xl hover:text-purple-400 transition-colors duration-300" onClick={(e) => scrollToSection('projects', e)}>Projects</Link>
-                        <Link to="/#contact" className="text-white text-3xl hover:text-purple-400 transition-colors duration-300" onClick={(e) => scrollToSection('contact', e)}>Contact</Link>
+                        <Link to="/#about" className="text-white text-3xl" onClick={(e) => handleNavigate('/#about', e)}>About</Link>
+                        <Link to="/#experience" className="text-white text-3xl" onClick={(e) => handleNavigate('/#experience', e)}>Experience</Link>
+                        <Link to="/#projects" className="text-white text-3xl" onClick={(e) => handleNavigate('/#projects', e)}>Projects</Link>
+                        
+                        {/* === PERUBAHAN DI SINI UNTUK MOBILE === */}
+                        <Link to="/#certifications" className="text-white text-3xl" onClick={(e) => handleNavigate('/#certifications', e)}>Certifications</Link>
+                        
+                        <Link to="/#contact" className="text-white text-3xl" onClick={(e) => handleNavigate('/#contact', e)}>Contact</Link>
                     </div>
                 )}
             </nav>
+
+            {/* Menambahkan Style untuk Nav Link agar lebih rapi */}
+            <style jsx>{`
+                .nav-link {
+                    position: relative;
+                    color: rgba(255, 255, 255, 0.9);
+                    font-weight: 500;
+                    font-size: 1rem;
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+                    transition: all 0.3s;
+                }
+                .nav-link:hover {
+                    color: white;
+                }
+                .nav-link::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -4px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: linear-gradient(to right, #a855f7, #f97316);
+                    transform: scaleX(0);
+                    transform-origin: center;
+                    transition: transform 0.3s ease-out;
+                }
+                .nav-link:hover::after {
+                    transform: scaleX(1);
+                }
+            `}</style>
         </>
     );
 };

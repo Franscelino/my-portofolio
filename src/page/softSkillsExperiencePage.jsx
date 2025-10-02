@@ -277,7 +277,7 @@ const SoftSkillsExperiencePage = () => {
                                                         <span className="w-1.5 h-1.5 sm:w-2 bg-gradient-to-r from-orange-400 to-red-400 rounded-full flex-shrink-0 mt-1.5 sm:mt-2 mr-2 sm:mr-3"></span>
                                                         <span className="text-sm sm:text-base">{item}</span>
                                                     </li>
-                                                ))}
+                                                ))} 
                                             </ul>
                                         </div>
                                     </div>

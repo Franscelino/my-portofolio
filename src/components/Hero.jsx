@@ -29,26 +29,6 @@ const Hero = () => {
             top: mousePosition.y / 15,
           }}
         />
-        {/* Other blobs - disesuaikan ukurannya agar tidak terlalu memenuhi layar mobile */}
-        <div className="blob-effect top-10 left-5 w-48 h-48 sm:w-64 sm:h-64 bg-gradient-to-r from-purple-500/5 to-blue-500/5 animate-pulse"></div>
-        <div className="blob-effect bottom-10 right-5 w-56 h-56 sm:w-80 sm:h-80 bg-gradient-to-r from-orange-500/5 to-red-500/5 animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="blob-effect top-1/2 left-1/2 w-48 h-48 sm:w-64 sm:h-64 bg-gradient-to-r from-cyan-500/3 to-purple-500/3 animate-pulse" style={{animationDelay: '2s'}}></div>
-      </div>
-
-      {/* Enhanced Floating Elements - Menggunakan kelas global untuk konsistensi */}
-      <div className="animated-bg-elements">
-        {[...Array(15)].map((_, i) => (
-          <div
-            key={i}
-            className="particle-effect animate-float-particle"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${4 + Math.random() * 4}s`,
-            }}
-          ></div>
-        ))}
       </div>
 
       {/* Geometric Shapes - Menggunakan kelas global untuk konsistensi */}

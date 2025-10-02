@@ -14,45 +14,37 @@ const About = () => {
   }, []);
 
   const stats = [
-    { number: '3+', label: 'Years Learning', icon: <BookOpen className="w-5 h-5" /> },
-    { number: '15+', label: 'Projects Built', icon: <Code2 className="w-5 h-5" /> },
+    { number: '2+', label: 'Years Learning', icon: <BookOpen className="w-5 h-5" /> },
+    { number: '8+', label: 'Projects Built', icon: <Code2 className="w-5 h-5" /> },
     { number: '5+', label: 'Technologies', icon: <Lightbulb className="w-5 h-5" /> },
-    { number: '100%', label: 'Passion', icon: <Heart className="w-5 h-5" /> }
+    { number: '99,9%', label: 'Passion', icon: <Heart className="w-5 h-5" /> }
   ];
 
   const interests = [
     { icon: <Code2 className="w-6 h-6" />, title: 'Blockchain Development', desc: 'Deep understanding of decentralized applications and smart contracts' },
     { icon: <Lightbulb className="w-6 h-6" />, title: 'AI & Machine Learning', desc: 'Exploring intelligent solutions and automation' },
-    { icon: <Users className="w-6 h-6" />, title: 'Team Collaboration', desc: 'Working together to achieve common goals' },
-    { icon: <Coffee className="w-6 h-6" />, title: 'Continuous Learning', desc: 'Always eager to discover new technologies' }
+    { icon: <Users className="w-6 h-6" />, title: 'Data Engineering', desc: 'Managing pipelines, databases, and streaming data for analytics' },
+    { icon: <Coffee className="w-6 h-6" />, title: 'Software Development', desc: 'Creating reliable applications with clean and efficient code' }
   ];
 
   const tabContent = {
     journey: {
       title: "My Journey",
-      content: "My venture into technology sparked from innate curiosity. From computer science fundamentals, I gravitated towards the disruptive potential of blockchain and the intelligence of AI. Each project and new skill acquired refined my passion, transforming intricate concepts into functional innovations."
+      content: "I began with computer science fundamentals and grew into blockchain and AI. Every project sharpened my skills and turned ideas into real solutions."
     },
     philosophy: {
       title: "My Philosophy",
-      content: "I see myself as a work in progress, constantly striving to become a better version of who I was yesterday. Whether it's learning a new tech stack, organizing an event, or simplifying complex ideas into action, growth never stops.\n\n“We are what we repeatedly do. Excellence, then, is not an act, but a habit.”\n— Aristotle"
+      content: "Growth never stops earning, building, and improving each day. “Excellence is a habit.”  ~Aristotle Aristotle"
     },
     goals: {
       title: "My Goals",
-      content: "I aspire to forge meaningful advancements in blockchain and AI, crafting solutions that are both technically robust and intuitively impactful. My objective is to collaborate with visionary teams, continuously expanding my expertise to contribute to pioneering endeavors. Ultimately, I aim to simplify complexity and cultivate lasting value in the digital sphere."
+      content: "I want to create impactful solutions in blockchain and AI, working with teams that drive innovation while keeping technology simple and valuable."
     }
   };
 
   return (
     <section id="about" className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
-        <div className="absolute top-20 right-20 w-64 h-64 border border-purple-500/10 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 border border-orange-500/10 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-purple-400 rounded-full animate-bounce opacity-30"></div>
-        <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-orange-400 rounded-full animate-bounce opacity-30" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-3/4 left-1/3 w-3 h-3 bg-pink-400 rounded-full animate-pulse opacity-20"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-cyan-400 rounded-full animate-pulse opacity-20" style={{animationDelay: '2s'}}></div>
-      </div>
+      
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
@@ -72,13 +64,13 @@ const About = () => {
             <div className={`relative group transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               <div className="relative flex justify-center items-center mb-8">
                 <div className="relative p-3 bg-gradient-to-br from-purple-600/30 via-pink-600/30 to-orange-600/30 rounded-3xl backdrop-blur-sm border border-gray-700/50 shadow-2xl transition-all duration-500 group-hover:scale-105">
-                  <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden border-2 border-gray-800 group-hover:border-purple-400 transition-all duration-500">
+                  <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden border-2 border-gray-800">
                     <img
                       src="/profile.jpg"
                       alt="Profile"
-                      className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover object-center transform transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-orange-500/20 opacity-0"></div>
                   </div>
 
                   <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200 animate-bounce">
