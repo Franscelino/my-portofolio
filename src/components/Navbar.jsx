@@ -79,8 +79,8 @@ const Navbar = ({ hideNavItems = false }) => {
                                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-orange-500 rounded-xl blur-lg opacity-70 group-hover:opacity-100 transition-all duration-300"></div>
                                 {/* Ganti <Link> dengan <a>, tambahkan href dan download */}
                                 <a
-                                    href="/Franscelino_Melvyn_CV.pdf"
-                                    download="Franscelino_Melvyn_CV.pdf"
+                                    href="/CV_Melvyn.pdf"
+                                    download="CV_Melvyn.pdf"
                                     className="relative block px-6 py-2 bg-gradient-to-r from-purple-500 to-orange-500 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95"
                                 >
                                     Download CV
@@ -92,7 +92,7 @@ const Navbar = ({ hideNavItems = false }) => {
                     {/* Mobile Menu Button */}
                     <div className="md:hidden">
                         <button onClick={toggleMenu} className="relative p-2 text-white/80 hover:text-white transition-colors duration-300">
-                           <div className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
+                            <div className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
                                 {isOpen ? <X size={28} /> : <Menu size={28} />}
                             </div>
                         </button>
@@ -107,7 +107,7 @@ const Navbar = ({ hideNavItems = false }) => {
                         <Link to="/#projects" className="text-white text-3xl" onClick={(e) => handleNavigate('/#projects', e)}>Projects</Link>
                         <Link to="/#certifications" className="text-white text-3xl" onClick={(e) => handleNavigate('/#certifications', e)}>Certifications</Link>
                         {/* Ganti Contact di Mobile Menu juga */}
-                        <a href="/Franscelino_Melvyn_CV.pdf" download="Franscelino_Melvyn_CV.pdf" className="text-white text-3xl hover:text-purple-400 transition-colors duration-300">Download CV</a>
+                        <a href="/CV_Melvyn.pdf" download="CV_Melvyn.pdf" className="text-white text-3xl hover:text-purple-400 transition-colors duration-300">Download CV</a>
                     </div>
                 )}
             </nav>
