@@ -1,5 +1,47 @@
 // src/data/projectsData.js
 const allProjectsData = [
+    // --- ENTRI BARU DITAMBAHKAN DI SINI ---
+    {
+        id: 'temanusaha-ai-financing',
+        name: 'TemanUsaha - AI-Powered MSME Financing',
+        imageUrl: '/landingTemanUsaha.png', // Menggunakan gambar slide Anda
+        thumbnailUrl: '/landingTemanUsaha.png', // Menggunakan gambar slide Anda
+        repositoryLink: null, // Asumsi ini adalah proyek konseptual/arsitektur
+        liveDemoLink: null,
+        shortDetails: [
+            '2nd Place Winner at [Nama Lomba Anda] Competition.',
+            'AI-driven financing platform for unbanked Indonesian MSMEs (3T regions).',
+            'Features a "Triple AI Layer" for scoring, fraud detection, and analytics.',
+            'Implements a "Triple-Win" (65/30/5) profit-sharing model, avoiding fixed-interest loans.'
+        ],
+        fullDescription: `TemanUsaha is a 2nd Place winning business concept designed to solve Indonesia's massive MSME credit gap (74% unbanked). It functions as a "Growth Partner" rather than a traditional lender. The system leverages a "Triple AI Layer" to accurately underwrite MSMEs in 3T regions, who are traditionally invisible to banks. Instead of charging interest, the platform facilitates investment based on a sustainable, OJK-compliant "Triple-Win" (65/30/5) net profit-sharing model, which 100% aligns the incentives of the MSME, the Investor, and the Platform. The entire business model, AI architecture, and financial projections were architected for this competition.`,
+        technologies: ['AI Strategy', 'System Architecture', 'Business Model Design', 'Financial Projection', 'OJK Compliance', 'Pitching', 'BPD Partnership'],
+        features: [ // Menggunakan 'features' untuk menjelaskan 'Key Components'
+            'Triple AI Layer: 1) AI Credit Scoring, 2) AI Fraud Detection, 3) AI Business Analytics.',
+            'Triple-Win Model (65/30/5): 65% for MSME, 30% for Investor, 5% for TemanUsaha. All from Net Profit.',
+            'OJK-Compliant Architecture: Designed to use Partner Bank (BPD) APIs for segregated RDL (Lender Fund) accounts.',
+            'Hybrid Validation: Combines AI data with on-ground verification (RT/RW) to build investor trust.',
+            'Gamified Data Entry: Motivates MSMEs to provide consistent daily data, feeding the AI engine.'
+        ],
+        challenges: [
+            'Designing an AI scoring model for "thin-file" clients with no formal credit history.',
+            'Architecting a system compliant with complex OJK regulations (LPBBTI/Sandbox).',
+            'Balancing the profit-share model to be attractive to investors while sustainable for MSMEs.',
+        ],
+        learnings: [
+            'Gained deep expertise in AI-driven business model design and system architecture.',
+            'Acquired practical knowledge of OJK regulations for fintech and financial inclusion.',
+            'Mastered financial projection and risk analysis for a high-growth startup.',
+            'Developed a data acquisition strategy (gamification) for an AI-first product.'
+        ],
+        gallery: [
+            { url: '/landingTemanUsaha.png', caption: 'Landing Page', description: 'Landing Page for TemanUsaha.' },
+            { url: '/umkmDashboard.png', caption: 'MSME Dashboard', description: 'Dashboard for MSME users to track their financial health.' },
+            { url: '/aiLayer.png', caption: 'Triple-Win Business Model', description: 'Showcasing the AI dashboard, competitive map, and Triple AI Layer.' },
+            { url: '/investorDashboard.png', caption: 'Investor Dashboard', description: 'Dashboard for investors to monitor their portfolio and performance.' }
+        ]
+    },
+    // --- AKHIR DARI ENTRI BARU ---
     {
         id: 'nextpath-ai-career',
         name: 'Nextpath AI Career Finder',
@@ -332,7 +374,7 @@ const allProjectsData = [
             { url: '/age5.png', caption: 'Prediction Distribution vs. Actual Age', description: 'Scatter plot or histogram comparing predicted age distribution with actual age distribution.' }, 
             { url: '/age6.png', caption: 'Training Loss Over Epochs (TabNet)', description: 'Graph showing the training and validation loss progression for TabNet.' }, 
             { url: '/age7.png', caption: 'Model Training Time Comparison', description: 'Bar chart comparing the training duration for each of the three models.' }, 
-            { url: '/age8.png', caption: 'Age Prediction Error Analysis', description: 'Analysis of prediction errors across different age groups.' }, 
+            { url: 'age8.png', caption: 'Age Prediction Error Analysis', description: 'Analysis of prediction errors across different age groups.' }, 
             { url: '/age9.png', caption: 'Overall Model Architecture', description: 'High-level diagram of the AI age prediction system architecture.' } 
         ]
     }

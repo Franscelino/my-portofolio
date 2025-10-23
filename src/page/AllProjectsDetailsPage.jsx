@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import allProjectsData from '../data/projectsData';
-import { Code, ExternalLink, Play, Camera, Lightbulb, Zap, ArrowLeft, Heart, Star, TrendingUp, ArrowRight, Download } from 'lucide-react';
+// === GANTI 'Heart' DENGAN 'FileText' UNTUK OVERVIEW ===
+import { Code, ExternalLink, Play, Camera, Lightbulb, Zap, ArrowLeft, FileText, Star, TrendingUp, ArrowRight, Download } from 'lucide-react'; 
 import Navbar from '../components/Navbar';
 
 const AllProjectsDetailsPage = ({ isSummaryPage }) => {
@@ -51,6 +52,7 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
             <>
                 <Navbar hideNavItems={true} />
                 <section className="py-16 sm:py-24 bg-black relative overflow-hidden text-white section-padding">
+                    {/* ... (kode halaman summary tidak berubah) ... */}
                     <div className="animated-bg-elements">
                         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
                         <div className="blob-effect top-1/4 right-1/4 w-40 h-40 sm:w-48 sm:h-48 bg-orange-500/10 animate-pulse" style={{animationDelay: '0.5s'}}></div>
@@ -139,6 +141,7 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
             <>
                 <Navbar hideNavItems={true} />
                 <section className="py-16 sm:py-24 bg-black relative overflow-hidden text-white section-padding">
+                    {/* ... (kode animated bg) ... */}
                     <div className="animated-bg-elements">
                         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
                         <div className="blob-effect top-1/4 right-1/4 w-40 h-40 sm:w-48 sm:h-48 bg-orange-500/10 animate-pulse" style={{animationDelay: '0.5s'}}></div>
@@ -207,40 +210,30 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
                                     </a>
                                 )}
                             </div>
-
-                            {project.fullDetails && (
+                            
+                            {/* === PERBAIKAN BUG DIMULAI DI SINI === */}
+                            {/* Mengganti 'project.fullDetails' dengan 'project.fullDescription' */}
+                            {project.fullDescription && (
                                 <div className="mb-8 sm:mb-10">
                                     <h2 className="text-xl sm:text-3xl font-bold text-white mb-3 sm:mb-4 flex items-center">
-                                        <Heart className="w-5 h-5 sm:w-6 mr-2 sm:mr-3 text-red-400" /> Overview
+                                        <FileText className="w-5 h-5 sm:w-6 mr-2 sm:mr-3 text-purple-400" /> Overview
                                     </h2>
                                     <div className="text-sm sm:text-lg text-gray-300 leading-relaxed space-y-3 sm:space-y-4">
-                                        {Array.isArray(project.fullDetails) ? project.fullDetails.map((block, index) => {
-                                            if (block.type === 'paragraph') {
-                                                return <p key={index}>{block.content}</p>;
-                                            } else if (block.type === 'heading') {
-                                                return <h3 key={index} className="text-lg sm:text-2xl font-semibold text-white mt-4 sm:mt-6 mb-2 sm:mb-3">{block.content}</h3>;
-                                            } else if (block.type === 'image') {
-                                                return (
-                                                    <div key={index} className="my-4 sm:my-6">
-                                                        <img
-                                                            src={block.src}
-                                                            alt={block.alt}
-                                                            className="w-full rounded-lg border border-gray-700 shadow-md"
-                                                        />
-                                                        {block.caption && <p className="text-xs sm:text-sm text-center text-gray-400 mt-1 sm:mt-2">{block.caption}</p>}
-                                                    </div>
-                                                );
-                                            }
-                                            return null;
-                                        }) : <p>{project.fullDetails}</p>}
+                                        {/* Tampilkan 'fullDescription' sebagai paragraf. split('\n') untuk menghormati baris baru */}
+                                        {project.fullDescription.split('\n').map((paragraph, index) => (
+                                            <p key={index}>{paragraph}</p>
+                                        ))}
                                     </div>
                                 </div>
                             )}
+                            {/* === PERBAIKAN BUG SELESAI === */}
 
+                            {/* ... (sisa kode tidak berubah) ... */}
                             {project.features && project.features.length > 0 && (
                                 <div className="mb-8 sm:mb-10">
+                                    {/* Judul 'Key Findings' sudah pas untuk paper, tapi untuk TemanUsaha mungkin 'Key Components' */}
                                     <h2 className="text-xl sm:text-3xl font-bold text-white mb-3 sm:mb-4 flex items-center">
-                                        <Star className="w-5 h-5 sm:w-6 mr-2 sm:mr-3 text-yellow-400" /> Key Findings
+                                        <Star className="w-5 h-5 sm:w-6 mr-2 sm:mr-3 text-yellow-400" /> {project.id.includes('paper') ? 'Key Findings' : 'Key Features'}
                                     </h2>
                                     <ul className="list-none space-y-2 sm:space-y-3 text-gray-300">
                                         {project.features.map((feature, index) => (
@@ -302,8 +295,9 @@ const AllProjectsDetailsPage = ({ isSummaryPage }) => {
 
                             {project.gallery && project.gallery.length > 0 && (
                                 <div className="mb-8 sm:mb-10">
+                                    {/* Judul 'Key Figures' sudah pas untuk paper, tapi untuk TemanUsaha mungkin 'Pitch Deck Gallery' */}
                                     <h2 className="text-xl sm:text-3xl font-bold text-white mb-4 sm:mb-6 flex items-center">
-                                        <Camera className="w-5 h-5 sm:w-6 mr-2 sm:mr-3 text-blue-400" /> Key Figures
+                                        <Camera className="w-5 h-5 sm:w-6 mr-2 sm:mr-3 text-blue-400" /> {project.id.includes('paper') ? 'Key Figures' : 'Project Gallery'}
                                     </h2>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                                         {project.gallery.map((image, index) => (

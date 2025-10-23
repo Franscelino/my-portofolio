@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Calendar, Award, BookOpen, Code, Users, ExternalLink } from 'lucide-react';
+// === TAMBAHKAN IMPORT Database dan BarChart DI SINI ===
+import { ArrowLeft, Calendar, Award, BookOpen, Code, Users, ExternalLink, Database, BarChart } from 'lucide-react'; 
 import Navbar from '../components/Navbar';
 import certificationsData from '../data/certificationsData';
 
@@ -11,6 +12,9 @@ const CertificationsPage = () => {
         Users: Users,
         Award: Award,
         Code: Code,
+        // === TAMBAHKAN IKON BARU DI SINI ===
+        Database: Database,
+        BarChart: BarChart,
     };
 
     useEffect(() => {

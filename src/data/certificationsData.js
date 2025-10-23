@@ -1,5 +1,37 @@
 export const certifications = [
     {
+        id: 'icpc-2024',
+        title: 'Honorable Mention - ICPC National Contest',
+        issuer: 'International Collegiate Programming Contest',
+        date: 'October 26-27, 2024',
+        icon: 'Award',
+        imageUrl: '/sertif1.png',
+        overview: 'Achieved an Honorable Mention in the 2024 ICPC Asia Jakarta - Indonesia National Contest, a prestigious competitive programming event.',
+        achievements: [
+        'Solved complex algorithmic problems under pressure.',
+        'Demonstrated proficiency in data structures and algorithms.',
+        'Competed against top university teams from across the nation.',
+        ],
+        skills: ['Competitive Programming', 'Algorithms', 'Data Structures', 'C++', 'Problem Solving'],
+    },
+    // --- ENTRI 'TemanUsaha' YANG SUDAH DILENGKAPI ---
+    {
+        id: 'temanusaha-infest-2025', // ID yang lebih baik
+        title: '2nd Place Winner - Hackathon of Infest XI 2025',
+        issuer: 'Informatics Festival US',
+        date: '17 - 19 October 2025',
+        icon: 'Award',
+        imageUrl: '/sertif_temanusaha.png',
+        overview: 'Achieved 2nd Place by designing "TemanUsaha," an AI-powered financing platform to solve the credit gap for Indonesia\'s unbanked MSMEs in 3T regions.',
+        achievements: [
+            'Architected a "Triple AI Layer" (Credit Scoring, Fraud Detection, Business Analytics).',
+            'Designed an OJK-compliant "Triple-Win" (65/30/5) profit-sharing business model.',
+            'Pitched the complete financial projections and system architecture to a panel of VCs and experts.',
+        ],
+        skills: ['AI Strategy', 'Business Model Design', 'Financial Projection', 'Pitching', 'OJK Compliance', 'System Architecture'],
+    },
+    // --- AKHIR DARI ENTRI BARU ---
+    {
         id: 'web-dev-lomba-2025',
         title: 'National Web Development Competition',
         issuer: 'Universitas PGRI Semarang',
@@ -40,21 +72,6 @@ export const certifications = [
         'Successfully presented the research findings to an international audience.',
         ],
         skills: ['Blockchain', 'Technical Writing', 'Public Speaking', 'Research'],
-    },
-    {
-        id: 'icpc-2024',
-        title: 'Honorable Mention - ICPC National Contest',
-        issuer: 'International Collegiate Programming Contest',
-        date: 'October 26-27, 2024',
-        icon: 'Award',
-        imageUrl: '/sertif1.png',
-        overview: 'Achieved an Honorable Mention in the 2024 ICPC Asia Jakarta - Indonesia National Contest, a prestigious competitive programming event.',
-        achievements: [
-        'Solved complex algorithmic problems under pressure.',
-        'Demonstrated proficiency in data structures and algorithms.',
-        'Competed against top university teams from across the nation.',
-        ],
-        skills: ['Competitive Programming', 'Algorithms', 'Data Structures', 'C++', 'Problem Solving'],
     },
     {
         id: 'ml-beginner-2025',
@@ -98,6 +115,7 @@ export const certifications = [
         ],
         skills: ['Data Analytics', 'Tableau', 'Excel', 'Data Visualization'], // ADDED THIS
     },
+    // Entri kosong { id: 'TemanUsaha - infest', } telah diganti dengan entri lengkap di atas
 ];
 
 export default certifications;
