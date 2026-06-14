@@ -12,11 +12,13 @@ import ProjectDetailPage from './page/AllProjectsDetailsPage';
 import SoftSkillsExperiencePage from './page/softSkillsExperiencePage.jsx';
 import HardSkillsExperiencePage from './page/hardSkillsExperiencePage.jsx';
 import CertificationsPage from './page/CertificationsPage.jsx';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
   return (
     <Router>
-      <div className="bg-primary-dark text-text-light min-h-screen">
+        <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg-primary)', color: 'var(--color-text-primary)' }}>
+        <CustomCursor />
         <Navbar hideNavItems={false} />
         <main>
           <Routes> 

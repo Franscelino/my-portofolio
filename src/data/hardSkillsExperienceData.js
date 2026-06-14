@@ -1,4 +1,32 @@
 const hardSkillsExperiences = [
+    // === KALBE CONSUMER HEALTH INTERNSHIP (ONGOING) ===
+    {
+        type: 'internship',
+        title: 'Intern Full Stack Application',
+        icon: 'Briefcase',
+        date: '2025 - Present',
+        location: 'Jakarta, Indonesia',
+        status: 'ongoing', // Used for badge display in UI
+        company: 'Kalbe Consumer Health',
+        overview: 'Menjalankan magang sebagai Full Stack Application Intern di Kalbe Consumer Health, salah satu divisi dari Kalbe Farma Group — perusahaan farmasi terbesar di Asia Tenggara.',
+        achievements: [
+            // TODO: Isi dengan pencapaian/kontribusi aktual yang kamu kerjakan
+            'Contributed to full stack application development at Kalbe Consumer Health.',
+        ],
+        skills: [
+            // TODO: Isi dengan tech stack yang kamu pakai di Kalbe
+            'Full Stack Development',
+        ],
+        impact: 'Gaining hands-on industry experience in enterprise application development at one of Southeast Asia\'s largest pharmaceutical companies.',
+        // TODO: Update impact dengan deskripsi pencapaian aktual
+        lessons: [
+            // TODO: Isi dengan lessons learned
+            'Adapting to enterprise-level development workflows and standards.',
+        ],
+        photos: []
+        // TODO: Tambahkan foto jika ada
+    },
+    // === END KALBE INTERNSHIP ===
     {
         type: 'academic',
         title: 'Computer Science Student (Database Specialization)',

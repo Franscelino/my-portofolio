@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Github, ExternalLink, ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
 import projectsData from '../data/projectsData';
 
 const Projects = () => {
@@ -8,51 +9,73 @@ const Projects = () => {
     const highlightedProjects = projectsData.slice(0, 4);
 
     return (
-        <section id="projects" className="py-24 bg-black">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                {/* === KONTEN DIBUNGKUS UNTUK MEMBUATNYA LEBIH RAMPING === */}
-                <div className="max-w-5xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-6xl font-black text-white">My <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400">Projects</span></h2>
-                        <p className="text-lg text-gray-300 max-w-2xl mx-auto mt-4">A selection of projects that showcase my skills and passion.</p>
-                    </div>
+        <section id="projects" className="py-24 lg:py-32" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
+            <div className="max-w-7xl mx-auto px-6">
+                {/* Section Header */}
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-16"
+                >
+                    <p className="text-eyebrow mb-4">Selected works</p>
+                    <h2 className="section-title">
+                        My <span style={{ color: 'var(--color-accent)' }}>Projects</span>
+                    </h2>
+                    <div className="w-16 h-px mx-auto mb-6" style={{ backgroundColor: 'var(--color-accent)' }}></div>
+                    <p className="text-base md:text-lg max-w-2xl mx-auto" style={{ color: 'var(--color-text-muted)' }}>
+                        A selection of projects that showcase my skills and passion.
+                    </p>
+                </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                        {highlightedProjects.map(project => (
-                            <div
-                                key={project.id}
-                                onClick={() => navigate(`/projects/${project.id}`)}
-                                className="relative group bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl flex flex-col transition-all duration-300 hover:border-purple-500/50 hover:-translate-y-2 overflow-hidden cursor-pointer shadow-lg"
-                            >
-                                <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                                    <div className="absolute inset-0 rounded-2xl animate-spin-slow-reverse" style={{ background: 'conic-gradient(from 0deg at 50% 50%, #8b5cf6, transparent 30%, #f97316, transparent 70%, #8b5cf6)' }}></div>
+                {/* Projects Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-16">
+                    {highlightedProjects.map((project, index) => (
+                        <motion.div
+                            key={project.id}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.6, delay: index * 0.15 }}
+                            onClick={() => navigate(`/projects/${project.id}`)}
+                            className="card-base group flex flex-col cursor-pointer hover:-translate-y-1 transition-all duration-300 interactive-hover"
+                        >
+                            {/* Thumbnail with hover scale */}
+                            {project.thumbnailUrl && (
+                                <div className="overflow-hidden rounded-t-lg" style={{ borderBottom: '1px solid var(--color-border)' }}>
+                                    <motion.img
+                                        whileHover={{ scale: 1.05 }}
+                                        transition={{ duration: 0.5 }}
+                                        src={project.thumbnailUrl}
+                                        alt={`Thumbnail for ${project.name}`}
+                                        className="w-full h-48 sm:h-56 object-cover"
+                                    />
                                 </div>
-                                <div className="absolute inset-0 rounded-2xl z-10 bg-gray-900/80 group-hover:bg-gray-900/90 transition-colors duration-300"></div>
-                                
-                                <div className="relative z-20 p-4 flex flex-col flex-grow">
-                                    {project.thumbnailUrl && (
-                                        <div className="mb-4 rounded-lg overflow-hidden border border-gray-700/50 shadow-md">
-                                            <img
-                                                src={project.thumbnailUrl}
-                                                alt={`Thumbnail for ${project.name}`}
-                                                className="w-full h-auto object-cover"
-                                            />
-                                        </div>
-                                    )}
+                            )}
 
-                                    <h3 className="text-xl font-bold text-white mb-2">{project.name}</h3>
-                                    <p className="text-gray-400 text-sm mb-4 flex-grow line-clamp-3">{project.shortDetails.join(' ')}</p>
+                            {/* Content */}
+                            <div className="p-5 sm:p-6 flex flex-col flex-grow">
+                                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 pointer-events-none">{project.name}</h3>
+                                <p className="text-sm mb-4 flex-grow line-clamp-3 pointer-events-none" style={{ color: 'var(--color-text-muted)' }}>
+                                    {project.shortDetails.join(' ')}
+                                </p>
 
-                                    <div className="flex items-center space-x-4 mt-auto pt-4 border-t border-gray-700/50">
+                                {/* Links row */}
+                                <div className="flex items-center justify-between mt-auto pt-4" style={{ borderTop: '1px solid var(--color-border)' }}>
+                                    <div className="flex items-center space-x-4 relative z-30">
                                         {project.repositoryLink && (
                                             <a
                                                 href={project.repositoryLink}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 onClick={(e) => e.stopPropagation()}
-                                                className="text-gray-400 hover:text-white transition-colors duration-300"
+                                                className="transition-colors duration-300 interactive-hover"
+                                                style={{ color: 'var(--color-text-muted)' }}
+                                                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-accent)'}
+                                                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-text-muted)'}
                                             >
-                                                <Github size={20} />
+                                                <Github size={18} className="pointer-events-none" />
                                             </a>
                                         )}
                                         {project.liveDemoLink && (
@@ -61,27 +84,40 @@ const Projects = () => {
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 onClick={(e) => e.stopPropagation()}
-                                                className="text-gray-400 hover:text-white transition-colors duration-300"
+                                                className="transition-colors duration-300 interactive-hover"
+                                                style={{ color: 'var(--color-text-muted)' }}
+                                                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-accent)'}
+                                                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-text-muted)'}
                                             >
-                                                <ExternalLink size={20} />
+                                                <ExternalLink size={18} className="pointer-events-none" />
                                             </a>
                                         )}
                                     </div>
+                                    <span className="text-xs uppercase tracking-wider font-medium transition-colors duration-300 pointer-events-none" style={{ color: 'var(--color-text-muted)' }}>
+                                        View Project →
+                                    </span>
                                 </div>
                             </div>
-                        ))}
-                    </div>
-
-                    <div className="text-center">
-                        <button
-                            onClick={() => navigate('/projects/all-details-summary')}
-                            className="btn-primary inline-flex items-center px-8 py-4 text-base font-bold group"
-                        >
-                            <span>View All Projects</span>
-                            <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-                        </button>
-                    </div>
+                        </motion.div>
+                    ))}
                 </div>
+
+                {/* View All Projects CTA */}
+                <motion.div 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    className="text-center"
+                >
+                    <button
+                        onClick={() => navigate('/projects/all-details-summary')}
+                        className="btn-primary group interactive-hover"
+                    >
+                        <span className="pointer-events-none">View All Projects</span>
+                        <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1 pointer-events-none" />
+                    </button>
+                </motion.div>
             </div>
         </section>
     );

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 const Navbar = ({ hideNavItems = false }) => {
-    // ... (kode useEffect, toggleMenu, handleNavigate tidak berubah) ...
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const navigate = useNavigate();
@@ -42,107 +42,103 @@ const Navbar = ({ hideNavItems = false }) => {
         setIsOpen(false);
     };
 
-
     return (
-        <>
-            <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-                scrolled ? 'bg-black/80 backdrop-blur-xl shadow-2xl' : 'bg-transparent backdrop-blur-sm'
-            }`}>
-                <div className="container mx-auto flex justify-between items-center py-4 px-6">
-                    {/* Logo */}
-                    <div className="relative group">
-                        <Link to="/" onClick={(e) => handleNavigate('/#', e)} className="flex items-center">
-                            <div className="relative">
-                                <img
-                                    src="/Logo.svg"
-                                    alt="Logo"
-                                    className="h-12 sm:h-16 w-auto transition-all duration-300 group-hover:scale-110 drop-shadow-lg"
-                                />
-                            </div>
-                        </Link>
-                    </div>
-
-                    {/* Desktop Navigation */}
-                    {!hideNavItems && (
-                        <div className="hidden md:flex items-center space-x-8 lg:space-x-12">
-                            <Link to="/#about" onClick={(e) => handleNavigate('/#about', e)} className="nav-link">About</Link>
-                            <Link to="/#experience" onClick={(e) => handleNavigate('/#experience', e)} className="nav-link">Experience</Link>
-                            <Link to="/#projects" onClick={(e) => handleNavigate('/#projects', e)} className="nav-link">Projects</Link>
-                            <Link to="/#certifications" onClick={(e) => handleNavigate('/#certifications', e)} className="nav-link">Certifications</Link>
-                        </div>
-                    )}
-
-                    {/* === PERUBAHAN DI SINI: Tombol Contact diganti Download CV === */}
-                    {!hideNavItems && (
-                        <div className="hidden md:block">
-                            <div className="relative group">
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-orange-500 rounded-xl blur-lg opacity-70 group-hover:opacity-100 transition-all duration-300"></div>
-                                {/* Ganti <Link> dengan <a>, tambahkan href dan download */}
-                                <a
-                                    href="/CV_Melvyn.pdf"
-                                    download="CV_Melvyn.pdf"
-                                    className="relative block px-6 py-2 bg-gradient-to-r from-purple-500 to-orange-500 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95"
-                                >
-                                    Download CV
-                                </a>
-                            </div>
-                        </div>
-                    )}
-
-                    {/* Mobile Menu Button */}
-                    <div className="md:hidden">
-                        <button onClick={toggleMenu} className="relative p-2 text-white/80 hover:text-white transition-colors duration-300">
-                            <div className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
-                                {isOpen ? <X size={28} /> : <Menu size={28} />}
-                            </div>
-                        </button>
-                    </div>
+        <motion.nav 
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ type: 'spring', stiffness: 120, damping: 20 }}
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+                scrolled 
+                    ? 'border-b' 
+                    : 'border-b border-transparent'
+            }`}
+            style={{
+                backgroundColor: scrolled ? 'rgba(11, 11, 11, 0.85)' : 'rgba(11, 11, 11, 0.4)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                borderColor: scrolled ? 'var(--color-border)' : 'transparent',
+            }}
+        >
+            <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+                {/* Logo */}
+                <div className="relative group interactive-hover">
+                    <Link to="/" onClick={(e) => handleNavigate('/#', e)} className="flex items-center interactive-hover">
+                        <span className="text-xl sm:text-2xl font-black tracking-widest text-white transition-all duration-300 group-hover:text-[var(--color-accent)] pointer-events-none">
+                            FM
+                        </span>
+                    </Link>
                 </div>
 
-                {/* Mobile Menu Overlay */}
-                {isOpen && !hideNavItems && (
-                    <div className="md:hidden fixed inset-0 bg-black/90 z-40 flex flex-col items-center justify-center space-y-8 animate-fade-in pt-20">
-                        <Link to="/#about" className="text-white text-3xl" onClick={(e) => handleNavigate('/#about', e)}>About</Link>
-                        <Link to="/#experience" className="text-white text-3xl" onClick={(e) => handleNavigate('/#experience', e)}>Experience</Link>
-                        <Link to="/#projects" className="text-white text-3xl" onClick={(e) => handleNavigate('/#projects', e)}>Projects</Link>
-                        <Link to="/#certifications" className="text-white text-3xl" onClick={(e) => handleNavigate('/#certifications', e)}>Certifications</Link>
-                        {/* Ganti Contact di Mobile Menu juga */}
-                        <a href="/CV_Melvyn.pdf" download="CV_Melvyn.pdf" className="text-white text-3xl hover:text-purple-400 transition-colors duration-300">Download CV</a>
+                {/* Desktop Navigation */}
+                {!hideNavItems && (
+                    <div className="hidden md:flex items-center space-x-8 lg:space-x-12">
+                        <Link to="/#about" onClick={(e) => handleNavigate('/#about', e)} className="nav-link interactive-hover">About</Link>
+                        <Link to="/#experience" onClick={(e) => handleNavigate('/#experience', e)} className="nav-link interactive-hover">Experience</Link>
+                        <Link to="/#projects" onClick={(e) => handleNavigate('/#projects', e)} className="nav-link interactive-hover">Projects</Link>
+                        <Link to="/#certifications" onClick={(e) => handleNavigate('/#certifications', e)} className="nav-link interactive-hover">Certifications</Link>
                     </div>
                 )}
-            </nav>
 
-            {/* ... (kode style tidak berubah) ... */}
-            <style jsx>{`
-                .nav-link {
-                    position: relative;
-                    color: rgba(255, 255, 255, 0.9);
-                    font-weight: 500;
-                    font-size: 1rem;
-                    letter-spacing: 0.05em;
-                    text-transform: uppercase;
-                    transition: all 0.3s;
-                }
-                .nav-link:hover {
-                    color: white;
-                }
-                .nav-link::after {
-                    content: '';
-                    position: absolute;
-                    bottom: -4px;
-                    left: 0;
-                    width: 100%;
-                    height: 2px;
-                    background: linear-gradient(to right, #a855f7, #f97316);
-                    transform: scaleX(0);
-                    transform-origin: center;
-                    transition: transform 0.3s ease-out;
-                }
-                .nav-link:hover::after {
-                    transform: scaleX(1);
-                }
-            `}</style>
-        </>
+                {/* CTA: Download CV — outline style, hover → solid fill */}
+                {!hideNavItems && (
+                    <div className="hidden md:block">
+                        <a
+                            href="/CV_Melvyn.pdf"
+                            download="CV_Melvyn.pdf"
+                            className="btn-outline-accent interactive-hover"
+                        >
+                            <Download className="w-4 h-4 mr-2 pointer-events-none" />
+                            <span className="pointer-events-none">Download CV</span>
+                        </a>
+                    </div>
+                )}
+
+                {/* Mobile Menu Button */}
+                <div className="md:hidden">
+                    <button onClick={toggleMenu} className="relative p-2 transition-colors duration-300 interactive-hover" style={{ color: 'var(--color-text-muted)' }}>
+                        <div className={`transform transition-transform duration-300 pointer-events-none ${isOpen ? 'rotate-180' : ''}`}>
+                            {isOpen ? <X size={28} /> : <Menu size={28} />}
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {isOpen && !hideNavItems && (
+                    <motion.div 
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3 }}
+                        className="md:hidden fixed inset-0 z-40 flex flex-col items-center justify-center space-y-8 pt-20"
+                        style={{ backgroundColor: 'rgba(11, 11, 11, 0.97)' }}
+                    >
+                        {['about', 'experience', 'projects', 'certifications'].map((section) => (
+                            <Link
+                                key={section}
+                                to={`/#${section}`}
+                                className="text-2xl font-light tracking-widest uppercase transition-colors duration-300 interactive-hover"
+                                style={{ color: 'var(--color-text-muted)' }}
+                                onMouseEnter={(e) => e.target.style.color = 'var(--color-accent)'}
+                                onMouseLeave={(e) => e.target.style.color = 'var(--color-text-muted)'}
+                                onClick={(e) => handleNavigate(`/#${section}`, e)}
+                            >
+                                {section.charAt(0).toUpperCase() + section.slice(1)}
+                            </Link>
+                        ))}
+                        <a 
+                            href="/CV_Melvyn.pdf" 
+                            download="CV_Melvyn.pdf" 
+                            className="btn-outline-accent text-lg interactive-hover"
+                        >
+                            <Download className="w-4 h-4 mr-2 pointer-events-none" />
+                            <span className="pointer-events-none">Download CV</span>
+                        </a>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.nav>
     );
 };
 

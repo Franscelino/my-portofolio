@@ -1,40 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, ExternalLink, Calendar, MapPin, Users, Award, GraduationCap, Zap, Link, Lightbulb, Code } from 'lucide-react';
+import { ArrowRight, Calendar, MapPin, Users, Award, GraduationCap, Zap, Lightbulb, Code, Briefcase } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'motion/react';
+import hardSkillsExperiences from '../data/hardSkillsExperienceData';
 
 const Experience = () => {
   const [activeSection, setActiveSection] = useState(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const navigate = useNavigate();
 
   const iconComponents = {
-    GraduationCap: GraduationCap,
-    Zap: Zap,
-    Users: Users,
-    Award: Award,
-    Lightbulb: Lightbulb,
-    Code: Code,
-    Link: Link,
+    GraduationCap, Zap, Users, Award, Lightbulb, Code, Briefcase,
   };
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
   const handleNavigateToDetail = (path) => {
     navigate(path);
   };
+
+  // Find the ongoing Kalbe internship
+  const kalbeInternship = hardSkillsExperiences.find(exp => exp.status === 'ongoing');
 
   const experiences = [
     {
       type: 'soft-skills-overview',
       category: 'soft-skills',
       title: 'Soft Skill Experience',
-      color: 'from-blue-500 to-purple-600',
       icon: 'GraduationCap',
       summary: 'My comprehensive academic journey at BINUS University, coupled with significant leadership and mentorship roles within campus organizations, has built a strong foundation in both technical and soft skills.',
       stats: 'Diverse Campus Roles',
@@ -52,7 +41,6 @@ const Experience = () => {
       type: 'hard-skills-overview',
       category: 'hard-skills',
       title: 'Hard Skill Experience',
-      color: 'from-green-500 to-cyan-500',
       icon: 'Zap',
       summary: 'Actively engaged in cutting-edge blockchain bootcamps and prominent industry events, continuously expanding knowledge in Decentralized Finance (DeFi), DApp development, and high-performance blockchain technologies.',
       stats: 'Continuous Industry Learning',
@@ -69,148 +57,186 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 bg-black relative overflow-hidden min-h-screen">
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-900/10 via-transparent to-orange-900/10"></div>
-        <div className="absolute top-1/4 right-1/6 w-48 h-48 border border-purple-500/20 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-1/3 left-1/5 w-32 h-32 border border-orange-500/20 rounded-full animate-bounce" style={{ animationDuration: '3s' }}></div>
-
-        {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-purple-400/30 rounded-full animate-ping"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 2}s`
-            }}
-          ></div>
-        ))}
-
-        <div
-          className="absolute w-64 h-64 rounded-full pointer-events-none transition-all duration-1000 ease-out"
-          style={{
-            background: 'radial-gradient(circle, rgba(147, 51, 234, 0.05) 0%, transparent 70%)',
-            left: mousePosition.x - 128,
-            top: mousePosition.y - 128,
-          }}
-        ></div>
+    <section id="experience" className="py-24 lg:py-32 relative overflow-hidden min-h-screen" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
+      {/* Background subtle elements */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute top-1/4 right-1/6 w-48 h-48 rounded-full animate-pulse" style={{ border: '1px solid rgba(0, 229, 255, 0.15)' }}></div>
+        <div className="absolute bottom-1/3 left-1/5 w-32 h-32 rounded-full" style={{ border: '1px solid rgba(0, 229, 255, 0.1)', animation: 'pulseSlow 4s infinite' }}></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6"> {/* Adjusted font size for mobile */}
-              My
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 ml-2 md:ml-4"> {/* Adjusted spacing */}
-                Experience
-              </span>
-            </h2>
-            <div className="flex justify-center space-x-2 mb-6">
-              <div className="w-8 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></div>
-              <div className="w-4 h-1 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-              <div className="w-12 h-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
-            </div>
-            <p className="text-base md:text-xl text-gray-300 max-w-2xl mx-auto px-4"> {/* Adjusted font size and added horizontal padding */}
-              Explore my journey through academic excellence, organizational leadership, and intensive tech bootcamps.
-            </p>
-          </div>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Section Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <p className="text-eyebrow mb-4">Track record</p>
+          <h2 className="section-title">
+            My <span style={{ color: 'var(--color-accent)' }}>Experience</span>
+          </h2>
+          <div className="w-16 h-px mx-auto mb-6" style={{ backgroundColor: 'var(--color-accent)' }}></div>
+          <p className="text-base md:text-lg max-w-2xl mx-auto px-4" style={{ color: 'var(--color-text-muted)' }}>
+            Explore my journey through academic excellence, organizational leadership, and intensive tech bootcamps.
+          </p>
+        </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"> {/* Adjusted grid for mobile */}
-            <div className="text-center p-4 sm:p-6 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl hover:border-purple-500/50 transition-all duration-300"> {/* Adjusted padding */}
-              <div className="text-2xl sm:text-3xl font-bold text-purple-400 mb-2">2+</div> {/* Adjusted font size */}
-              <div className="text-xs sm:text-sm text-gray-400">Years Experience</div>
-            </div>
-            <div className="text-center p-4 sm:p-6 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl hover:border-orange-500/50 transition-all duration-300"> {/* Adjusted padding */}
-              <div className="text-2xl sm:text-3xl font-bold text-orange-400 mb-2">7+</div> {/* Adjusted font size */}
-              <div className="text-xs sm:text-sm text-gray-400">Major Roles/Bootcamps</div>
-            </div>
-            <div className="text-center p-4 sm:p-6 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl hover:border-pink-500/50 transition-all duration-300"> {/* Adjusted padding */}
-              <div className="text-2xl sm:text-3xl font-bold text-pink-400 mb-2">4+</div> {/* Adjusted font size */}
-              <div className="text-xs sm:text-sm text-gray-400">Organizations/Bootcamps</div>
-            </div>
-            <div className="text-center p-4 sm:p-6 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl hover:border-blue-500/50 transition-all duration-300"> {/* Adjusted padding */}
-              <div className="text-2xl sm:text-3xl font-bold text-blue-400 mb-2">99,9%</div> {/* Adjusted font size */}
-              <div className="text-xs sm:text-sm text-gray-400">Passion & Dedication</div>
-            </div>
-          </div>
+        {/* Kalbe Internship Highlight Card */}
+        {kalbeInternship && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="mb-12"
+          >
+            <div
+              className="card-base p-6 sm:p-8 relative overflow-hidden interactive-hover cursor-pointer"
+              style={{ borderColor: 'rgba(0, 229, 255, 0.3)' }}
+              onClick={() => handleNavigateToDetail('/experience/hard-skills')}
+            >
+              {/* Subtle accent glow on the card */}
+              <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.03) 0%, transparent 50%)' }}></div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {experiences.map((experience, index) => (
-              <div
+              <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+                <div className="flex items-center gap-4 flex-1">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg flex items-center justify-center flex-shrink-0 pointer-events-none" style={{ backgroundColor: 'rgba(0, 229, 255, 0.1)', border: '1px solid rgba(0, 229, 255, 0.2)' }}>
+                    <Briefcase className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: 'var(--color-accent)' }} />
+                  </div>
+                  <div className="pointer-events-none">
+                    <div className="flex items-center gap-3 mb-1">
+                      <h3 className="text-lg sm:text-xl font-bold text-white">{kalbeInternship.title}</h3>
+                      <span className="badge-ongoing">Ongoing</span>
+                    </div>
+                    <p className="text-sm font-medium" style={{ color: 'var(--color-accent)' }}>{kalbeInternship.company}</p>
+                    <p className="text-xs mt-1 flex items-center gap-3" style={{ color: 'var(--color-text-muted)' }}>
+                      <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {kalbeInternship.date}</span>
+                      <span className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {kalbeInternship.location}</span>
+                    </p>
+                  </div>
+                </div>
+                <ArrowRight className="w-5 h-5 flex-shrink-0 pointer-events-none" style={{ color: 'var(--color-text-muted)' }} />
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Stats Row */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
+        >
+          {[
+            { number: '2+', label: 'Years Experience' },
+            { number: '7+', label: 'Major Roles' },
+            { number: '4+', label: 'Organizations' },
+            { number: '99,9%', label: 'Dedication' },
+          ].map((stat, index) => (
+            <div key={index} className="card-base text-center p-4 sm:p-6 interactive-hover">
+              <div className="text-2xl sm:text-3xl font-bold mb-1 pointer-events-none" style={{ color: 'var(--color-accent)' }}>{stat.number}</div>
+              <div className="text-xs uppercase tracking-wider pointer-events-none" style={{ color: 'var(--color-text-muted)' }}>{stat.label}</div>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Experience Category Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {experiences.map((experience, index) => {
+            const IconComp = iconComponents[experience.icon];
+            return (
+              <motion.div
                 key={index}
-                className="group relative bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 sm:p-8 cursor-pointer hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-2" // Adjusted padding
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: 0.2 + (index * 0.2) }}
+                whileHover={{ scale: 1.02 }}
+                className="card-base p-6 sm:p-8 cursor-pointer hover:-translate-y-1 transition-all duration-500 interactive-hover"
                 onMouseEnter={() => setActiveSection(experience.type)}
                 onMouseLeave={() => setActiveSection(null)}
+                onClick={() => handleNavigateToDetail(experience.detailPath)}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-
                 <div className="relative z-10 flex flex-col h-full">
+                  {/* Icon + Title */}
                   <div className="flex items-center mb-6">
-                    <div className="text-4xl sm:text-5xl mr-3 sm:mr-4 group-hover:scale-110 transition-all duration-300"> {/* Adjusted icon size */}
-                      {iconComponents[experience.icon] && React.createElement(iconComponents[experience.icon], { className: "w-10 h-10 sm:w-12 sm:h-12" })} {/* Adjusted icon size */}
+                    <div className="mr-3 sm:mr-4 transition-all duration-300 pointer-events-none" style={{ color: 'var(--color-accent)' }}>
+                      {IconComp && <IconComp className="w-10 h-10 sm:w-12 sm:h-12" />}
                     </div>
-                    <div className="flex-1">
-                      <h3 className={`text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${experience.color} group-hover:scale-105 transition-all duration-300`}> {/* Adjusted font size */}
+                    <div className="flex-1 pointer-events-none">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white">
                         {experience.title}
                       </h3>
-                      <div className={`h-1 w-12 sm:w-16 bg-gradient-to-r ${experience.color} rounded-full mt-1 sm:mt-2 transform origin-left transition-all duration-500 ${activeSection === experience.type ? 'scale-x-150' : 'scale-x-100'}`}></div> {/* Adjusted width and spacing */}
+                      <div className="h-px w-12 sm:w-16 mt-2 transition-all duration-500" style={{
+                        backgroundColor: 'var(--color-accent)',
+                        transform: activeSection === experience.type ? 'scaleX(1.5)' : 'scaleX(1)',
+                        transformOrigin: 'left',
+                      }}></div>
                     </div>
                   </div>
 
-                  <p className="text-sm sm:text-lg text-gray-300 mb-4 sm:mb-6 group-hover:text-white transition-all duration-300 flex-grow"> {/* Adjusted font size and spacing */}
+                  {/* Summary */}
+                  <p className="text-sm sm:text-base mb-4 sm:mb-6 flex-grow pointer-events-none" style={{ color: 'var(--color-text-muted)' }}>
                     {experience.summary}
                   </p>
 
-                  <div className="grid grid-cols-1 gap-2 sm:gap-3 mb-4 sm:mb-6"> {/* Adjusted gap and spacing */}
-                    <div className="flex items-center text-xs sm:text-sm"> {/* Adjusted font size */}
-                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${experience.color} mr-2 sm:mr-3 flex-shrink-0`}></div> {/* Adjusted spacing */}
-                      <span className="text-gray-400 capitalize mr-1">Period:</span>
-                      <span className="text-white font-semibold">{experience.period}</span>
+                  {/* Period & Location */}
+                  <div className="grid grid-cols-1 gap-2 sm:gap-3 mb-4 sm:mb-6 pointer-events-none">
+                    <div className="flex items-center text-xs sm:text-sm">
+                      <Calendar className="w-3 h-3 mr-2" style={{ color: 'var(--color-accent)' }} />
+                      <span style={{ color: 'var(--color-text-muted)' }}>Period:</span>
+                      <span className="text-white font-medium ml-1">{experience.period}</span>
                     </div>
-                    <div className="flex items-center text-xs sm:text-sm"> {/* Adjusted font size */}
-                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${experience.color} mr-2 sm:mr-3 flex-shrink-0`}></div> {/* Adjusted spacing */}
-                      <span className="text-gray-400 capitalize mr-1">Location:</span>
-                      <span className="text-white font-semibold">{experience.location}</span>
+                    <div className="flex items-center text-xs sm:text-sm">
+                      <MapPin className="w-3 h-3 mr-2" style={{ color: 'var(--color-accent)' }} />
+                      <span style={{ color: 'var(--color-text-muted)' }}>Location:</span>
+                      <span className="text-white font-medium ml-1">{experience.location}</span>
                     </div>
                   </div>
 
-                  <div className={`inline-block px-3 py-1 sm:px-4 sm:py-2 bg-gradient-to-r ${experience.color} text-white text-xs sm:text-sm font-bold rounded-full mb-4 sm:mb-6`}> {/* Adjusted padding and font size */}
+                  {/* Badge */}
+                  <div className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 text-xs sm:text-sm font-semibold rounded-lg mb-4 sm:mb-6 self-start pointer-events-none" style={{
+                    backgroundColor: 'rgba(0, 229, 255, 0.1)',
+                    color: 'var(--color-accent)',
+                    border: '1px solid rgba(0, 229, 255, 0.2)',
+                  }}>
                     {experience.stats}
                   </div>
 
-                  <div className="space-y-1 sm:space-y-2 mb-6 sm:mb-8"> {/* Adjusted spacing */}
-                    <h4 className="text-sm sm:text-base text-white font-semibold mb-2">Key Achievements:</h4> {/* Adjusted font size */}
-                    <ul className="list-none space-y-1 sm:space-y-2 text-gray-300"> {/* Adjusted spacing */}
+                  {/* Key Achievements */}
+                  <div className="space-y-1 sm:space-y-2 mb-6 sm:mb-8 pointer-events-none">
+                    <h4 className="text-sm sm:text-base text-white font-semibold mb-2">Key Achievements:</h4>
+                    <ul className="list-none space-y-1 sm:space-y-2">
                       {experience.achievements.map((achievement, achievementIndex) => (
                         <li key={achievementIndex} className="flex items-start">
-                          <Award className="w-3 h-3 sm:w-4 sm:h-4 mr-2 text-yellow-400 flex-shrink-0" /> {/* Adjusted icon size */}
-                          <span className="text-xs sm:text-sm">{achievement}</span> {/* Adjusted font size */}
+                          <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2 mr-2 sm:mr-3" style={{ backgroundColor: 'var(--color-accent)' }}></span>
+                          <span className="text-xs sm:text-sm" style={{ color: 'var(--color-text-muted)' }}>{achievement}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="text-center mt-auto">
+                  {/* CTA */}
+                  <div className="text-center mt-auto pointer-events-auto">
                     <button
-                      onClick={() => handleNavigateToDetail(experience.detailPath)}
-                      className="group relative inline-flex items-center px-5 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-bold text-white bg-gradient-to-r from-purple-600 to-orange-600 rounded-full hover:from-purple-500 hover:to-orange-500 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25" // Adjusted padding and font size
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleNavigateToDetail(experience.detailPath);
+                      }}
+                      className="btn-primary group/btn interactive-hover text-sm"
                     >
-                      <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-orange-600 rounded-full blur opacity-30 group-hover:opacity-50 transition-all duration-300"></div>
-
-                      <span className="relative mr-2">See Details</span>
-                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 relative group-hover:translate-x-1 transition-all duration-300" /> {/* Adjusted icon size */}
+                      <span className="relative mr-2 pointer-events-none">See Details</span>
+                      <ArrowRight className="w-4 h-4 relative group-hover/btn:translate-x-1 transition-all duration-300 pointer-events-none" />
                     </button>
                   </div>
                 </div>
-
-                <div className="absolute bottom-0 right-0 w-12 h-12 sm:w-16 sm:h-16 opacity-10"> {/* Adjusted size */}
-                  <div className={`absolute inset-0 bg-gradient-to-tl ${experience.color} transform rotate-45 translate-x-3 translate-y-3 sm:translate-x-4 sm:translate-y-4 rounded-full`}></div> {/* Adjusted translation */}
-                </div>
-              </div>
-            ))}
-          </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

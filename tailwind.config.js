@@ -8,18 +8,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary-dark': '#0A0A0A', // Sedikit lebih gelap dari hitam murni untuk kontras
-        'accent-purple': '#8B5CF6', // Ungu dominan
-        'secondary-orange': '#F97316', // Oranye aksen
-        'text-light': '#E0E0E0', // Warna teks terang untuk kontras dengan primary-dark
-        'text-muted': '#A0A0A0', // Warna teks sedikit diredam
-        'card-bg': '#1A1A1A', // Latar belakang kartu/elemen
-        'border-color': '#333333', // Warna border untuk pemisah
+        'dark-canvas': {
+          bg: '#0B0B0B',
+          card: '#1A1A1A',
+          border: '#2A2A2A',
+          accent: '#00E5FF',
+          muted: '#8A8A8A',
+        },
       },
       fontFamily: {
-        // Anda bisa menambahkan font kustom di sini, misalnya 'Inter', 'Poppins'
-        // 'sans': ['Inter', 'sans-serif'],
-      }
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
     },
   },
   plugins: [],
